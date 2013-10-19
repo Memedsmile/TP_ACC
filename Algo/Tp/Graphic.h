@@ -19,8 +19,22 @@ class Graphic{
   Vertex getV(int);
   Vertex getSource(int);
   Vertex getWell(int);
-
   
+  vector<Vertex> pcc();
+  /**
+   *Permet d'obtenir un sommet à partir de son nom
+   * @param name le nom du sommet 
+   * @return le somet de nom name
+   */
+  Vertex returnVertexOfName(int); 
+
+
+  //Méthode de visualition d'un graphe
+  /**
+   *Création d'un fichier .dot
+   *Permet la visualitation du graphe
+   */
+  void displayGraphic();
   
 };
 

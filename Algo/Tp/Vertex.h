@@ -12,13 +12,13 @@ class Vertex{
   //Constructeur
   Vertex();
   Vertex(int);
-  Vertex(const Vertex);
+  Vertex(const Vertex&);
   //Get et Set
   void setVertex(int);
   void setArcOut(Arcs*,int);
   void setArcIn(Arcs*,int);
 
-  int getVertex();
+  int getVertex()const;
   Arcs* getArcOut(int);
   Arcs* getArcIn(int);
   
@@ -27,7 +27,9 @@ class Vertex{
   void addArcOut(Arcs*); //ajout d'un arc sortant
   void addArcIn(Arcs*); //ajout d'un arc entrant
 
-  
+  //Surcharge
+  bool operator==(const Vertex&);
+
 };
 
 
