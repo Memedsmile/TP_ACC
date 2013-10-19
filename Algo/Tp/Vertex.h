@@ -12,7 +12,7 @@ class Vertex{
   //Constructeur
   Vertex();
   Vertex(int);
-
+  Vertex(const Vertex);
   //Get et Set
   void setVertex(int);
   void setArcOut(Arcs*,int);

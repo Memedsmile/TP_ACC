@@ -9,7 +9,7 @@ class Graphic{
  public:
   //Constructeur
   Graphic();
-  Graphic(Vertex,Vertex);
+  Graphic(const Vertex,const Vertex);
 
   //Get et Set
   void setV(Vertex,int);
