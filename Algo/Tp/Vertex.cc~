@@ -1,0 +1,10 @@
+#include <iostream>
+#include <vector.h>
+#include "Vertex.h"
+#include "Arcs.h"
+
+Vertex::Vertex(){
+  vertex=-1;
+  arcOut=new vector<Arcs();
+  arcIn=new 
+}

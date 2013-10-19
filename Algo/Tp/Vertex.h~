@@ -1,0 +1,13 @@
+#ifndef VERTEX_H
+#define VERTEX_H
+
+class Vertex{
+ private:
+  int vertex; // représentation du sommet
+  vector<Arcs> arcOut; // arc sortant
+  vector<Arcs> arcIn; // arc entrant 
+ public:
+}
+
+
+#end
