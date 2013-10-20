@@ -18,19 +18,36 @@ class Vertex{
   void setArcOut(Arcs*,int);
   void setArcIn(Arcs*,int);
 
-  int getVertex()const;
+  int getVertex();
   Arcs* getArcOut(int);
   Arcs* getArcIn(int);
+
+ //Methode de copie d'un vertex a partir d'un autre vertex
+  void Copie(Vertex&);//copie les donnes d'un Sommet dans un sommet courant
   
+  //methodes donnantes les tailles des vector d'arcIN et arcOut
+  int sizeArcOut();
+  int sizeArcIn();
 
   //Methode d'ajout d'un arc
   void addArcOut(Arcs*); //ajout d'un arc sortant
   void addArcIn(Arcs*); //ajout d'un arc entrant
 
+  //Methode d'affichage d'un Sommet
+  void toString(ostream&);
+
   //Surcharge
   bool operator==(const Vertex&);
 
+  
 };
+
+//Surcharge de l'operateur <<
+ostream &operator<<(ostream&, Vertex&);
+
+//surcharge d'operateurs
+Vertex operator=(Vertex v1, Vertex v2);
+
 
 
 #endif

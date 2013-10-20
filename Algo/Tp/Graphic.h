@@ -10,16 +10,24 @@ class Graphic{
   //Constructeur
   Graphic();
   Graphic(const Vertex,const Vertex);
+  Graphic(const Graphic&);
 
   //Get et Set
   void setV(Vertex,int);
   void setSource(Vertex);
   void setWell(Vertex);
+  void setAllVertex(vector<Vertex>);//maj de vecteur des sommets du graphe courant par le vecteur des sommets passé en parametres 
+
 
   Vertex getV(int);
-  Vertex getSource(int);
-  Vertex getWell(int);
-  
+  Vertex getSource();
+  Vertex getWell();
+  Vector<Vertex> getV();//rends le vector des Sommet du Graphe
+  void Copie(Graphic&);// methode qui servent a la surcharge d'operateur=(affectation)
+
+  //Construction d'un graphe d'écart
+  Graphic graphEcart();
+
   vector<Vertex> pcc();
   /**
    *Permet d'obtenir un sommet à partir de son nom
@@ -36,6 +44,16 @@ class Graphic{
    */
   void displayGraphic();
   
+
+  //Methode d'affichage d'un graphe
+  void toString(ostream&);
+   
 };
+
+//Surcharge de l'operateur <<
+ostream &operator<<(ostream&, Graphic&);
+
+Graphic operator=(Graphic& g1, Graphic& g2);
+
 
 #endif

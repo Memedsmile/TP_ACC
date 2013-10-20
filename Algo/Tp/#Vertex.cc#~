@@ -74,7 +74,6 @@ Vertex Vertex::operator=(Vertex& v1, Vertex& v2){
 
 
 
-
 //Surcharge de l'operateur <<
 ostream &operator<<(ostream& o, Vertex& s){
    s.toString(o);

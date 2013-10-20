@@ -1,12 +1,11 @@
 #include <iostream>
 #include <vector>
-#include <fstream>
+#include <queue>
 using namespace std;
 
 #include "Vertex.h"
 #include "Arcs.h"
 #include "Graphic.h"
-
 
 ///////////////Variable global
 const char file[]="graph.dot";
@@ -14,6 +13,7 @@ const int infinity=999999;
 //////////////
 
 
+//Constructeur non-parametré
 Graphic::Graphic(): source(Vertex()), well(Vertex()){
   v.push_back(source);
   v.push_back(well);
@@ -24,6 +24,58 @@ Graphic::Graphic(const Vertex s,const Vertex w): source(s),well(w){
   v.push_back(well);
 }
 
+//constructeur par copie
+Graphic::Graphic(const Graphic& G){
+	this->setSource(G.getSource());
+	this->setWell(G.getWell());
+	vector<Vertex> copies = new vector<Vertex>;
+	for(int i=0; i<G.getVectv().size(); i++){
+		copies[i+3]=G.getV().getVertex(i+3);
+	}
+	copie.v=copies;
+}
+
+
+
+Graphic Graphic::graphEcart(){
+
+  Graphic* Ge = new Graphic(*this); // Graphe d'écart
+
+  bool marque[v.size()]; // Tableau de marquage des sommets parcourues
+
+  queue<Vertex> ATraite; // file des sommets en attente
+
+  for(int i = 0 ; i < v.size() ; i++){
+    marque[i]=false;
+  }
+
+  ATraite.push(Ge->getSource());
+
+  while(!ATraite.empty()){
+    Vertex* v = new Vertex (ATraite.front());
+    ATraite.pop();
+
+    for(int j = 0 ; j < v->sizeArcOut() ; j++){
+      if(!marque[v->getArcOut(j)->getVertexArrive().getVertex()]){
+	marque[v->getArcOut(j)->getVertexArrive().getVertex()]=true;
+	ATraite.push(v->getArcOut(j)->getVertexArrive());
+
+	for(int i = 0 ; i < v->getArcOut(j)->getVertexArrive().sizeArcIn() ; i++){
+	  if(v->getArcOut(j)->getVertexArrive().getArcIn(i)->isSaturate()){
+	    Arcs* a = new Arcs (v->getArcOut(j)->getVertexArrive().getArcIn(i)->getVertexArrive(), v->getArcOut(j)->getVertexArrive().getArcIn(i)->getVertexStart(), v->getArcOut(j)->getVertexArrive().getArcIn(i)->getCapacity());
+	    *v->getArcOut(j)->getVertexArrive().getArcIn(i) = *a;
+	    delete a;
+	  }
+	 
+	  else if(v->getArcOut(j)->getVertexArrive().getArcIn(i)->getFlow() != 0){
+	    Arcs* a= new Arcs (v->getArcOut(j)->getVertexArrive().getArcIn(i)->getVertexArrive(), v->getArcOut(j)->getVertexArrive().getArcIn(i)->getVertexStart(), v->getArcOut(j)->getVertexArrive().getArcIn(i)->getFlow());
+	    v->getArcOut(j)->getVertexArrive().getArcIn(i)->setCapacity(v->getArcOut(j)->getVertexArrive().getArcIn(i)->getCapacity() - v->getArcOut(j)->getVertexArrive().getArcIn(i)->getFlow());
+	  }
+	}
+      }
+    }
+  }
+}
 
 vector<Vertex> Graphic::pcc(){
   
@@ -140,3 +192,18 @@ void Graphic::displayGraphic(){
   output << " } " << endl;
 }
 
+
+
+//Methode d'affichage d'un Sommet
+void Graphic::toString(ostream& o){
+  for(int i =0 ; i < v.size() ; i++){
+    v[i].toString(o);
+  }
+}
+
+
+//Surcharge de l'operateur <<
+ostream &operator<<(ostream& o, Graphic& g){
+   g.toString(o);
+   return o;
+}
