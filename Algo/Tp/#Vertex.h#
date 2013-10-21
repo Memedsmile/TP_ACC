@@ -49,5 +49,4 @@ ostream &operator<<(ostream&, Vertex&);
 
 
 
-
 #endif
