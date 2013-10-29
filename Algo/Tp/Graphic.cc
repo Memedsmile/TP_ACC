@@ -35,7 +35,16 @@ Graphic::Graphic(const Graphic& G){
 	copie.v=copies;
 }
 
+void Graphic::setV(Vertex v,int i){}
+void Graphic::setSource(Vertex vSource){}
+void Graphic::setWell(Vertex vWell){}
+void Graphic::setAllVertex(vector<Vertex> allVertex){}
 
+Vertex Graphic::getV(int i){return v[i];}
+Vertex Graphic::getSource(){return source;}
+Vertex Graphic::getWell(){return well;}
+vector<Vertex> getV(){return v;}//rends le vector des Sommet du Graphe
+void Copie(Graphic&){} //methode qui servent a la surcharge d'operateur=(affectation)
 
 Graphic Graphic::graphEcart(){
 
@@ -75,6 +84,7 @@ Graphic Graphic::graphEcart(){
       }
     }
   }
+  return *Ge;
 }
 
 vector<Vertex> Graphic::pcc(){

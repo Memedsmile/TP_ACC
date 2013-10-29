@@ -51,7 +51,7 @@ void Vertex::toString(ostream& o){
 
 //Methode de copie d'un vertex a partir d'un autre Vertex
 
-void Vertex::Copie(Vertex& v1){
+void Vertex::Copie(const Vertex& v1){
   this->setVertex(v1.getVertex());
   this->setArcIn(v1.getArcIn());
   this->setArcOut(v1.getArcOut());
@@ -67,9 +67,9 @@ int Vertex::sizeArcOut(){
   return arcOut.size();
 }
 
-Vertex Vertex::operator=(Vertex& v1, Vertex& v2){
-  v1.Copie(v2)
-  return v1;
+Vertex Vertex::operator=(const Vertex& v2){
+  this->Copie(v2)
+  return *this;
 }
 
 

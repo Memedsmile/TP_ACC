@@ -22,7 +22,7 @@ class Graphic{
   Vertex getV(int);
   Vertex getSource();
   Vertex getWell();
-  Vector<Vertex> getV();//rends le vector des Sommet du Graphe
+  vector<Vertex> getV();//rends le vector des Sommet du Graphe
   void Copie(Graphic&);// methode qui servent a la surcharge d'operateur=(affectation)
 
   //Construction d'un graphe d'écart
@@ -48,12 +48,15 @@ class Graphic{
   //Methode d'affichage d'un graphe
   void toString(ostream&);
    
+
+  Graphic operator=(Graphic&);
+
 };
 
 //Surcharge de l'operateur <<
 ostream &operator<<(ostream&, Graphic&);
 
-Graphic operator=(Graphic& g1, Graphic& g2);
+
 
 
 #endif
