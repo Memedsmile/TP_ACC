@@ -1,0 +1,61 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{hyperref}
+\usepackage[english]{babel}
+\usepackage{calc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathrsfs}
+\usepackage{amsthm}
+
+\title{TP d'Algo/Complexité/Calculabilité}
+\author{
+  CIMBE Pierre-Alexandre \\
+  LAGNIEZ Jean-Marc \\
+  LESNYAK Viktor \\
+  RAFIK Ahmed}
+\date\today
+
+\begin{document}
+
+\maketitle
+
+\section{Partie théorique}
+\subsection{Partie algorithmique}
+\subsection{Partie complexité}
+\subsection{Partie calculabilité}
+
+
+\subsubsection{Exercie 7}
+
+\noindent\fbox{\parbox{\linewidth-2\fboxrule-2\fboxsep}{ \begin {enumerate} \scriptsize  
+\item \textbf{Comment enumérer les couples d'entiers?}\\
+\item \textbf{Donner les fonctions de codage et de décodage f\oldstylenums{1} $\rightarrow$ x et f\oldstylenums{2} $\rightarrow$ y}\\
+\item \textbf{Montrer que l'on peut coder les triplets. Géneraliser aux k-uplets.}\\
+\item \textbf{Pensez-vous que l'on peut coder les éléments de l'intervalle [0,1]. Justifier.}
+\end{enumerate} }}\\\\
+
+\begin{enumerate}
+\item Soit (x,y) $\in$ $\mathbb{N}$ * $\mathbb{N}$, alors faire x + y et trié par ordre lexicographique
+\item La fonction de codage est : \[z = \frac{(x+y)(x+y+1)}{2} + y\]\\
+Pour les fonction de décodage, posons t tel que \[t = x + y\]
+La fonction de décodage de y est: \[z =\frac{t(t+1)}{2} + y\] \[y = z - \frac{t(t+1)}{2}\]
+La fonction de décodage de x est: \[x = t - y\] \[x = -z + t + \frac{t(t+1)}{2}\] \[x = -z + \frac{t(t+3)}{2}\]
+\item Pour coder les triplets, il suffit de coder deux entier et coder le résultat et le dernier entier. 
+  \[h(x,y,z)=c(x , c(y,z))\]
+On peut repeter se raisonement pour les k-uplets, ainsi on a 
+\[k(x\oldstylenums{1},x\oldstylenums{2}... x\oldstylenums{k}) = c(x\oldstylenums{1} , c(x\oldstylenums{2} , ... c(x\oldstylenums{k-1},x\oldstylenums{k}))\]
+\item On ne peut pas coder les éléments de l'intervalle [0,1] car l'ensemble n'est pas dénombrable. On utilise la diagonal de cantor sur cette ensemble.\\
+Supposons que l'on puisse numeroter $\mathbb{N}$  $\rightarrow$ [0,1] et on en définie la suite S telle que tout éléments de [0,1] soit élément de la suite S.
+Et on définie un réel r tel que la partie entière est égal à 0 et que chaque décimal en position n est égal à sn(n)\footnote{la nème décimal du nème élément de S}+1 si sn(n) est différent de 9 et sn(n)-1 si sn(n) est égal à 9.\\
+Par construction, r n'est pas dans S sinon on aurait un Sn tel que \[Sn(n)=r(n)=Sn(n)+1\] ou \[Sn(n)=r(n)=Sn(n)-1\] C'est absurbe, ainsi ce n'est pas dénombrable. 
+   
+  
+\end{enumerate}
+
+
+
+\subsubsection{Exercice 8}
+
+\end{document}
