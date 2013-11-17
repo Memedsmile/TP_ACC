@@ -40,6 +40,7 @@
 \item Soit (x,y) $\in$ $\mathbb{N}$ * $\mathbb{N}$, alors faire x + y et trié par ordre lexicographique
 \item La fonction de codage est : \[z = \frac{(x+y)(x+y+1)}{2} + y\]\\
 Pour les fonction de décodage, posons t tel que \[t = x + y\]
+On va prendre t tel que si t augmente de 1 alors \[\frac{t(t+1)}{2} > z\] sinon on a \[\frac{t(t+1)}{2} \le z\]
 La fonction de décodage de y est: \[z =\frac{t(t+1)}{2} + y\] \[y = z - \frac{t(t+1)}{2}\]
 La fonction de décodage de x est: \[x = t - y\] \[x = -z + t + \frac{t(t+1)}{2}\] \[x = -z + \frac{t(t+3)}{2}\]
 \item Pour coder les triplets, il suffit de coder deux entier et coder le résultat et le dernier entier. 
@@ -69,7 +70,133 @@ O $\in \mathbb{N}^0$, $\pi_i^k \in \mathbb{N}^k$ et SUC $\mathbb{N}^1$
 \[\pi_i^k(x_1,x_2...,x_k) = x_i \] 
 \[SUC(x_1) = x_1 + 1 \] 
 
+Soit la fonction qu'on utilise pour la récursion primitive:\\
+g $\in \mathbb{N}^1$
+\[g() = SUC(O()) \]
+
+Soit la fonction recursive primitive:\\
+f $\in \mathbb{N}^1$
+\[f(0) = g()\]
+\[f(SUC(n)) = \pi_1^2(f(n),n)\]
   
-\item  
+\item  yoloooooooo je ne sais pas 
+\item \begin{enumerate}\item Soit la fonction somme défini ainsi:\\
+ Sum $\in \mathbb{N}^2$ 
+\[Sum(0,y) = \pi_1^1(y) = y \]
+\[Sum(Suc(x),y) = \pi_2^3(x,Sum(x,y),y)\]
+\item Soit la fonction Mult défini ainsi: \\
+Mult $\in \mathbb{N}^2$
+\[Mult(O,y) = 0() = 0\]
+\[Mult(1,y) = \pi_1^1(y) = y\]
+\[Mult(Suc(x),y) = \pi_2^3(x,Sum(Mult(x,y),y),y)\]
+\item Soit la fonction puissance défini aisni:\\
+ $X^Y$ $\in \mathbb{N}^2$
+\[X^Y(x,0) = Suc(0()) = 1\]
+\[X^Y(x,Suc(y)) = \pi_2^3(x,Mult(X^Y(x,y),x),y)\]
+\item Soit la fonction prédecesseurs tel que: \\
+Pred $\in \mathbb{N}^1$
+\[Pred(0) = O() = 0\]
+\[Pred(Suc(x)) = \pi_1^2(x,Pred(x))\]
+\item Soit la fonction soustraction tel que:\\
+X-Y $\in \mathbb{N}^2$
+\[X-Y(0,y) = 0() = 0\]
+\[X-Y(x,0) = \pi_1^1(x) = x\]
+\[X-Y(x,y) = \pi_2^3(x,X-Y(Pred(x),Pred(y)),y))\]
+\item Soit la fonction sg tel que:
+sg $\in \mathbb{N}^1$
+\[sg(0) = 0() = 0\]
+\[sg(Suc(x)) = \pi_1^2(1,Suc(x))\]
+\item Soit la fonction X > Y tel que :\\
+X>Y $\in \mathbb{N}^2$
+\[X>Y(0,y) = 0\]
+\[X>Y(x,0) = 1\]
+\[X>Y(x,y) = \pi_2^3(x,X>Y(Pred(x),Pred(y)),y)\]
+Soit la fonction X $\ge$ Y tel que :\\
+X$\ge$Y $\in \mathbb{N}^2$
+\[X\ge Y(0,0) = 1\]
+\[X\ge Y(0,y) = 0\]
+\[X\ge Y(x,0) = 1\]
+\[X\ge Y(x,y) = \pi_2^3(x,X>Y(Pred(x),Pred(y)),y)\]
+
+\end{enumerate}
+\item \begin{enumerate} 
+
+\item Voici la fonction d'Ackerman pour 0 $\le$ m $\le$ 3 et 0 $\le$ n $\le$ 4 \\
+\begin{center}
+\begin{tabular}{| c || c | c | c | c | c |}
+\hline
+m/n & 0 & 1 & 2 & 3 & 4 \\
+\hline
+\hline
+0 & 1 & 2 & 3 & 4 & 5 \\
+\hline
+1 & 2 & 3 & 4 & 5 & 6 \\
+\hline
+2 & 3 & 5 & 7 & 9 & 11 \\
+\hline
+3 & 5 & 13 & 28 & 58 & 118 \\
+\hline
+\end{tabular}
+\end{center}
+
+\item Fesons une preuve par récurrence
+\[A_0(n) = Suc(n) = n + 1\]
+Hypothèse: A\tiny m\normalsize (n) est primitive récursive\\
+Montrons que A\tiny m+1\normalsize (n) est primitive récursive\\ 
+
+Si n = 0, on a que A\tiny m+1\normalsize (n) = A\tiny m\normalsize (1). D'après l'hypothèse de réccurence, on a que A\tiny m\normalsize (n) est primitive récursive. Donc A\tiny m+1\normalsize (n) est primitf recursive\\
+
+Si n > 0, on a que A\tiny m+1\normalsize (n) = A\tiny m\normalsize (A\tiny m+1\normalsize (n)).\\
+Posons n' = A\tiny m+1\normalsize (n). Donc on a A\tiny m\normalsize (n'). D'après l'hypothèse de réccurence, on a que A\tiny m\normalsize (n) est primitive récursive pour tous n $\in \mathbb{N}$ . Donc A\tiny m+1\normalsize (n) est primitif recursive.\\
+
+\item 
+Fesons une preuve par récurrence 
+\[A_0(n) = n+1 \] 
+n+1 > n donc c'est vrai au premier rang\\
+Hypothèse: A\tiny m\normalsize (n) > n \\
+Montrons que A\tiny m+1\normalsize (n) > n\\ \\
+Maitenant, on applique une récurrence sur n\\
+n = 0 : A\tiny m+1\normalsize (1) > 1  > 0
+Hypothèse: A\tiny m+1\normalsize (n) > n \\
+Montrons que: A\tiny m+1\normalsize (n+1) > n+1\\
+On utilise les deux hypothèse de réccurence:\\
+\[A\tiny m+1\normalsize (n+1) = A\tiny m\normalsize (A\tiny m+1\normalsize (n)) > A\tiny m+1\normalsize (n) > n \]
+Ainsi \[A\tiny m+1\normalsize (n) \ge n+1\]
+Donc \[A\tiny m+1\normalsize (n+1) > n+1\]
+On peux donc conclure que A\tiny m\normalsize (n) > n\\
+
+\item  Il faut montrer que A\tiny m+1\normalsize (n) - A\tiny m\normalsize (n)  $\ge$ 0\\
+Fesons une preuve par récurrence sur m \\
+\[A_0(n+1) - A_0(n) = n + 1 - n = 1\] 
+Hypothèse: A\tiny m\normalsize (n+1) - A\tiny m\normalsize (n) > 0\\
+Montrons que A\tiny m+1\normalsize (n+1) - A\tiny m+1\normalsize (n) > 0\\
+A\tiny m+1\normalsize (n+1) = A\tiny m\normalsize (A\tiny m+1\normalsize (n)) > A\tiny m\normalsize (n)\\
+On peut conclure que\\ 
+A\tiny m\normalsize (n+1) - A\tiny m\normalsize (n) > 0
+
+\item 
+Pour n = 0: A\tiny m+1\normalsize (0) = A\tiny m\normalsize (1). De plus, d'après la question précédente, on a que A\tiny m\normalsize (1) > A\tiny m\normalsize (0)\\\\
+Pour n > 0: A\tiny m+1\normalsize (n) = A\tiny m\normalsize (A\tiny m+1\normalsize (n-1)). De plus on a que A\tiny m\normalsize (n-1) > n - 1 $\rightarrow$ A\tiny m\normalsize (n-1) $\ge$ n\\
+Comme la fonction est strictement croissante, on a que  A\tiny m\normalsize (A\tiny m\normalsize (n-1)) $\ge$ A\tiny m\normalsize (n) \\ \\
+On peux en conclure que \\
+A\tiny m+1\normalsize (n) = A\tiny m\normalsize (A\tiny m+1\normalsize (n-1)) $\ge$ A\tiny m\normalsize (n) 
+
+\item D'après les question précédente, on a montré que A\tiny m+1\normalsize (n) $\ge$ A\tiny m\normalsize (n) et que A\tiny m\normalsize (n+1) > A\tiny m\normalsize (n). Ceci prouve que $A_m^k$ est strictement croissante. 
+
+\item Fesons une preuve pas récurrence sur k.\\
+Au cas de base, on a bien $A_{m+1}$\normalsize (n) $\ge$ $A_m$\normalsize (n)\\
+Hypothèse: $A_{m+1}$\normalsize (n + k) $\ge$ $A^k_m$\normalsize (n)\\
+Montrons que : $A_{m+1}$(n + k + 1) $\ge$ $A^{k+1}_m$(n)\\
+D'après l'hypothèse de réccurence, on a \\
+\[A^{k+1}_m = A_m(A^k_m(n)) \le A_m(A_{m+1}(n + k))\] 
+De plus:\\
+\[A_{m+1}(n + k + 1) = A_m(A_{m+1}(n + k))\]
+On peut conclure que:\\
+\[A^{k+1}_m = A_m(A^k_m(n)) \le A_{m+1}(n + k + 1)\]
+\item 
+Fesons une preuve par l'absurbe, soit la fonction d'Ackermann primitive récursive.\\\\
+Sois la fonction \[f: \mathbb{N} \rightarrow \mathbb{N} : n \rightarrow A(n,2n)\]
+Comme la fonction d'Ackerman est primitive récursive alors f est primitive récursive.   
+\end{enumerate}
 \end{enumerate}
 \end{document}
