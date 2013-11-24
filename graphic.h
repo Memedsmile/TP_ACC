@@ -25,6 +25,8 @@ void minLoad(struct arcs**,int*,int*,int);
 //Question 4
 void upFlow(struct arcs**, int*,int ,int);
 
+//Question 5
+void flowMax(struct arcs**, struct arcs**, int);
 
 void affiche(struct arcs**,int);
 void affichePere(int*,int,int);

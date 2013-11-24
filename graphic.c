@@ -226,6 +226,27 @@ void upFlow(struct arcs** graph, int* road, int sizeRoad, int k)
     }
 }
 
+
+void flowMax(struct arcs** graph, struct arcs** graphEcart, int n)
+{
+  int line;
+  int column;
+  int flowMax = 0;
+  for(column = 0 ; column < n ; column++)
+    {
+      flowMax = flowMax + graphEcart[column][0].capacity;
+    }
+  printf("Le flot max est de %d \n",flowMax);
+  for(line = 0 ; line < n ; line++)
+    {
+      for(column = 0 ; column < n ; column++)
+	{
+	  
+	}
+    }
+}
+
+
 void affiche(struct arcs** graph,int n)
 {
   int line=0;
@@ -279,6 +300,8 @@ int main()
   struct arcs** graphEcart = graphSD(graph,n);
   //affiche(graph,n);
   affiche(graphEcart,n);
+
+  //determine le graph d'écart max
   int sizeRoad = dijkstra(graphEcart,0,n-1,road,n);
   while(sizeRoad != 0)
     {
@@ -292,6 +315,7 @@ int main()
   affiche(graphEcart,n);
   sizeRoad = dijkstra(graphEcart,0,n-1,road,n);
   }
+  flowMax(graph,graphEcart,n);
     int line=0;
     while(line < n)
     {
