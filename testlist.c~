@@ -1,0 +1,46 @@
+#include <stdlib.h>
+#include <stdio.h>
+#include "list.h"
+
+
+int main (){
+  List liste = (List)malloc(sizeof(List));
+  afficheList(liste);
+  listInit(liste);
+  afficheList(liste);
+  printf("taille de la liste : %d\n", sizeList(liste));
+  int tab1[3] = {1, 2, 3};
+  liste = push_back(liste,tab1);
+  afficheList(liste);
+  printf("taille de la liste : %d\n", sizeList(liste));
+  int tab2[3] = {5, 9, 8};
+  liste = push_front(liste,tab2);
+  afficheList(liste);
+  printf("taille de la liste : %d\n", sizeList(liste));
+  int tab3[4] = {0, 9, 4, 5};
+  liste = push_front(liste,tab3);
+  afficheList(liste);
+  printf("taille de la liste : %d\n", sizeList(liste));
+  /*  liste = push_back(liste,30);
+  afficheList(liste);
+  printf("taille de la liste : %d\n", sizeList(liste));
+  */ 
+  int tab4[5] = {7, 5, 8, 6, 3}; 
+  liste = push_front(liste,tab4);
+  afficheList(liste);
+  printf("taille de la liste : %d\n", sizeList(liste));
+  int tab5[3] = {8, 5, 2};
+  liste = push_back(liste, tab5);
+  afficheList(liste);
+  printf("taille de la liste : %d\n", sizeList(liste));
+  liste = pop_front(liste);
+  afficheList(liste);
+  printf("taille de la liste : %d\n", sizeList(liste));
+  liste = pop_back(liste);
+  afficheList(liste);
+  printf("taille de la liste : %d\n", sizeList(liste));
+  liste = freeList(liste);
+  afficheList(liste);
+  printf("taille de la liste : %d\n", sizeList(liste));
+  return 0;
+}

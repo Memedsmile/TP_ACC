@@ -26,9 +26,20 @@ void minLoad(struct arcs**,int*,int*,int);
 void upFlow(struct arcs**, int*,int ,int);
 
 //Question 5
-void flowMax(struct arcs**, struct arcs**, int);
+int flowMax(struct arcs**, struct arcs**, int, int, int);
+
+//Question 6
+int* predecessors(struct arcs**, int, int, int);
+int* readRoadDFS(struct arcs**, int*, int, int);
+struct arcs** edmondsKarp(struct arcs**, int*, int, int, int);
+
+//Question 7
+int pluscourtchemins(struct arcs**, int**, int, int, int);
+int pccrec(struct arcs**, int**, int, int, int, int, int, int);
+
 
 void affiche(struct arcs**,int);
+void afficheMatrice(struct arcs**, int);
 void affichePere(int*,int,int);
 void afficheRoad(int*,int);
 void afficheLoad(int*);

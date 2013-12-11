@@ -243,56 +243,6 @@ int flowMax(struct arcs** graph, struct arcs** graphEcart, int s, int p, int n)
   }
 }
 
-/*
-int* predecessors(struct arcs** graph, int s, int p, int n){
-  int* pred = (int*)malloc(sizeof(int) * n);
-  pred[s] = s;
-  int i;  
-  for(i = 0 ; i < n ; i++){
-    pred[i] = -1;
-  }
-  Queue* treat = malloc(sizeof(Queue));
-  push(treat,s);
-  while(empty(treat) == 0){
-    int eltTraite = treat->first->data;
-    pop(treat);
-    for(i = 0 ; i < n ; i++){
-      if(graph[eltTraite][i].capacity > 0 && pred[i] == -1){
-	pred[i] = eltTraite;
-	if(i == p){
-	  free(treat);
-	  return pred;
-	}
-	push(treat,i);
-      }
-    }
-  }
-  printf("Aucun chemin de la source au puit\n");
-  return NULL;
-}
-
-*/
-/*int* readRoadDFS(struct arcs** graph, int* pred, int s, int p){
-  List roadDFS;
-  int eltcourant = p;
-  afficheList(roadDFS);
-  printf("element courant : %d\n", eltcourant);
-  roadDFS = push_front(roadDFS, eltcourant);
-  afficheList(roadDFS);
-  while(eltcourant != s){
-    roadDFS = push_front(roadDFS, eltcourant);
-    printf("element courant : %d\n", eltcourant);
-    afficheList(roadDFS);
-    eltcourant = pred[eltcourant];
-  }
-  int i;
-  int* roadtab = (int*)malloc(sizeof(int)*sizeList(roadDFS));
-  for(i = 0 ; i < sizeList(roadDFS) ; i++){
-    roadtab[i] = element(roadDFS, i);
-  }
-  freeList(roadDFS);
-  return roadtab;
-  }*/
 
 struct arcs** edmondsKarp(struct arcs** graph, int* flowmax, int s, int p, int n){
 
@@ -381,6 +331,35 @@ int pccrec(struct arcs** graph, int** listPCC, int nbroad, int sizeroad, int s, 
   return 1 + pccrec(graphEcart, listPCC, nbroad, sizeroad, s, p, n, j+1);
 }
 
+/*
+int* predecessors(struct arcs** graph, int s, int p, int n){
+  int* pred = (int*)malloc(sizeof(int) * n);
+  pred[s] = s;
+  int i;  
+  for(i = 0 ; i < n ; i++){
+    pred[i] = -1;
+  }
+  Queue* treat = malloc(sizeof(Queue));
+  push(treat,s);
+  while(empty(treat) == 0){
+    int eltTraite = treat->first->data;
+    pop(treat);
+    for(i = 0 ; i < n ; i++){
+      if(graph[eltTraite][i].capacity > 0 && pred[i] == -1){
+	pred[i] = eltTraite;
+	if(i == p){
+	  free(treat);
+	  return pred;
+	}
+	push(treat,i);
+      }
+    }
+  }
+  printf("Aucun chemin de la source au puit\n");
+  return NULL;
+}
+
+*/
 
  
 void affiche(struct arcs** graph,int n)

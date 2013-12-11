@@ -24,6 +24,63 @@
 \section{Partie théorique}
 \subsection{Partie algorithmique}
 \subsection{Partie complexité}
+
+\subsubsection{Exercie 5}
+
+\begin{enumerate}
+\item \begin{enumerate}
+  \item
+    SAT : Un  problème SAT est un problème de décision visant à montrer l'existence d'une interprétation satisfaisant un ensemble de variable propositionnelle. (Formule logique CNF)
+    3-SAT : Cas particulier du problème SAT dans lequel les clauses sont toutes de taille 3.
+
+  \item
+    On dit qu'il existe une réduction d'un problème P à un problème P' s'il existe une fonction f telle que x $\in$ D(P) <=> f(x) $\in$ D(P')
+
+  \item
+    3-SAT est un cas particulier de SAT, or SAT $\in$ NP.
+    Donc 3-SAT $\in$ NP
+
+    SAT $\in$ NP-Complet
+
+    Nous allons chercher à réduire un problème Sat à un problème 3-SAT : 
+
+    Soit P une instance du problème SAT.
+    
+    $\twoheadrightarrow$Soit U={$l_1vl_2vl_3......vl_k$} une clause de taille k > 3
+
+    On la divise en 2 clause :
+    $\succ$ une clause de taille $\lfloor$k/2$\rfloor$+1 en complétant par une variable x$\notin$U 
+    $\succ$ une clause de taille $\lceil$k/2$\rceil$+1 en complétant par $\overline x$ le complémentaire de x.
+
+    On applique ce principe récursivement jusqu'à obtenir des clauses de taille 3
+
+    $\twoheadrightarrow$Soit U={$l_1vl_2$} une clause de taille 2
+    
+    On clone la clause U pour avoir 2 clauses $U_1$ et $U_2$ auxquelles on ajoute respectivement une variable x et son complémentaire $\overline x$
+    on obtient :  $U_1$={$l_1vl_2$vx}
+    $U_2$={$l_1vl_2$v$\overline x$}
+
+    $\twoheadrightarrow$Soit U={$l_1$} une clause de taille 1
+    On force $l_1$ à vrai et on retire les clauses unitaire.
+
+    On obtient ainsi un problème P' de type 3-SAT.    
+
+    Donc 3-SAT est NP-Complet.
+
+    \item
+      Soit $l_1$, $l_2$, $l_3$, $l_4$ une clause de taille 4
+
+      $l_1, l_2, l_3, l_4\left\lbrace 
+      \begin{array}{lcl} 
+        l_1 v l_2 v u\\
+        l_3 v l_4 v \overline u
+      \end{array}\right.$
+    
+\end{enumerate}
+\end{enumerate}
+
+
+
 \subsection{Partie calculabilité}
 
 

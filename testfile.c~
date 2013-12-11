@@ -1,0 +1,26 @@
+#include <stdlib.h>
+#include <stdio.h>
+#include "file.h"
+
+
+int main (){
+  Queue* fifo = malloc(sizeof(Queue));;
+  initialization(fifo);
+  affiche(fifo);
+  push(fifo,10);
+  affiche(fifo);
+  push(fifo,20);
+  printf("%d\n", fifo->first->next->data);
+  printf("dernier élément : %d\n", fifo->last->data);
+  affiche(fifo);
+  push(fifo,30);
+  affiche(fifo);
+  push(fifo,40);
+  printf("dernier élément : %d\n", fifo->last->data);
+  affiche(fifo);
+  push(fifo,50);
+  affiche(fifo);
+  pop(fifo);
+  affiche(fifo);
+  return 0;
+}

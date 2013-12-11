@@ -1,0 +1,227 @@
+#include <stdlib.h>
+#include <stdio.h>
+#include "list.h"
+
+
+
+//Initialisation de la liste
+void listInit(List* liste){
+  liste->first = NULL;
+  liste->last = NULL;
+  liste->size = 0;
+}
+
+// Test de liste vide
+int empty(List* liste){
+  if(liste->size == 0)
+    return 1;
+  else return 0;
+}
+
+// Taille de la liste
+int size(List* liste){
+  return liste->size;
+}
+
+//Accesseur à l'élément i de la liste
+int* element(List* liste, int i){
+  if(i >= sizeList(liste)){
+    printf("élément en dehors de la liste !");
+    return NULL;
+  }
+  EltList* courant = liste;
+  int j = 0;
+  while(j < i)
+    courant = courant->next;
+  
+  return courant->data;
+}
+
+//Ajout d'un élément en tete de la liste
+int push_front(List* liste, int* tab){
+  EltList* newelt = (EltList*) malloc (sizeof (EltList));
+  if (newelt == NULL || tab == NULL)
+    return -1;
+ 
+  newelt->data = data;
+
+  if(liste->first == NULL){        // cas où liste est vide
+    newelt->next = liste->last;
+    liste->first = newelt;
+  }else{
+    if(liste->first->next == NULL){   // cas où liste n'a qu'un élément
+      newelt->next = liste->first;
+      liste->last = liste->first;
+      liste->first = newelt;
+    }
+    else{
+      newelt->next = liste->first;
+      liste->first = newelt;
+    }
+  }
+  liste->size++;
+  return 1;
+}
+  
+
+//Ajout d'un élément en fin de la liste
+int push_back(List* liste, int* tab){
+ EltList* newelt = (EltList*) malloc (sizeof (EltList));
+  if (newelt == NULL || tab == NULL)
+    return -1;
+ 
+  newelt->data = data;
+
+  if(liste->first == NULL){        // cas où liste est vide
+    newelt->next = liste->last;
+    liste->first = newelt;
+  }else{
+    if(liste->first->next == NULL){   // cas où liste n'a qu'un élément
+      liste->last = newelt;
+      newelt->next = NULL;
+      liste->first->next = liste->last;
+    }
+    else{
+      liste->last->next = newelt;
+      newelt->next = NULL;
+      liste->last = newelt;
+    }
+  }
+  liste->size++;
+  return 1;
+}
+
+//Supression du premier élément de la liste
+int pop_front(List* liste){
+  EltList* eltsupp;
+  if (liste->size == 0)
+    return -1;
+  eltsupp = liste->first;
+  liste->first = liste->first->next;
+  free(eltsupp);
+  liste->size--;
+  return 0;
+}
+
+//Supression du dernier élément de la liste
+int pop_back(List*);
+
+//Supression de la liste
+int freeList(List*);
+
+//Affichage de la liste
+void afficheList(List*);
+
+
+//Accesseur à l'élément i de la liste
+int* element(List liste, int i){
+  if(i >= sizeList(liste)){
+    printf("élément en dehors de la liste !");
+    return NULL;
+  }
+  EltList* courant = liste;
+  int j = 0;
+  while(j < i)
+    courant = courant->next;
+  
+  return courant->data;
+}
+
+
+//Ajout d'un élément en tete de la liste
+List push_front(List liste, int* val){
+   List newliste = (List)malloc(sizeof(List));
+   newliste->data = val;
+   newliste->next = liste;
+   return newliste;
+ }
+
+//Ajout d'un élément en fin de la liste
+List push_back(List liste, int* val){
+  List newelt = (List)malloc(sizeof(List));
+   newelt->data = val;
+   if(liste == NULL)
+     return newelt;
+   else{
+     EltList* courant = liste;
+     while(courant->next != NULL){
+       courant = courant->next;
+     }
+     courant->next = newelt;
+     return liste;
+   }
+}
+
+//Supression du premier élément de la liste
+List pop_front(List liste){
+  if(liste != NULL){
+    if(liste->next == NULL){
+      free(liste->data);
+      free(liste);
+      return NULL;
+    }
+    else{
+      free(liste->data);
+      return liste->next;
+    }
+  }
+  else{
+    printf("La liste est vide !\n");
+    return NULL;
+  }
+}
+
+
+//Supression du dernier élément de la liste
+List pop_back(List liste){
+  if(liste == NULL){
+    printf("La liste est vide !\n");
+    return NULL;
+  }
+  if(liste->next == NULL){
+    free(liste->data);
+    free(liste);
+    return NULL;
+  }
+  
+  EltList* eltsupp = liste;
+  EltList* newlast = liste;
+
+  while(eltsupp->next != NULL){
+    newlast = eltsupp;
+    eltsupp = eltsupp->next;
+  }
+  newlast->next = NULL;
+  free(eltsupp->data);
+  free(eltsupp);
+  return liste;
+}
+
+//Supression de la liste
+List freeList(List liste){
+  while(liste!=NULL){
+    liste = pop_back(liste);
+  }
+  return liste;
+}
+    
+
+//Affichage de la liste
+void afficheList(List liste){
+  if(liste == NULL)
+    printf("La liste est vide !\n");
+  else{
+    EltList* courant = liste;
+    while(courant != NULL){
+      printf("[");
+      int i;
+      for(i = 0 ; i < sizeof(courant->data) ; i++){
+	printf("%d, ", courant->data[i]);
+      }
+      printf("]\n");
+      courant = courant->next;
+    }
+    printf("\n");
+  }
+}
+  
