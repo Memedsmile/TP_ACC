@@ -11,6 +11,9 @@ struct arcs{
 struct arcs** graph_initialization(int);
 void arcs_initialization(struct arcs**,int);
 void createRoadSourceWell(struct arcs** graph,int n);
+void createRoadSourceWellUpTurn(struct arcs** graph,int n);
+void createRoadSourceWellUpTurnRec(struct arcs** graph,int n,int vertex);
+
 
 //Question 1
 struct arcs** graphSD(struct arcs** graph,int n); //Graph d'écart
@@ -24,7 +27,8 @@ void minLoad(struct arcs**,int*,int*,int);
 
 //Question 4
 void upFlow(struct arcs**, int*,int ,int);
-
+void displayUpFlow(FILE*, struct arcs**, int*,int, int);
+void displayNewArcs(FILE*,struct arcs**,int,int,int); 
 //Question 5
 void flowMax(struct arcs**, struct arcs**, int);
 
