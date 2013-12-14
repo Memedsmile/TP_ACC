@@ -23,11 +23,49 @@
 
 \section{Partie théorique}
 \subsection{Partie algorithmique}
+
+\subsubsection{Exercice 2}
+
+\textbf{Soit un graphe G=(V,E);\\
+avec $\forall i,j \in V$,\\
+et f(i,j)-est la fonction representant le flot de l'arc ou $\forall (i,j)\in E$;\\}
+
+\begin{enumerate}
+
+
+\item Vrai, car si on enleve un arc (i,j), avec la f(i,j)=0,\\ alors on n'influence pas la valeur du flot maximal.\\
+Ce qui correspondt a la definition de plus petit \\arc vital.
+
+\item Vrai, car dans un flot maximum un arc (i,j) avec le f(i,j)\\ minimum est le plus petit arc vital d'apres la \\
+definition de plus petit arc vital.
+\item Faux, il faut montret le contre exemple(mais je galere a faire ce put.n de graph sous latex).
+
+ 
+\end{enumerate}
+
+\subsubsection{Exercice 3}
+
+
+\item Je suis sur que c'est faux ce que je vais raconter mais je me lance:
+
+Donc pour la partie trouver un sous-graphe d'un graphe K2n+1 qui est isomorphe a une double etoile on peut donner un\\
+example avec le graphe de petersen(voila le lien : http://fr.wikipedia.org/wiki/Graphe_de_Petersen);
+
+\item Pour la partie de demonstration : en considerant le +1 (de la formule K2n+1) comme le sommet racine, on peut \\
+dire que nous avons un graphe bipartie, et donc on peut trouver une equivalence avec le probleme d'affectation(le \\
+probleme de couplage maximum de poids minimum).
+
+
+
+P.S: voila j'espere que ca a au moins un minimum de verité.
+
+
 \subsection{Partie complexité}
 \subsection{Partie calculabilité}
 
 
-\subsubsection{Exercie 7}
+
+\subsubsection{Exercice 7}
 
 \noindent\fbox{\parbox{\linewidth-2\fboxrule-2\fboxsep}{ \begin {enumerate} \scriptsize  
 \item \textbf{Comment enumérer les couples d'entiers?}\\
