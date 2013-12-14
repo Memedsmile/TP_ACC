@@ -9,7 +9,7 @@ void initialization(Queue* file){
   file->size = 0;
 }
 
-int empty(Queue* file){
+int emptyFile(Queue* file){
   if(file->size == 0)
     return 1;
   else return 0;
@@ -60,10 +60,21 @@ int pop(Queue* file){
   return 0;
 }
 
+//Supression de la file
+int freeFile(Queue* file){
+  if(file->size == 0)                       // cas d'une file vide 
+    return -1;
+
+  while(emptyFile(file) != 1){
+    pop(file);
+   }
+  free(file);
+  return 1;
+}
 
 //Affichage de la liste
 void afficheQueue(Queue* file){
-  if(empty(file)==1){
+  if(emptyFile(file)==1){
     printf("La file est vide\n");
   }
   else{

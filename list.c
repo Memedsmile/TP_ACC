@@ -12,7 +12,7 @@ void listInit(List* liste){
 }
 
 // Test de liste vide
-int empty(List* liste){
+int emptyList(List* liste){
   if(liste->size == 0)
     return 1;
   else return 0;
@@ -23,24 +23,11 @@ int sizeList(List* liste){
   return liste->size;
 }
 
-// Taille du tableau data
-int sizeTab(int* data){
-  if(data == NULL)
-    return 0;
-  int i = 0;
-  int size = 0;
-  while(data[i] != NULL){
-    size++;
-    i++;
-  }
-  return size;
-}
-
 //Accesseur à l'élément i de la liste
-int* element(List* liste, int i){
+int element(List* liste, int i){
   if(i >= sizeList(liste)){
     printf("élément en dehors de la liste !");
-    return NULL;
+    return -1;
   }
   EltList* courant = liste->first;
   int j = 0;
@@ -51,12 +38,12 @@ int* element(List* liste, int i){
 }
 
 //Ajout d'un élément en tete de la liste
-int push_front(List* liste, int* tab){
+int push_front(List* liste, int val){
   EltList* newelt = (EltList*) malloc (sizeof (EltList));
-  if (newelt == NULL || tab == NULL)
+  if (newelt == NULL)
     return -1;
  
-  newelt->data = tab;
+  newelt->data = val;
 
   if(liste->first == NULL){        // cas où liste est vide
     newelt->next = liste->last;
@@ -78,12 +65,12 @@ int push_front(List* liste, int* tab){
   
 
 //Ajout d'un élément en fin de la liste
-int push_back(List* liste, int* tab){
+int push_back(List* liste, int val){
  EltList* newelt = (EltList*) malloc (sizeof (EltList));
-  if (newelt == NULL || tab == NULL)
+  if (newelt == NULL)
     return -1;
  
-  newelt->data = tab;
+  newelt->data = val;
 
   if(liste->first == NULL){        // cas où liste est vide
     newelt->next = liste->last;
@@ -110,7 +97,8 @@ int pop_front(List* liste){
     return -1;
 
   if(liste->size == 1){                      // cas d'une liste à un élément
-    freeList(liste);
+    free(liste->first);
+    liste->size--;
     return 0;
   }
 
@@ -127,7 +115,8 @@ int pop_back(List* liste){
     return -1;
 
   if(liste->size == 1){                      // cas d'une liste à un élément
-    freeList(liste);
+    free(liste->first);
+    liste->size--;
     return 0;
   }
 
@@ -138,6 +127,8 @@ int pop_back(List* liste){
     courant = eltsupp;
     eltsupp = courant->next;
   }
+  courant->next = NULL;
+  liste->last = courant;
   
   free(eltsupp);
   liste->size--;
@@ -150,36 +141,36 @@ int freeList(List* liste){
     return -1;
 
   if(liste->size == 1){                      // cas d'une liste à un élément
-    freeList(liste);
+    pop_front(liste);
+    free(liste);
     return 0;
   }
 
-  while(empty(liste) != 1){
+  while(emptyList(liste) != 1){
     pop_back(liste);
-  }
+   }
   free(liste);
   return 1;
 }
 
 //Affichage de la liste
 void afficheList(List* liste){
- if(empty(liste)==1){
-    printf("La liste est vide\n");
-  }
-  else{
+ if(emptyList(liste)==1){
+   printf("La liste est vide\n");
+ }
+ else if(sizeList(liste) == 1){
+      printf("[ %d ]\n", liste->first->data);
+ }
+ else{
     EltList* courant;
     int i, y;
     courant = liste->first;
     
-    for(i = 0 ; i < liste->size ; i++){
-      int s = sizeof courant->data;
-      printf("tab%d est de taille : %d\n",i, s);
-      printf("[");
-      for(y = 0 ; y < (sizeof courant->data)/4 ; y++){
-	printf("%d,  ", courant->data[y]);
-      }
-      printf("%d]\n", courant->data[(sizeof courant->data)/4]);
+    printf("[");
+    while(courant != liste->last){
+      printf("%d,  ", courant->data);
       courant = courant->next;
     }
+     printf("%d]\n", liste->last->data);
   }
 }

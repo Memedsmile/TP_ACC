@@ -3,7 +3,7 @@
 
 
 typedef struct tagQueueElt{
-  int* data;
+  int data;
   struct tagQueueElt* next;
 }QueueElt;
 
@@ -17,16 +17,19 @@ typedef struct tagQueue{
 void initialization(Queue*);
 
 // Test de file vide
-int empty(Queue*);
+int emptyFile(Queue*);
 
 //Taille de la file
 int size(Queue*);
 
 //Ajout d'un élément dans la file
-int push(Queue*, int*);
+int push(Queue*, int);
 
 //Supression du premier élément de la file
 int pop(Queue*);
+
+//Supression de la file
+int freeFile(Queue*);
 
 //Affichage de la liste
 void afficheQueue(Queue*);

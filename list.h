@@ -2,7 +2,7 @@
 #define LIST_H
 
 typedef struct tagEltList{
-  int* data;
+  int data;
   struct tagEltList* next;
 }EltList;
 
@@ -16,22 +16,19 @@ typedef struct tagList{
 void listInit(List*);
 
 // Test de liste vide
-int empty(List*);
+int emptyList(List*);
 
 // Taille de la liste
 int sizeList(List*);
 
-// Taille du tableau data
-int sizeTab(int*);
-
 //Accesseur à l'élément i de la liste
-int* element(List*, int);
+int element(List*, int);
 
 //Ajout d'un élément en tete de la liste
-int push_front(List*, int*);
+int push_front(List*, int);
 
 //Ajout d'un élément en fin de la liste
-int push_back(List*, int*);
+int push_back(List*, int);
 
 //Supression du premier élément de la liste
 int pop_front(List*);

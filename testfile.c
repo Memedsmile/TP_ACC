@@ -4,7 +4,7 @@
 
 
 int main (){
-  Queue* fifo = malloc(sizeof(Queue));;
+  Queue* fifo = (Queue*)malloc(sizeof (Queue));;
   initialization(fifo);
   afficheQueue(fifo);
   push(fifo,10);
