@@ -1,0 +1,14 @@
+CC=gcc
+OBJECTS= Rationnel.o main.o 
+
+essai : $(OBJECTS)
+	$(CC) $(OBJECTS) -o essai
+
+Rationnel.o : Rationnel.cc Rationnel.h 
+	$(CC) -c Rationnel.cc
+
+main.o : main.cc Rationnel.h 
+	$(CC) -c main.cc
+
+clean :
+	rm -f *~ *.o essai

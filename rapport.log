@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2013.11.24)  3 DEC 2013 15:39
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2013.11.24)  15 DEC 2013 21:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -531,204 +531,935 @@ LaTeX Font Info:    Try loading font information for U+rsfs on input line 23.
 
 (/usr/share/texlive/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
-) [1
+)
+Underfull \hbox (badness 10000) in paragraph at lines 31--33
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 38--39
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 41--43
+
+ []
+
+[1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 94--94
-
- []
-
-LaTeX Font Info:    Try loading font information for OML+cmr on input line 94.
-(/usr/share/texlive/texmf-dist/tex/latex/base/omlcmr.fd
-File: omlcmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `OML/cmr/bx/it' in size <7> not available
-(Font)              Font shape `OML/cmm/b/it' tried instead on input line 94.
-
-Underfull \hbox (badness 10000) in paragraph at lines 94--94
+Underfull \hbox (badness 10000) in paragraph at lines 63--65
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 94--94
+Underfull \hbox (badness 10000) in paragraph at lines 71--72
 
  []
 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.92 ...ien : http://fr.wikipedia.org/wiki/Graphe_
+                                                  de_Petersen);
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.93 
+     
+? 
+! Missing } inserted.
+<inserted text> 
+                }
+l.93 
+     
+? 
 
-Underfull \hbox (badness 10000) in paragraph at lines 89--95
-
+Overfull \hbox (106.44197pt too wide) in paragraph at lines 91--93
+\T1/cmr/m/n/10 example avec le graphe de pe-tersen(voila le lien : http://fr.wi
+kipedia.org/wiki/Graphe$[]\OML/cmm/m/it/10 e[]etersen\OT1/cmr/m/n/10 ); []$ 
  []
 
+! Extra }, or forgotten \endgroup.
+\@par ... \@noitemerr {\@@par }\fi \else {\@@par }
+                                                  \fi 
+l.93 
+     
+? 
 
-Underfull \hbox (badness 10000) in paragraph at lines 89--95
+Underfull \hbox (badness 10000) in paragraph at lines 111--113
 
  []
 
 [2]
+Underfull \hbox (badness 10000) in paragraph at lines 115--116
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 146--147
+
+ []
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.153       $l_1$, $l_2$, $l_3$, $l_4$\left
+                                           \lbrace
+? 
+
+! LaTeX Error: Command \end{center} invalid in math mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.158       \end{center}
+                        
+? 
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.158       \end{center}
+                        
+? 
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.158       \end{center}
+                        
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.158       \end{center}
+                        
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.162         n_
+                4 -> 2n_4
+? 
+
+! LaTeX Error: Command \end{center} invalid in math mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.163       \end{center}
+                        
+? 
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.163       \end{center}
+                        
+? 
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.163       \end{center}
+                        
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.163       \end{center}
+                        
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.166         4n_
+                 4 -> 5n_4
+? 
+
+! LaTeX Error: Command \end{center} invalid in math mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.167       \end{center}
+                        
+? 
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.167       \end{center}
+                        
+? 
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.167       \end{center}
+                        
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.167       \end{center}
+                        
+? 
+
+Underfull \hbox (badness 10000) in paragraph at lines 166--169
+
+ []
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.174       $l_1$, $l_2$, $l_3$, $l_4$, $l_5$\left
+                                                  \lbrace
+? 
+
+! LaTeX Error: Command \end{center} invalid in math mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.179       \end{center}
+                        
+? 
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.179       \end{center}
+                        
+? 
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.179       \end{center}
+                        
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.179       \end{center}
+                        
+? 
+[3]
+! Missing $ inserted.
+<inserted text> 
+                $
+l.182       $l_3$ v $l_4$ v $l_5$ v \overline u
+                                               \left\lbrace
+? 
+
+! LaTeX Error: Command \end{center} invalid in math mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.187       \end{center}
+                        
+? 
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.187       \end{center}
+                        
+? 
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.187       \end{center}
+                        
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.187       \end{center}
+                        
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.191         n_
+                5 -> 3n_5
+? 
+
+! LaTeX Error: Command \end{center} invalid in math mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.192       \end{center}
+                        
+? 
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.192       \end{center}
+                        
+? 
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.192       \end{center}
+                        
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.192       \end{center}
+                        
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.195         5n_
+                 5 -> 7n_5
+? 
+
+! LaTeX Error: Command \end{center} invalid in math mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.196       \end{center}
+                        
+? 
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.196       \end{center}
+                        
+? 
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.196       \end{center}
+                        
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.196       \end{center}
+                        
+? 
+
+Underfull \hbox (badness 10000) in paragraph at lines 195--198
+
+ []
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.203       $l_1$, $l_2$\left
+                             \lbrace
+? 
+
+! LaTeX Error: Command \end{center} invalid in math mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.208       \end{center}
+                        
+? 
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.208       \end{center}
+                        
+? 
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.208       \end{center}
+                        
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.208       \end{center}
+                        
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.212         n_
+                2 -> 2n_2
+? 
+
+! LaTeX Error: Command \end{center} invalid in math mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.213       \end{center}
+                        
+? 
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.213       \end{center}
+                        
+? 
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.213       \end{center}
+                        
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.213       \end{center}
+                        
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.216         2n_
+                 2 -> 3n_2
+? 
+
+! LaTeX Error: Command \end{center} invalid in math mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.217       \end{center}
+                        
+? 
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.217       \end{center}
+                        
+? 
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.217       \end{center}
+                        
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.217       \end{center}
+                        
+? 
+
+Underfull \hbox (badness 10000) in paragraph at lines 216--219
+
+ []
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.225       $l_1$\left
+                      \lbrace
+? 
+
+! LaTeX Error: Command \end{center} invalid in math mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.229       \end{center}
+                        
+? 
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.229       \end{center}
+                        
+? 
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.229       \end{center}
+                        
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.229       \end{center}
+                        
+? 
+
+Overfull \hbox (0.65941pt too wide) in paragraph at lines 231--232
+[]\T1/cmr/m/n/10 Chaque clause con-tenant 1 lit-téraux est trans-for-mée en une
+ clause
+ []
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.233         n_
+                1 -> n_1
+? 
+
+! LaTeX Error: Command \end{center} invalid in math mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.234       \end{center}
+                        
+? 
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.234       \end{center}
+                        
+? 
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.234       \end{center}
+                        
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.234       \end{center}
+                        
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.237         n_
+                1 -> 3n_1
+? 
+
+! LaTeX Error: Command \end{center} invalid in math mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.238       \end{center}
+                        
+? 
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.238       \end{center}
+                        
+? 
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.238       \end{center}
+                        
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.238       \end{center}
+                        
+? 
+
+Underfull \hbox (badness 10000) in paragraph at lines 237--240
+
+ []
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.243         Nombre de clauses = n_
+                                    1 + 3n_2 + n_3 + 2n_4 + 3n_5\\
+? 
+
+! LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.243 ...lauses = n_1 + 3n_2 + n_3 + 2n_4 + 3n_5\\
+                                                  
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.243 ...lauses = n_1 + 3n_2 + n_3 + 2n_4 + 3n_5\\
+                                                  
+? 
+! Missing } inserted.
+<inserted text> 
+                }
+l.243 ...lauses = n_1 + 3n_2 + n_3 + 2n_4 + 3n_5\\
+                                                  
+? 
+! Extra }, or forgotten \endgroup.
+\par ...m \@noitemerr {\@@par }\fi \else {\@@par }
+                                                  \fi 
+l.243 ...lauses = n_1 + 3n_2 + n_3 + 2n_4 + 3n_5\\
+                                                  
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.244         Nombre de variables = 3n_
+                                       1 + 3n_2 + 3n_3 + 5n_4 + 7n_5\\
+? 
+
+! LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.244 ...bles = 3n_1 + 3n_2 + 3n_3 + 5n_4 + 7n_5\\
+                                                  
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.244 ...bles = 3n_1 + 3n_2 + 3n_3 + 5n_4 + 7n_5\\
+                                                  
+? 
+! Missing } inserted.
+<inserted text> 
+                }
+l.244 ...bles = 3n_1 + 3n_2 + 3n_3 + 5n_4 + 7n_5\\
+                                                  
+? 
+! Extra }, or forgotten \endgroup.
+\par ...m \@noitemerr {\@@par }\fi \else {\@@par }
+                                                  \fi 
+l.244 ...bles = 3n_1 + 3n_2 + 3n_3 + 5n_4 + 7n_5\\
+                                                  
+? 
+
+! LaTeX Error: \begin{enumerate} on input line 109 ended by \end{enumarate}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.247 \end{enumarate}
+                     
+? 
+
+Underfull \hbox (badness 10000) in paragraph at lines 270--270
+
+ []
+
+LaTeX Font Info:    Try loading font information for OML+cmr on input line 270.
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/omlcmr.fd
+File: omlcmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OML/cmr/bx/it' in size <7> not available
+(Font)              Font shape `OML/cmm/b/it' tried instead on input line 270.
+
+Underfull \hbox (badness 10000) in paragraph at lines 270--270
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 270--270
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 265--271
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 265--271
+
+ []
+
+[4]
 LaTeX Font Info:    Font shape `OML/cmr/m/it' in size <10> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 106.
-
-Underfull \hbox (badness 10000) in paragraph at lines 120--121
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 122--125
-
- []
-
-[3] [4]
-Underfull \hbox (badness 10000) in paragraph at lines 181--182
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 282.
+ [5]
+Underfull \hbox (badness 10000) in paragraph at lines 296--297
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 200--203
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 204--205
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 206--208
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 211--220
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 211--220
-
- []
-
-[5]
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 220.
-
-
-LaTeX Font Warning: Command \normalsize invalid in math mode on input line 220.
-
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 220.
-
-
-LaTeX Font Warning: Command \normalsize invalid in math mode on input line 220.
-
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 220.
-
-
-LaTeX Font Warning: Command \normalsize invalid in math mode on input line 220.
-
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 220.
-
-
-LaTeX Font Warning: Command \normalsize invalid in math mode on input line 220.
-
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 221.
-
-
-LaTeX Font Warning: Command \normalsize invalid in math mode on input line 221.
-
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 222.
-
-
-LaTeX Font Warning: Command \normalsize invalid in math mode on input line 222.
-
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 222--224
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 225--227
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 235--240
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 235--240
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 243--248
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 248--250
+Underfull \hbox (badness 10000) in paragraph at lines 298--301
 
  []
 
 [6]
-Underfull \hbox (badness 10000) in paragraph at lines 250--252
+Underfull \hbox (badness 10000) in paragraph at lines 357--358
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 254--255
+Underfull \hbox (badness 10000) in paragraph at lines 376--379
 
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 259.
+
+Underfull \hbox (badness 10000) in paragraph at lines 380--381
+
+ []
+
 [7]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 259.
+Underfull \hbox (badness 10000) in paragraph at lines 382--384
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 387--396
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 387--396
+
+ []
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 396.
+
+
+LaTeX Font Warning: Command \normalsize invalid in math mode on input line 396.
+
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 396.
+
+
+LaTeX Font Warning: Command \normalsize invalid in math mode on input line 396.
+
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 396.
+
+
+LaTeX Font Warning: Command \normalsize invalid in math mode on input line 396.
+
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 396.
+
+
+LaTeX Font Warning: Command \normalsize invalid in math mode on input line 396.
+
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 397.
+
+
+LaTeX Font Warning: Command \normalsize invalid in math mode on input line 397.
+
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 398.
+
+
+LaTeX Font Warning: Command \normalsize invalid in math mode on input line 398.
+
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 398--400
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 401--403
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 411--416
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 411--416
+
+ []
+
+[8]
+Underfull \hbox (badness 10000) in paragraph at lines 419--424
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 424--426
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 426--428
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 430--431
+
+ []
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 435.
+[9]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 435.
  (./rapport.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 259.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 259.
-Package rerunfilecheck Info: File `rapport.out' has not changed.
-(rerunfilecheck)             Checksum: CF8859A42B768629AAA2A2AD134C49CA;469.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 259.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 435.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 435.
+
+
+Package rerunfilecheck Warning: File `rapport.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `rapport.out':
+(rerunfilecheck)             Before: 0A0712539501197BD5A0B28EB9E4E444;748
+(rerunfilecheck)             After:  B279191B9F862DFD0D7C784554206791;678.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 435.
  ) 
 Here is how much of TeX's memory you used:
- 6100 strings out of 495002
- 84449 string characters out of 6180261
- 164935 words of memory out of 5000000
- 9192 multiletter control sequences out of 15000+600000
+ 6119 strings out of 495002
+ 84689 string characters out of 6180261
+ 165935 words of memory out of 5000000
+ 9197 multiletter control sequences out of 15000+600000
  20562 words of font info for 59 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 29i,8n,28p,286b,560s stack positions out of 5000i,500n,10000p,200000b,80000s
- </tmp/texfonts/pk/ljfour/jknappen/ec/ecrm0500.600pk> </tmp/texfonts/pk/ljfou
-r/jknappen/ec/ecrm0800.600pk> </tmp/texfonts/pk/ljfour/jknappen/ec/ecrm0600.600
-pk> </tmp/texfonts/pk/ljfour/jknappen/ec/ecbx0700.600pk> </tmp/texfonts/pk/ljfo
-ur/jknappen/ec/ecrm0700.600pk> </tmp/texfonts/pk/ljfour/jknappen/ec/ecrm1000.60
-0pk> </tmp/texfonts/pk/ljfour/jknappen/ec/ecbx1000.600pk> </tmp/texfonts/pk/ljf
-our/jknappen/ec/ecbx1200.600pk> </tmp/texfonts/pk/ljfour/jknappen/ec/ecbx1440.6
-00pk> </tmp/texfonts/pk/ljfour/jknappen/ec/ecrm1200.600pk> </tmp/texfonts/pk/lj
-four/jknappen/ec/ecrm1728.600pk></usr/share/texlive/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra
-/cmmib7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10
-.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></u
-sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/sha
-re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on rapport.pdf (7 pages, 165637 bytes).
+ 29i,8n,28p,286b,664s stack positions out of 5000i,500n,10000p,200000b,80000s
+pdfTeX warning (dest): name{subsubsection.1.3.3} has been referenced but does
+ not exist, replaced by a fixed one
+
+ </tmp/texfonts/pk/ljfour/jknappen/ec/ecrm0500.600pk> </tmp/texfonts/pk/ljfour/
+jknappen/ec/ecrm0800.600pk> </tmp/texfonts/pk/ljfour/jknappen/ec/ecrm0600.600pk
+> </tmp/texfonts/pk/ljfour/jknappen/ec/ecbx0700.600pk> </tmp/texfonts/pk/ljfour
+/jknappen/ec/ecrm0700.600pk> </tmp/texfonts/pk/ljfour/jknappen/ec/ecrm1000.600p
+k> </tmp/texfonts/pk/ljfour/jknappen/ec/ecbx1000.600pk> </tmp/texfonts/pk/ljfou
+r/jknappen/ec/ecbx1200.600pk> </tmp/texfonts/pk/ljfour/jknappen/ec/ecbx1440.600
+pk> </tmp/texfonts/pk/ljfour/jknappen/ec/ecrm1200.600pk> </tmp/texfonts/pk/ljfo
+ur/jknappen/ec/ecrm1728.600pk></usr/share/texlive/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/c
+mmib7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.p
+fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr
+/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texliv
+e/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive
+/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on rapport.pdf (9 pages, 182323 bytes).
 PDF statistics:
- 439 PDF objects out of 1000 (max. 8388607)
- 176 compressed objects within 2 object streams
- 48 named destinations out of 1000 (max. 500000)
- 57 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 509 PDF objects out of 1000 (max. 8388607)
+ 209 compressed objects within 3 object streams
+ 62 named destinations out of 1000 (max. 500000)
+ 89 words of extra memory for PDF output out of 10000 (max. 10000000)
 

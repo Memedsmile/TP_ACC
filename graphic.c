@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <time.h>
 #include <tgmath.h>
+#include <math.h>
 #include "graphic.h"
 #include "file.h"
 #include "list.h"
@@ -262,23 +263,19 @@ struct arcs** edmondsKarp(struct arcs** graph, int* flowmax, int s, int p, int n
       flow[line][column].capacity = graph[line][column].capacity;
     }
   }
-  afficheMatrice(flow, n);
-
+ 
   /* Recherche d'un chemin */
   int road[n];
   int sizeRoad = dijkstra(flow, s, p, road, n);
-
   /* Mise à jour du graphe flow */
   while(sizeRoad != 0){
     int load[3];
     minLoad(flow, road, load, sizeRoad);
     int i;
-    afficheLoad(load);
     upFlow(flow, road, sizeRoad, load[2]);
-    flowmax += load[2];
+    *flowmax += load[2];
     sizeRoad = dijkstra(flow, s, p, road, n);
   }
-  
   return flow;
 }
 
@@ -342,131 +339,149 @@ void minflow(struct arcs** graphLayer, int* load, int n){
 }
 
 
-
-int* predecessors(struct arcs** graph, int s, int p, int n){
-  int* pred = (int*)malloc(sizeof(int) * n);
-  int i, road = 0;  
-  for(i = 0 ; i < n ; i++){
-    pred[i] = -1;
-  }
-  pred[s] = s;
-  Queue* treat = (Queue*)malloc(sizeof(Queue));
-  initialization(treat);
-  push(treat, s);
-  while(emptyFile(treat) == 0){
-    int eltTraite = treat->first->data;
-    pop(treat);
-    for(i = 0 ; i < n ; i++){
-      if(graph[eltTraite][i].capacity > 0 && pred[i] == -1){
-	pred[i] = eltTraite;
-	if(i != p){
-	  push(treat,i);
-	}
-	else{
-	  road = 1;
-	}
-      }
-    }
-  }
-  if(road == 0){
-    printf("Aucun chemin de la source au puit\n");
-    freeFile(treat);
-    return NULL;
-  }
-  else{
-    freeFile(treat);
-    return pred;
-  }
-}
-
-int readroad(struct arcs** graph, int* load, int* pred, int* road, int s, int p, int n){
-  int sizeroad = 0;
-  List* roadlist = (List*)malloc(sizeof(List));
-  listInit(roadlist);
-  push_back(roadlist, load[0]);
-  sizeroad++;
-  push_back(roadlist, load[1]);
-  sizeroad++;
+int rRoad(struct arcs** graph, int* load, int* road, int s, int p, int n){
+  int roadsi[n];
+  int roadjp[n];
   
-  int i = pred[load[0]];
-  while(i != s){
-    push_front(roadlist, i);
-    sizeroad++;
-    i = pred[i];
-  }
-  printf("roadlist a %d éléments 1: \n", sizeroad);
-  afficheList(roadlist);
-  push_front(roadlist, s);
-  sizeroad++;
-  printf("roadlist a %d éléments 2: \n", sizeroad);
-  afficheList(roadlist);
-  i = 0;
-  int j = load[1];
-  printf("i=%d, j=%d\n1", i, j);
-  while(j != p){
-    printf("i=%d, j=%d\n2", i, j);
-    while(pred[i] != j || i == n){
-      i++;
-    }
-    if(i < n){
-      push_back(roadlist, i);
-      sizeroad++;
-      printf("roadlist a %d éléments 3: \n", sizeroad);
-      afficheList(roadlist);
-      j = i;
-      i = 0;
-    }
-    else{
-      printf("Pas de st-chemin contenant l'arc %d->%d\n", load[0], load[1]);
-      road = NULL;
-      return 0;
-    }
-  }
+  int sizesi = dijkstra(graph, s, load[0], roadsi, n);
+  int sizejp = dijkstra(graph, load[1], p, roadjp, n);
 
-  printf("yolo\n");  
-  road = (int*)malloc(sizeof(int) * sizeroad);
-  for(i = 0 ; i < sizeroad ; i++){
-    road[i] = roadlist->first->data;
-    pop_front(roadlist);
-    printf("roadlist a %d éléments 4: \n", sizeList(roadlist));
-    afficheList(roadlist);
-    printf("road :\n");
-    int j;
-    for(j = 0 ; j < sizeroad ; j++){
-      printf("%d  ",road[j]);
-    }
-    printf("\n");
+  int sizeroad = sizesi + sizejp;
+  int i, j = 0;
 
+  for(i = 0 ; i < sizesi ; i++){
+    road[j] = roadsi[i];
+    j++;
   }
+  
+  for(i = 0 ; i < sizejp ; i++){
+    road[j] = roadjp[i];
+    j++;
+  }
+ 
   return sizeroad;
 }
     
 
-void upFlowLayer(struct arcs** graph, struct arcs** graphEcart, int s, int p, int n){
-  struct arcs** graphcouche = graphLayer(graph, s, p, n);
+int upFlowLayer(struct arcs** graph, struct arcs** graphcouche, int s, int p, int n){
   int load[3] = {0, 0, 0};
   minflow(graphcouche, load, n);
-  printf("load : %d->%d : %d\n", load[0], load[1], load[2]);
-  int* pred = predecessors(graphcouche, s, p, n);
-  int i;
-  printf("Tableau de prédecesseur :\n");
-  for(i = 0 ; i < n ; i++){
-    printf("%d -> %d   ", i, pred[i]);
-    }
-  printf("\n");
-  int* road;
-  int sizeroad = readroad(graphcouche, load, pred, road, s, p, n); 
-  printf("taille du chemin : %d\n", sizeroad);
-  for(i = 0 ; i < sizeroad ; i++){
-    printf("%d -> ", i);
+  int road[n];
+  int sizeroad = rRoad(graph, load, road, s, p, n); 
+  upFlow(graph, road, sizeroad, load[2]);
+  return load[2];
+}
+
+int dinic(struct arcs** graph, int s, int p, int n){
+  struct arcs** graphEcart = graphSD(graph, n);
+  struct arcs** graphcouche;
+  int flow = 0;
+  int road[n];
+  int sizeroad = dijkstra(graphEcart, s, p, road, n);
+  while(sizeroad != 0){
+    graphcouche = graphLayer(graphEcart, s, p, n);
+    flow += upFlowLayer(graph, graphcouche, s, p, n);
+    graphEcart = graphSD(graph, n);
+    sizeroad = dijkstra(graphEcart, s, p, road, n);
   }
-  printf("\n");
-  if(sizeroad != 0){
-    upFlow(graph, road, sizeroad, load[2]);
+  return flow;
+}
+
+void DFS(struct arcs** graph, int* pere, int s, int p, int n){
+  int dv[n];
+  int pipo[n];
+  int indice = 0;
+  int i;
+  for(i = 0 ; i < n ; i++){
+    dv[i] = 0;
+  }
+  dv[s] = 1;
+  pere[s] = s;
+  pipo[0] = s;
+  while(indice >= 0 && pipo[indice] != p){
+    i = 0;
+    while(i < n && (graph[pipo[indice]][i].capacity == 0 || dv[i]==1))
+	{
+	  i++;
+	}
+    if(i < n)
+      {
+	pere[i] = pipo[indice];
+	indice++;
+	pipo[indice] = i;
+	dv[i] = 1;
+      }
+    else
+      {
+	indice--;
+      }
   }
 }
 
 
+int fordfulkerson(struct arcs** graph, struct arcs** graphEcart, int s, int p, int n){
+  int pere[n];
+  int i;
+  for(i = 0 ; i < n ; i++)
+    pere[i] = i;
+  DFS(graph, pere, s, p, n);
+  int road[n];
+  int sizeroad = createRoad(pere, s, p, road, n);
+  if(sizeroad == 0){
+    return 0;
+  }
+  else{
+    int load[3] = {0, 0, 0};
+    minLoad(graph, road, load, sizeroad);
+    upFlow(graphEcart, road, sizeroad, load[2]);
+    return load[2] + fordfulkerson(graphEcart, graphEcart, s, p, n);
+  }
+}
+
+int capacityscaling(struct arcs** graph, int s, int p, int n){
+  struct arcs** graphDelta = graph_initialization(n);
+  struct arcs** graphEcart = graphSD(graph, n);
+  int line, column;
+  int maxflow = 0;
+  int maxcap = 0;
+  for(line = 0 ; line < n ; line++){
+    for(column = 0 ; column < n ; column++){
+      if(maxcap < graph[line][column].capacity){
+	maxcap =  graph[line][column].capacity;
+      }
+    }
+  }
+  int log2C = log10(maxcap)/log10(2);
+  int delta = pow(2, log2C);
+  while(delta >= 1){  
+    for(line = 0 ; line < n ; line++){
+      for(column = 0 ; column < n ; column++){
+	if(graphEcart[line][column].capacity < delta){
+	  graphDelta[line][column].capacity = 0;
+	}
+	else{
+	  graphDelta[line][column].capacity = graphEcart[line][column].capacity;
+	}
+      }
+    }
+    int road[n];
+    int sizeroad = dijkstra(graphDelta, s, p, road, n);
+    while(sizeroad != 0){
+      int load[3] = {0, 0, 0};
+      minLoad(graphDelta, road, load, sizeroad);
+      int i;
+      for(i = 0 ; i < sizeroad-1 ; i++){
+	graph[road[i]][road[i+1]].flow += load[2];
+      } 
+      upFlow(graphEcart, road, sizeroad, load[2]);
+      upFlow(graphDelta, road, sizeroad, load[2]);
+      maxflow += load[2];
+      sizeroad =  dijkstra(graphDelta, s, p, road, n);
+    }
+    delta /= 2;
+  }
+  return maxflow;
+}
  
 void affiche(struct arcs** graph,int n)
 {
@@ -579,11 +594,11 @@ int main()
  
   //determine le graph d'écart max
  
- int sizeRoad = dijkstra(graphEcart,0,n-1,road,n);
-
+  //int sizeRoad = dijkstra(graphEcart,0,n-1,road,n);
+  /*
  int load[3] ={0,0,0};
  minLoad(graphEcart,road,load,sizeRoad);
- // afficheLoad(load);
+  */// afficheLoad(load);
  
  //afficheMatrice(graphEcart,n);
  // upFlow(graphEcart,road,sizeRoad,load[2]);
@@ -598,24 +613,12 @@ int main()
  // printf("Graph avant edmondsKarps : \n");
  //  afficheMatrice(graph, n);
 
-  int* pred;
-  pred = predecessors(graph, 0, n-1, n);
-  int i;
-   printf("Tableau de prédecesseur :\n");
-  for(i = 0 ; i < n ; i++){
-    printf("%d -> %d   ", i, pred[i]);
-    }
-  printf("\n");
+ int flowmax = 0;
+ // printf("test\n");
+ struct arcs** flow = edmondsKarp(graph, &flowmax, 0, n-1, n);
+ afficheMatrice(flow, n);
+ printf("Flot Max = %d\n", flowmax);
   
-  // afficheMatrice(graph, n);
-
-  int flowmax = 0;
-  // printf("test\n");
-  struct arcs** flow = edmondsKarp(graph, &flowmax, 0, n-1, n);
-  /* printf("Flot Max = %d\n", flowmax);
-  afficheMatrice(flow, n);
-  printf("Flot Max = %d\n", flowmax);
-  */
   /*int** listPCC;
 
   int nbPCC = pluscourtchemins(graph, listPCC, 0, n-1, n);
@@ -630,24 +633,62 @@ int main()
     }
   */
   
-  printf("yolo\n");
-  struct arcs** graphcouche = graphLayer(graphEcart, 0, n-1, n);
+  /*  struct arcs** graphcouche = graphLayer(graphEcart, 0, n-1, n);
   printf("Graphe de couche :\n");
   afficheMatrice(graphcouche, n);
   printf("\n");
   afficheLayer(graphcouche, n);
   int loadbis[3];
   minflow(graphcouche, load, n);
-  printf("valuation minimum du graphe de couphe : %d\n", load[2]);
-  printf("Arc correspondant : %d->%d\n", load[0], load[1]);
-
-  upFlowLayer(graph, graphEcart, 0, n-1, n);
+  upFlowLayer(graph, graphcouche, 0, n-1, n);
   afficheMatrice(graph, n);
+  */
+  
+  /*int flowdinic = dinic(graph, 0, n-1, n);
+  printf("flot max dinic = %d\n\n", flowdinic);
+  afficheMatrice(graph, n);
+  */
+/*
+  int* pred = (int*)malloc(sizeof(int) * n);
+  int i;
+  for(i = 0 ; i < n ; i++){
+    pred[i] = -1;
+  }
+  pred[0] = 0;
+ 
+  int* treat = (int*)malloc(sizeof(int) * n); 
+  for(i = 0 ; i < n ; i++){
+    treat[i] = 0;
+  }
+*/
+/*
+ int pere[n];
+ int i;
+ for(i = 0 ; i < n ; i++){
+   pere[i] = i;
+ }
 
+ DFS(graph, pere, 0, n-1, n);
 
-  free(pred);
+ printf("Tableau de prédecesseur :\n");
+ for(i = 0 ; i < n ; i++){
+   printf("%d -> %d   ", i, pere[i]);
+ }
+ printf("\n");  
+ */
+ 
+ afficheMatrice(graphEcart, n);
+ printf("\n");
+ int flowFF = fordfulkerson(graph, graphEcart, 0, n-1, n);
+ printf("flowFF = %d\n",flowFF);
+ afficheMatrice(graphEcart, n);
+
+ int flowCS =  capacityscaling(graph, 0, n-1, n);
+ printf("flowCS = %d\n",flowCS);
+ 
+  // free(pred);
   //free(listPCC);
-  free(graphcouche);
+  // free(graphcouche);
   free(flow);
   free(graphEcart);
   free(graph);

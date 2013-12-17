@@ -1,6 +1,7 @@
 #ifndef GRAPHIC_H
 #define GRAPHIC_H
 
+#include "math.h"
 #include "list.h"
 #include "file.h"
 
@@ -42,10 +43,18 @@ struct arcs** graphLayer(struct arcs**, int, int, int);
 void minflow(struct arcs**, int*, int);
 
 //Question 9
-int* predecessors(struct arcs**, int, int, int);
-int readroad(struct arcs**, int*, int*, int*, int, int, int);
-void upFlowLayer(struct arcs**, struct arcs**, int, int, int);
+int rRoad(struct arcs**, int*, int*, int, int, int);
+int upFlowLayer(struct arcs**, struct arcs**, int, int, int);
 
+//Question 10
+int dinic(struct arcs**, int, int, int);
+
+//Question 11
+void DFS(struct arcs**, int*, int, int, int);
+int fordfulkerson(struct arcs**, struct arcs**, int, int, int);
+
+//Question 12
+int capacityscaling(struct arcs**, int, int, int);
 
 
 void affiche(struct arcs**,int);
