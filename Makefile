@@ -14,4 +14,4 @@ graphic.o : graphic.c list.h file.h
 	$(CC) -c graphic.c
 
 clean :
-	rm -f *~ *.o \# * \# essai
+	rm -f *~ *.o \#*\# essai
