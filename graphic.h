@@ -38,7 +38,7 @@ void displayNewArcs(FILE*,struct arcs**,int,int,int);
 int flowMax(struct arcs**, struct arcs**, int, int, int);
 
 //Question 6
-struct arcs** edmondsKarp(struct arcs**, int*, int, int, int);
+struct arcs** edmondsKarp(struct arcs**, int*, int, int, int, FILE*, int*, int*);
 
 //Question 7
 struct arcs** graphLayer(struct arcs**, int, int, int);
@@ -51,14 +51,14 @@ int rRoad(struct arcs**, int*, int*, int, int, int);
 int upFlowLayer(struct arcs**, struct arcs**, int, int, int);
 
 //Question 10
-int dinic(struct arcs**, int, int, int);
+int dinic(struct arcs**, int, int, int, FILE*, int*, int*);
 
 //Question 11
 void DFS(struct arcs**, int*, int, int, int);
-int fordfulkerson(struct arcs**, struct arcs**, int, int, int);
+int fordfulkerson(struct arcs**, struct arcs**, int, int, int, FILE*, int*, int*);
 
 //Question 12
-int capacityscaling(struct arcs**, int, int, int);
+int capacityscaling(struct arcs**, int, int, int, FILE*, int*, int*);
 
 
 void affiche(struct arcs**,int);
