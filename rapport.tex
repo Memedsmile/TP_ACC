@@ -28,6 +28,46 @@
 \section{Partie théorique}
 \subsection{Partie algorithmique}
 
+\subsubsection{Exercice 1}
+
+\begin{enumerate}
+
+\item Le nombre de s-t chemins d'arc disjoint est de 3.\\
+On trouve ce résultat en appliquant l'algorithme de Ford-Fulkerson.\\
+\begin{center}
+s -> 4 -> 5 -> t      F = 1\\
+s -> 3 -> 4 -> t      F = 1\\
+s -> 2 -> 3 -> t      F = 1\\
+\end{center}
+Tous les arcs du graphe sont saturés donc on ne peut plus trouver de chemin améliorant et Fmax = 3.\\
+
+
+\item Soit Si l'ensemble des sommets de la coupe i, $\overline Si$ l'ensemble des sommets du complémentaire de la coupe i, \\
+Avi l'ensemble des arcs avants de la coupe i, et Ari l'ensemble des arcs arrière de cette coupe.\\
+\begin{center}
+S1 = \{1\} ; $\overline S1$ = \{2, 3, 4, 5, 6\}\\ 
+Av1 = \{1->4 ; 1->3 ; 1->2\} ; Ar1 = \{\}\\
+S2 = \{1, 2\} ; $\overline S2$ = \{3, 4, 5, 6\}\\
+Av2 = \{1->4 ; 1->3 ; 2->3\} ; Ar2 = \{\}\\ 
+S3 = \{1, 4\} ; $\overline S3$ = \{2, 3, 5, 6\}\\
+Av3 = \{1->3 ; 1->2 ; 4->5 ; 4->6\} ; Ar3 = \{3->4\}\\
+S4 = \{1, 2, 3\} ; $\overline S4$ = \{4, 5, 6\}\\ 
+Av4 = \{1->4 ; 3->4 ; 3->6\} ; Ar4 = \{\}\\
+S5 = \{1, 2, 4\} ; $\overline S5$ = \{3, 5, 6\}\\
+Av5 = \{1->3 ; 2->3 ; 4->5 ; 4->6\} ; Ar5 = \{3->4\}\\
+S6 = \{1, 4, 5\} ; $\overline S6$ = \{2, 3, 6\}\\
+Av6 = \{1->2 ; 1->3 ; 4->6 ; 5->6\} ; Ar6 = \{3->4\}\\ 
+S7 = \{1, 2, 3, 4\} ; $\overline S7$ = \{5, 6\}\\ 
+Av7 = \{4->5 ; 4->6 ; 3->6\} ; Ar6 = \{\}\\ 
+S8 = \{1, 2, 3, 4, 5\} ; $\overline S8$ = \{6\}\\
+Av6 = \{3->6 ; 4->6 ; 5->6\} ; Ar6 = \{\}\\
+\end{center}
+
+
+\item Nombre minimum d'arc sortant dans une s-t coupe = 3\\
+  Nombre maximum de chemin d'arc disjoint = 3\\
+
+
 \subsubsection{Exercice 2}
 
 \textbf{Soit un graphe G=(V,E);\\avec $\forall i,j \in V$,\\
@@ -41,7 +81,7 @@ Ce qui correspondt a la definition de plus petit \\arc vital.
 
 \item Vrai, car dans un flot maximum un arc (i,j) avec le f(i,j)\\ minimum est le plus petit arc vital d'apres la \\
 definition de plus petit arc vital.
-\item Faux, il faut montret le contre exemple(mais je galere a faire ce put.n de graph sous latex).
+\item Faux, voila un contre exemple.
 
 
 \usetikzlibrary{arrows}
@@ -52,20 +92,24 @@ definition de plus petit arc vital.
             color      = orange,
             labelcolor = red!30,
             labelstyle = {draw,sloped}]
-  \tikzset{node distance = 20cm}
+  \tikzset{node distance = 5cm}
   \GraphInit[vstyle=Normal]
-  \Vertex{P}
-  \NOEA(P){B}
-  \SOEA(P){M}
-  \SOEA(B){C}
+  \Vertex[x=-3, y=0]{P}
+  \Vertex[x=0, y=3]{B}
+  \Vertex[x=3, y=0]{C}
+  \Vertex[x=0, y=-3]{M}
   \tikzset{EdgeStyle/.style={->}}
-  \Edge[label=$3$](C)(B)
-  \Edge[label=${10,4}$](B)(P)
-  \tikzset{EdgeStyle/.style={<->}}
-  \Edge[label=$4$](P)(M)
-  \Edge[label=$9$](C)(M)
-  \Edge[label=$10$](B)(M)
-  \tikzset{EdgeStyle/.style={<->,relative=false,in=0,out=60}}
+  \Edge[label=$2$](P)(B)
+  \Edge[label=$1$](P)(M)
+  \Edge[label=$1$](B)(C)
+  \Edge[label=$2$](M)(C)
+  \Edge[label=$1$](B)(M)
+  \draw (-2,2) -- (-2,-2);
+  \draw[blue,->](-1,-3)--(-1,-2);
+  \draw[blue,->](-3,2.5)--(-2,2);
+
+  \node at (-3,2.5){Coupe Minimale};
+  \node at (-2,-3){Plus petit arc vitale};
 \end{tikzpicture}
 \end{center}
  
@@ -75,22 +119,172 @@ definition de plus petit arc vital.
 \begin{enumerate}
 
 
-\item Je suis sur que c'est faux ce que je vais raconter mais je me lance:
-
-Donc pour la partie trouver un sous-graphe d'un graphe $K2n+1$ qui est isomorphe a une double etoile on peut donner un\\
+\item Donc pour la partie recherche : trouver un sous-graphe d'un graphe $K2n+1$ qui est isomorphe a une double etoile on peut donner un\\
 example avec le graphe de petersen(voila le lien : $http://fr.wikipedia.org/wiki/Graphe\_de\_Petersen$);
 
 \item Pour la partie de demonstration : en considerant le +1 (de la formule $K2n+1$) comme le sommet racine, on peut \\
 dire que nous avons un graphe bipartie, et donc on peut trouver une equivalence avec le probleme d'affectation(le \\
 probleme de couplage maximum de poids minimum).
 
-
-
-P.S: voila j'espere que ca a au moins un minimum de verité.
 \end{enumerate}
 
 
 \subsection{Partie complexité}
+
+\subsubsection{Exercie 5}
+
+\begin{enumerate}
+\item 
+  \begin{enumerate}
+  \item
+    SAT : Un  problème SAT est un problème de décision visant à montrer l'existence d'une interprétation satisfaisant un ensemble de variable propositionnelle (Formule logique CNF)\\
+    3-SAT : Cas particulier du problème SAT dans lequel les clauses sont toutes de taille 3.\\
+
+  \item
+    On dit qu'il existe une réduction d'un problème P à un problème P' s'il existe une fonction f telle que x $\in$ D(P) <=> f(x) $\in$ D(P')\\
+
+  \item
+    3-SAT est un cas particulier de SAT, or SAT $\in$ NP.\\
+    Donc 3-SAT $\in$ NP
+
+    SAT $\in$ NP-Complet
+
+    Nous allons chercher à réduire un problème SAT à un problème 3-SAT : 
+
+    Soit P une instance du problème SAT.
+    
+    $\twoheadrightarrow$Soit U={$l_1vl_2vl_3......vl_k$} une clause de taille k > 3
+
+    On la divise en 2 clause :
+    $\succ$ une clause de taille $\lfloor$k/2$\rfloor$+1 en complétant par une variable x$\notin$U 
+    $\succ$ une clause de taille $\lceil$k/2$\rceil$+1 en complétant par $\overline x$ le complémentaire de x.
+
+    On applique ce principe récursivement jusqu'à obtenir des clauses de taille 3
+
+    $\twoheadrightarrow$Soit U={$l_1vl_2$} une clause de taille 2
+    
+    On clone la clause U pour avoir 2 clauses $U_1$ et $U_2$ auxquelles on ajoute respectivement une variable x et son complémentaire $\overline x$
+    on obtient :  $U_1$={$l_1vl_2$vx}
+    $U_2$={$l_1vl_2$v$\overline x$}
+
+    $\twoheadrightarrow$Soit U={$l_1$} une clause de taille 1
+    On force $l_1$ à vrai et on retire les clauses unitaire.
+
+    On obtient ainsi un problème P' de type 3-SAT.    
+
+    Donc 3-SAT est NP-Complet.\\
+
+    \item
+      Clause de taille 4 :\\
+      Soit $l_1$, $l_2$, $l_3$, $l_4$ une clause de taille 4
+
+      \begin{center}
+      $l_1$, $l_2$, $l_3$, $l_4$ \left\lbrace 
+      \begin{array}{lcl} 
+        l_1 v l_2 v u\\
+        l_3 v l_4 v \overline u
+      \end{array}\right.
+      \end{center}
+
+      Chaque clause contenant 4 littéraux est ainsi divisée en 2 clauses de 3 littéraux
+      \begin{center}
+        n_4 -> 2n_4
+      \end{center}
+      On ajoute ainsi une variable pour chaque clause
+      \begin{center}
+        4n_4 -> 5n_4
+      \end{center}
+      \newline
+
+      Clause de taille 5 :\\      
+      Soit $l_1$, $l_2$, $l_3$, $l_4$, $l_5$ une clause de taille 5
+
+      \begin{center}
+      $l_1$, $l_2$, $l_3$, $l_4$, $l_5$\left\lbrace 
+      \begin{array}{lcl} 
+        l_1 v l_2 v u\\
+        l_3 v l_4 v l_5 v \overline u
+      \end{array}\right.
+      \end{center}
+
+      \begin{center}
+      $l_3$ v $l_4$ v $l_5$ v \overline u\left\lbrace 
+      \begin{array}{lcl} 
+        l_3 v l_4 v y\\
+        l_5 v \overline u v \overline y
+      \end{array}\right.
+      \end{center}
+
+      Chaque clause contenant 5 littéraux est ainsi divisée en 3 clauses de 3 littéraux
+      \begin{center}
+        n_5 -> 3n_5
+      \end{center}
+      On ajoute ainsi 2 variables pour chaque clause
+      \begin{center}
+        5n_5 -> 7n_5
+      \end{center}
+      \newline
+
+      Clause de taille 2 :\\
+      Soit $l_1$, $l_2$ une clause de taille 2
+
+      \begin{center}
+      $l_1$, $l_2$\left\lbrace 
+      \begin{array}{lcl} 
+        l_1 v l_2 v u\\
+        l_1 v l_2 v \overline u
+      \end{array}\right.
+      \end{center}
+
+      Chaque clause contenant 2 littéraux est transformée en 2 clauses de 3 littéraux
+      \begin{center}
+        n_2 -> 2n_2
+      \end{center}
+      On ajoute ainsi 1 variables pour chaque clause
+      \begin{center}
+        2n_2 -> 3n_2
+      \end{center}
+      \newline
+
+
+      Clause de taille 1 :\\
+      Soit $l_1$ une clause de taille 1
+
+      \begin{center}
+      $l_1$\left\lbrace 
+      \begin{array}{lcl} 
+        l_1 v u v \overline u
+      \end{array}\right.
+      \end{center}
+
+      Chaque clause contenant 1 littéraux est transformée en une clause de 3 littéraux
+      \begin{center}
+        n_1 -> n_1
+      \end{center}
+      On ajoute ainsi 1 variables pour chaque clause
+      \begin{center}
+        n_1 -> 3n_1
+      \end{center}
+      \newline
+
+      On peut donc conclure :
+      \begin{center}
+        Nombre de clauses = n_1 + 3n_2 + n_3 + 2n_4 + 3n_5\\
+        Nombre de variables = 3n_1 + 3n_2 + 3n_3 + 5n_4 + 7n_5\\
+      \end{center}
+
+\end{enumarate}
+
+
+      
+
+
+    
+\end{enumerate}
+\end{enumerate}
+
+
+
 \subsection{Partie calculabilité}
 
 

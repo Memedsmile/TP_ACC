@@ -2,14 +2,16 @@
 #include <stdio.h>
 #include <time.h>
 #include <tgmath.h>
+#include <math.h>
 #include <sys/stat.h>
 #include <fcntl.h>
 #include <string.h>
 #include <sys/types.h>
 #include <unistd.h>
-#include <time.h>
-
 #include "graphic.h"
+#include "file.h"
+#include "list.h"
+
 #define NOMBRE_DE_SOMMET 10
 #define CAPACITY_MAX 100
 
@@ -384,11 +386,12 @@ struct arcs** graph_initialization(int n){
   
   //Iniatilisation du graph
   line=0;
-  int column=0;
   while(line<n){
+    int column = 0;
     while(column<n){
       graph[line][column].flow=0;
       graph[line][column].capacity=0;
+      graph[line][column].layer=-1;
       column++;
     }
     line++;
@@ -426,6 +429,7 @@ void arcs_initialization(struct arcs** graph,int n){
   
   return;
 }
+
 void createRoadSourceWell(struct arcs** graph, int n)
 {
   srand(time(NULL));
@@ -480,10 +484,9 @@ struct arcs** graphSD(struct arcs** graph, int n)
 	{
 	  if(graph[line][column].capacity != 0)
 	    {
-	      
 	      int c = graph[line][column].capacity;
-	      int f = graph[column][line].flow;
-	      printf("c %d f %d\n",c,f);
+	      int f = graph[line][column].flow;
+	      // printf("c %d f %d\n",c,f);
 	      graphEcart[line][column].capacity = c - f;
 	      graphEcart[column][line].capacity =graphEcart[column][line].capacity +  f;
 	    } 
@@ -556,6 +559,8 @@ int dijkstra(struct arcs** graph, int s , int p,int* road, int n)
   //  affichePere(pere,s,p);
   return sizeRoad;
 }
+
+
 int createRoad(int* pere,int s,int p,int* road,int n)
 {
   int root = p;
@@ -616,10 +621,10 @@ void upFlow(struct arcs** graph, int* road, int sizeRoad, int k)
   for(i = 0 ; i < sizeRoad - 1 ; i++)
     {
       graph[road[i]][road[i+1]].capacity = graph[road[i]][road[i+1]].capacity - k;
-      
-      graph[road[i+1]][road[i]].capacity =graph[road[i+1]][road[i]].capacity + k;
+      graph[road[i+1]][road[i]].capacity = graph[road[i+1]][road[i]].capacity + k;
     }
 }
+
 void displayUpFlow(FILE* desc, struct arcs** graph, int* road,int sizeRoad, int k)
 {
   int i;
@@ -691,26 +696,255 @@ void displayNewArcs(FILE* desc,struct arcs** graph,int i,int j,int k)
 
 }
 
-void flowMax(struct arcs** graph, struct arcs** graphEcart, int n)
+int flowMax(struct arcs** graph, struct arcs** graphEcart, int s, int p, int n)
 {
-  int line;
-  int column;
-  int flowMax = 0;
-  for(column = 0 ; column < n ; column++)
-    {
-      flowMax = flowMax + graphEcart[column][0].capacity;
-    }
-  printf("Le flot max est de %d \n",flowMax);
-  for(line = 0 ; line < n ; line++)
-    {
-      for(column = 0 ; column < n ; column++)
-	{
-	  
-	}
-    }
+  int road[n];
+  int sizeroad = dijkstra(graph, s, p, road, n);
+  if(sizeroad == 0){
+    return 0;
+  }
+  else{
+    int load[3] = {0, 0, 0};
+    minLoad(graph, road, load, sizeroad);
+    upFlow(graphEcart, road, sizeroad, load[2]);
+    return load[2] + flowMax(graphEcart, graphEcart, s, p, n);
+  }
 }
 
 
+struct arcs** edmondsKarp(struct arcs** graph, int* flowmax, int s, int p, int n){
+
+  /* Contruction d'un graphe de flot nul */
+  struct arcs** flow = graph_initialization(n);
+ 
+  int line;
+  int column;
+  for(line = 0 ; line < n ; line++){
+    for(column = 0 ; column < n ; column++){
+      flow[line][column].flow = 0;
+      flow[line][column].capacity = graph[line][column].capacity;
+    }
+  }
+ 
+  /* Recherche d'un chemin */
+  int road[n];
+  int sizeRoad = dijkstra(flow, s, p, road, n);
+  /* Mise à jour du graphe flow */
+  while(sizeRoad != 0){
+    int load[3];
+    minLoad(flow, road, load, sizeRoad);
+    int i;
+    upFlow(flow, road, sizeRoad, load[2]);
+    *flowmax += load[2];
+    sizeRoad = dijkstra(flow, s, p, road, n);
+  }
+  return flow;
+}
+
+
+struct arcs** graphLayer(struct arcs** graphEcart, int s, int p, int n){
+  struct arcs** gL = graph_initialization(n);
+  int treated[n];
+  List* treat = (List*)malloc(sizeof(List));
+  listInit(treat);
+  int currentlayer = 1, nbsom = 0;
+  int i, j;
+  for(i = 0 ; i < n ; i++){
+    treated[i] = -1;
+  }
+  push_back(treat, s);
+  treated[0] = 1;
+  for(i = 0 ; i < n ; i++){
+    if(graphEcart[s][i].capacity != 0 && graphEcart[s][i].flow < graphEcart[s][i].capacity && treated[i] == -1){
+      gL[s][i].capacity = graphEcart[s][i].capacity;
+      gL[s][i].layer = currentlayer;
+      push_back(treat, i);
+      treated[i] = 1;
+    }
+  }
+  pop_front(treat);
+  currentlayer++;
+
+  while(emptyList(treat) == 0){
+    int sizecouche = sizeList(treat);
+    for(i = 0 ; i < sizecouche ; i++){
+      int elt_i = element(treat, 0);
+      for(j = 0 ; j < n ; j++){
+	if(graphEcart[elt_i][j].capacity != 0 && graphEcart[elt_i][j].flow < graphEcart[elt_i][j].capacity && treated[j] == -1){
+	  gL[elt_i][j].capacity = graphEcart[elt_i][j].capacity;
+	  gL[elt_i][j].layer = currentlayer;
+	  push_back(treat, j);
+	  treated[j] = 1;
+	}
+      }
+      pop_front(treat);
+    }
+    currentlayer++;
+  }
+  return gL;
+}
+
+	  
+void minflow(struct arcs** graphLayer, int* load, int n){
+  int minF = 1000000;
+  int i, j;
+  for(i = 0 ; i < n ; i++){
+    for(j = 0 ; j < n ; j++){
+      if(minF > graphLayer[i][j].capacity && graphLayer[i][j].capacity != 0){
+	load[0] = i;
+	load[1] = j;
+	load[2] = graphLayer[i][j].capacity;
+	minF = graphLayer[i][j].capacity;
+      }
+    }
+  }
+}
+
+
+int rRoad(struct arcs** graph, int* load, int* road, int s, int p, int n){
+  int roadsi[n];
+  int roadjp[n];
+  
+  int sizesi = dijkstra(graph, s, load[0], roadsi, n);
+  int sizejp = dijkstra(graph, load[1], p, roadjp, n);
+
+  int sizeroad = sizesi + sizejp;
+  int i, j = 0;
+
+  for(i = 0 ; i < sizesi ; i++){
+    road[j] = roadsi[i];
+    j++;
+  }
+  
+  for(i = 0 ; i < sizejp ; i++){
+    road[j] = roadjp[i];
+    j++;
+  }
+ 
+  return sizeroad;
+}
+    
+
+int upFlowLayer(struct arcs** graph, struct arcs** graphcouche, int s, int p, int n){
+  int load[3] = {0, 0, 0};
+  minflow(graphcouche, load, n);
+  int road[n];
+  int sizeroad = rRoad(graph, load, road, s, p, n); 
+  upFlow(graph, road, sizeroad, load[2]);
+  return load[2];
+}
+
+int dinic(struct arcs** graph, int s, int p, int n){
+  struct arcs** graphEcart = graphSD(graph, n);
+  struct arcs** graphcouche;
+  int flow = 0;
+  int road[n];
+  int sizeroad = dijkstra(graphEcart, s, p, road, n);
+  while(sizeroad != 0){
+    graphcouche = graphLayer(graphEcart, s, p, n);
+    flow += upFlowLayer(graph, graphcouche, s, p, n);
+    graphEcart = graphSD(graph, n);
+    sizeroad = dijkstra(graphEcart, s, p, road, n);
+  }
+  return flow;
+}
+
+void DFS(struct arcs** graph, int* pere, int s, int p, int n){
+  int dv[n];
+  int pipo[n];
+  int indice = 0;
+  int i;
+  for(i = 0 ; i < n ; i++){
+    dv[i] = 0;
+  }
+  dv[s] = 1;
+  pere[s] = s;
+  pipo[0] = s;
+  while(indice >= 0 && pipo[indice] != p){
+    i = 0;
+    while(i < n && (graph[pipo[indice]][i].capacity == 0 || dv[i]==1))
+	{
+	  i++;
+	}
+    if(i < n)
+      {
+	pere[i] = pipo[indice];
+	indice++;
+	pipo[indice] = i;
+	dv[i] = 1;
+      }
+    else
+      {
+	indice--;
+      }
+  }
+}
+
+
+int fordfulkerson(struct arcs** graph, struct arcs** graphEcart, int s, int p, int n){
+  int pere[n];
+  int i;
+  for(i = 0 ; i < n ; i++)
+    pere[i] = i;
+  DFS(graph, pere, s, p, n);
+  int road[n];
+  int sizeroad = createRoad(pere, s, p, road, n);
+  if(sizeroad == 0){
+    return 0;
+  }
+  else{
+    int load[3] = {0, 0, 0};
+    minLoad(graph, road, load, sizeroad);
+    upFlow(graphEcart, road, sizeroad, load[2]);
+    return load[2] + fordfulkerson(graphEcart, graphEcart, s, p, n);
+  }
+}
+
+int capacityscaling(struct arcs** graph, int s, int p, int n){
+  struct arcs** graphDelta = graph_initialization(n);
+  struct arcs** graphEcart = graphSD(graph, n);
+  int line, column;
+  int maxflow = 0;
+  int maxcap = 0;
+  for(line = 0 ; line < n ; line++){
+    for(column = 0 ; column < n ; column++){
+      if(maxcap < graph[line][column].capacity){
+	maxcap =  graph[line][column].capacity;
+      }
+    }
+  }
+  int log2C = log10(maxcap)/log10(2);
+  int delta = pow(2, log2C);
+  while(delta >= 1){  
+    for(line = 0 ; line < n ; line++){
+      for(column = 0 ; column < n ; column++){
+	if(graphEcart[line][column].capacity < delta){
+	  graphDelta[line][column].capacity = 0;
+	}
+	else{
+	  graphDelta[line][column].capacity = graphEcart[line][column].capacity;
+	}
+      }
+    }
+    int road[n];
+    int sizeroad = dijkstra(graphDelta, s, p, road, n);
+    while(sizeroad != 0){
+      int load[3] = {0, 0, 0};
+      minLoad(graphDelta, road, load, sizeroad);
+      int i;
+      for(i = 0 ; i < sizeroad-1 ; i++){
+	graph[road[i]][road[i+1]].flow += load[2];
+      } 
+      upFlow(graphEcart, road, sizeroad, load[2]);
+      upFlow(graphDelta, road, sizeroad, load[2]);
+      maxflow += load[2];
+      sizeroad =  dijkstra(graphDelta, s, p, road, n);
+    }
+    delta /= 2;
+  }
+  return maxflow;
+}
+ 
 void affiche(struct arcs** graph,int n)
 {
   int line=0;
@@ -727,6 +961,61 @@ void affiche(struct arcs** graph,int n)
       line++;
     }
 }
+
+void afficheMatrice(struct arcs** graph, int n){
+  int line, column;
+  printf(" 0  ");
+  for(line = 0 ; line < n ; line++)
+    printf("   %d   ", line);
+  printf("\n");
+  for(line = 0 ; line < n ; line++){
+    printf(" %d  ", line);
+    for(column = 0 ; column < n ; column++){
+      if(graph[line][column].capacity < 10){
+	printf("( %d,", graph[line][column].capacity);
+	if(graph[line][column].flow < 10){
+	  printf(" %d)",graph[line][column].flow);
+	}
+	else{
+	  printf("%d)",graph[line][column].flow);
+	}
+      }
+      else{
+	printf("(%d,", graph[line][column].capacity);
+	if(graph[line][column].flow < 10){
+	  printf(" %d)",graph[line][column].flow);
+	}
+	else{
+	  printf("%d)",graph[line][column].flow);
+	}
+      }
+    }
+    printf("\n");
+  }
+}
+
+void afficheLayer(struct arcs** graph, int n){
+  int line, column;
+  printf(" 0  ");
+  for(line = 0 ; line < n ; line++)
+    printf(" %d  ", line);
+  printf("\n");
+  for(line = 0 ; line < n ; line++){
+    printf(" %d  ", line);
+    for(column = 0 ; column < n ; column++){
+      if(graph[line][column].layer < 10 && graph[line][column].layer >= 0){
+	printf(" %d  ", graph[line][column].layer);
+      }
+      else{
+	printf("%d  ", graph[line][column].layer);
+      }
+    }
+    printf("\n");
+  }
+}
+    
+    
+
 void affichePere(int* pere,int s, int p)
 {
   int pereP = p;
@@ -737,6 +1026,7 @@ void affichePere(int* pere,int s, int p)
     }
   printf("%d \n", s);
 }
+
 void afficheRoad(int* road,int sizeRoad)
 {
   int i=0;
@@ -765,7 +1055,9 @@ int main()
   int road[n+1];
   struct arcs** graph=graph_initialization(n);
   arcs_initialization(graph,n);
+  //  afficheMatrice(graph,n);
   struct arcs** graphEcart = graphSD(graph,n);
+
   //affiche(graph,n);
   affiche(graphEcart,n);
   beginTikz(desc);
