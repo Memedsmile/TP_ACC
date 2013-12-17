@@ -1,0 +1,175 @@
+\documentclass[pdftex]{beamer}
+\usepackage{beamerthemesplit}
+\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+%\usepackage[french]{babel}
+\usepackage{times}
+\usepackage{tabularx}
+
+\mode<presentation>
+{
+  \usetheme{Warsaw}
+  \usefonttheme[onlysmall]{structurebold}
+}
+
+\beamertemplatetransparentcovered
+\beamerboxesdeclarecolorscheme{myalert}{red}{black!5!averagebackgroundcolor}
+\beamerboxesdeclarecolorscheme{mybox}{blue}{black!5!averagebackgroundcolor}
+
+\usepackage{pgf,pgfarrows,pgfnodes,pgfautomata,pgfheaps,pgfshade}
+
+
+\font\bbfnt=msbm6
+\def\bbN{\mbox{\bbfnt N}}
+\def\bbR{\mbox{\bbfnt R}}
+
+\DeclareGraphicsExtensions{.pdf,.pdftex_t,.png,.jpg,.gif} 
+\graphicspath{{./}{../Images/}} 
+
+%===================================================
+%===================================================
+
+\title{Projet pratique Algorithme / Complexité / Calculabilité}
+\author{Jean-Marc Lagniez, Viktor Lesnyak, Pierre-Alexandre Cimbe, Ahmed Rafik}
+\institute{Master Informatique - Université Montpellier II}
+\date{2013}
+
+%===================================================
+%===================================================
+
+\begin{document}
+
+\frame{\titlepage}
+
+%===================================================
+\section<presentation>*{Plan}
+%===================================================
+
+\note{L'exopsé est composé de trois parties, une partie présenation des algorithmes utilisés,
+ une partie expérimentation et performances et une partie démonstration du programme}
+
+%----------------------------------------
+\begin{frame}
+  \frametitle{Plan}
+  \tableofcontents[part=1,pausesections]
+\end{frame}
+
+%----------------------------------------
+% cette partie entraine l'affichage du plan à chaque nouveau début de section
+\AtBeginSection[]
+{
+  \begin{frame}<beamer>
+    \frametitle{Plan}
+    \tableofcontents[current,currentsection]
+  \end{frame}
+}
+
+
+%=================================================
+\part<presentation>{Les Algorithmes utilisés}
+%===================================================
+\section[Les algorithmes étudiés]{Les algorithmes étudiés}
+%===================================================
+
+%+++++++++++++++++++++++++++++++++++++++++++++++++++
+\subsection[Ford-Fulkerson]{Ford-Fulkerson}
+%---------------------------------------------------
+
+%--------------------------------------------------
+\frame{
+\frametitle{AlgoFF}
+
+
+}
+
+
+%--------------------------------------------------
+\frame{
+\frametitle{AlgoFF-Suite}
+
+}
+
+%+++++++++++++++++++++++++++++++++++++++++++++++++++
+\subsection[Edmonds-Karp]{Edmonds-Karp}
+%---------------------------------------------------
+%--------------------------------------------------
+\frame{
+\frametitle{AlgoEK}
+   
+}
+
+%+++++++++++++++++++++++++++++++++++++++++++++++++++
+
+\subsection[Dinic]{Dinic}
+%---------------------------------------------------
+%--------------------------------------------------
+\frame{
+\frametitle{AlgoD}
+   
+}
+
+%+++++++++++++++++++++++++++++++++++++++++++++++++++
+
+\subsection[Cacity Scaling]{Capacity Scaling}
+%---------------------------------------------------
+%--------------------------------------------------
+\frame{
+\frametitle{AlgoCS}
+   
+}
+
+%===================================================
+\section[Experimentation et Performance]{Experimentation et Performance}
+%===================================================
+
+%+++++++++++++++++++++++++++++++++++++++++++++++++++
+\subsection[Temps d'execution en fonction du nombre de sommets]{Temps d'execution en fonction du nombre de sommets}
+%---------------------------------------------------
+
+%--------------------------------------------------
+\frame{
+\frametitle{???????}
+
+
+}
+
+
+%+++++++++++++++++++++++++++++++++++++++++++++++++++
+\subsection[Temps d'execution en fonction de la capacité maximale]{Temps d'execution en fonction de la capacité maximale}
+%---------------------------------------------------
+
+%--------------------------------------------------
+\frame{
+\frametitle{????bis?????}
+
+}
+
+%+++++++++++++++++++++++++++++++++++++++++++++++++++
+\subsection[Espace Memoire utilisé]{Espace Memoire utilise}
+%---------------------------------------------------
+
+%--------------------------------------------------
+
+\frame{
+  \frametitle{???}
+  
+}	
+
+
+
+%===================================================
+\section[Demonstration du fonctionnement sous TIKZ]{Demonstration du fonctionnement sous TIKZ}
+%===================================================
+
+%+++++++++++++++++++++++++++++++++++++++++++++++++++
+\subsection[Demonstration du fonctionnement sous TIKZ]{Demonstration du fonctionnement sous TIKZ}
+%---------------------------------------------------
+
+%--------------------------------------------------
+\frame{
+\frametitle{Démo}
+
+
+}
+
+\end{document}

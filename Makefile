@@ -13,5 +13,8 @@ file.o : file.c file.h
 graphic.o : graphic.c list.h file.h 
 	$(CC) -c graphic.c
 
+graph : graph.tex
+	pdflatex graph.tex
+
 clean :
 	rm -f *~ *.o \#*\# essai

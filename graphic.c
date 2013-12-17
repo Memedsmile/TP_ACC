@@ -1093,7 +1093,7 @@ int main()
       displayRoad(desc,graphEcart,n,road,sizeRoad,1,X,Y);
       endTikz(desc);
   }
-  flowMax(graph,graphEcart,n);
+  flowMax(graph,graphEcart, 0, n-1, n);
   int line=0;
   while(line < n)
     {
