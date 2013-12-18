@@ -136,7 +136,7 @@
 
 %--------------------------------------------------Graphe Ecart avec flot null
 \frame{
-\frametitle{AlgoFF-Suite}
+\frametitle{AlgoFF}
 
 \begin{columns}[c]
 \begin{column}{8cm}
@@ -212,7 +212,7 @@
             color      = orange,
             labelcolor = red!30,
             labelstyle = {draw,sloped}]
-  \tikzset{node distance = 2cm}
+  \tikzset{node distance = 2cm}d
   \GraphInit[vstyle=Normal]
   \Vertex[x=-3, y=3]{S}
   \Vertex[x=0, y=3]{A}
@@ -431,8 +431,8 @@
   
   \begin{column}{3cm}
   \begin{block}{Graphe initiale}
-  On reprends le meme graphe 
-  initiale.
+  On reprends le meme
+  graphe initiale.\\
   Soit G = (V,E) un graphe,avec
   V-ensemble des arcs et E-
   ensemble des sommets.
@@ -441,6 +441,199 @@
   \end{columns}  
   
 }
+
+
+
+%--------------------------------------------------Graphe d'ecart
+
+
+\frame{
+\frametitle{AlgoEK}
+
+\begin{columns}[c]
+\begin{column}{8cm}
+\begin{block}{Graphe d'ecart}
+
+
+\usetikzlibrary{arrows}
+\begin{flushleft}
+\begin{tikzpicture}[>=latex']
+ \SetUpEdge[lw         = 1pt,
+            color      = orange,
+            labelcolor = red!30,
+            labelstyle = {draw,sloped}]
+  \tikzset{node distance = 2cm}
+  \GraphInit[vstyle=Normal]
+  \Vertex[x=-3, y=3]{S}
+  \Vertex[x=0, y=3]{A}
+  \Vertex[x=3, y=3]{D}
+  \Vertex[x=3, y=0]{T}
+  \Vertex[x=0, y=0]{C}
+  \Vertex[x=-3, y=0]{B}
+  \tikzset{EdgeStyle/.style={->}}
+  \Edge[label=${0,3}$](S)(B)
+  \Edge[label=${0,2}$](S)(C)
+  \Edge[label=${0,2}$](C)(T)
+  \Edge[label=${0,1}$](C)(A)
+  \Edge[label=${0,1}$](C)(D)
+  \Edge[label=${0,1}$](B)(C)
+  \Edge[label=${0,3}$](S)(A)
+  \Edge[label=${0,4}$](A)(D)
+  \Edge[label=${0,1}$](D)(T)
+  \tikzset{EdgeStyle/.style={->}, bend right}
+  \Edge[label=${0,2}$](B)(T)
+  \draw[orange](3,0)--(4,4);
+  \draw[orange,->](4,4)--(-3,3);
+  \node at (4.25,4.25){0,$\infty$};
+  
+
+\end{tikzpicture}
+\end{flushleft}
+
+\end{block} 
+\end{column}
+  
+  \begin{column}{3cm}
+  \begin{block}{Graphe d'ecart}
+  On refait a nouveau a partir 
+  de graphe G le Graphe d'ecart 
+  G$_e$ on applique un flot null 
+  sur toutes les arcs et on ajout
+  un arc qui va de la source(S)
+  vers le puit(T).
+  \end{block}
+  \end{column}
+  \end{columns}  
+
+}
+
+
+%------------------------------------------grapheecart chemin ameliorant
+
+
+\frame{
+\frametitle{AlgoEK}
+
+\begin{columns}[c]
+\begin{column}{8cm}
+\begin{block}{Chemin ameliorant}
+
+\usetikzlibrary{arrows}
+\begin{flushleft}
+\begin{tikzpicture}[>=latex']
+ \SetUpEdge[lw         = 1pt,
+            color      = orange,
+            labelcolor = red!30,
+            labelstyle = {draw,sloped}]
+  \tikzset{node distance = 2cm}
+  \GraphInit[vstyle=Normal]
+  \Vertex[x=-3, y=3]{S}
+  \Vertex[x=0, y=3]{A}
+  \Vertex[x=3, y=3]{D}
+  \Vertex[x=3, y=0]{T}
+  \Vertex[x=0, y=0]{C}
+  \Vertex[x=-3, y=0]{B}
+
+  
+ \tikzset{EdgeStyle/.style={->}}
+  \Edge[label=${0,3}$](S)(B)
+  \Edge[label=${0,2}$](C)(T)
+  \Edge[label=${0,1}$](C)(A)
+  \Edge[label=${0,1}$](B)(C)
+  \Edge[label=${0,3}$](S)(A)
+  \Edge[label=${0,4}$](A)(D)
+  \tikzset{EdgeStyle/.style={->, color = red}}
+  \Edge[label=${0,1}$](D)(T)
+  \Edge[label=${0,2}$](S)(C)
+  \Edge[label=${0,1}$](C)(D)
+  \tikzset{EdgeStyle/.style={->, color = orange}, bend right}
+  \Edge[label=${0,2}$](B)(T)
+  \draw[orange](3,0)--(4,4);
+  \draw[orange,->](4,4)--(-3,3);
+  \node at (4.25,4.25){0,$\infty$};
+  
+\end{tikzpicture}
+\end{flushleft}
+
+\end{block} 
+\end{column}
+  
+  \begin{column}{3cm}
+  \begin{block}{Chemin ameliorant}
+    On choisi ici un chemin ameliorant
+    en fonction de plus court chemin,
+    qui dans notre cas est calculé 
+    avec l'algo de Dijsktra
+  \end{block}
+  \end{column}
+  \end{columns}
+
+}
+
+
+
+%-------------------------------------------------Mis a jour du graphe
+
+\frame{
+\frametitle{AlgoFF}
+
+\begin{columns}[c]
+\begin{column}{8cm}
+\begin{block}{Chemin ameliorant}
+
+\usetikzlibrary{arrows}
+\begin{flushleft}
+
+\begin{tikzpicture}[>=latex']
+ \SetUpEdge[lw         = 1pt,
+            color      = orange,
+            labelcolor = red!30,
+            labelstyle = {draw,sloped}]
+  \tikzset{node distance = 2cm}
+  \GraphInit[vstyle=Normal]
+  \Vertex[x=-3, y=3]{S}
+  \Vertex[x=0, y=3]{A}
+  \Vertex[x=3, y=3]{D}
+  \Vertex[x=3, y=0]{T}
+  \Vertex[x=0, y=0]{C}
+  \Vertex[x=-3, y=0]{B}
+
+  
+ \tikzset{EdgeStyle/.style={->}}
+  \Edge[label=${0,3}$](S)(B)
+  \Edge[label=${0,2}$](C)(T)
+  \Edge[label=${0,1}$](C)(A)
+  \Edge[label=${0,1}$](B)(C)
+  \Edge[label=${1,4}$](A)(D)
+  \Edge[label=${1,3}$](S)(A)
+  \tikzset{EdgeStyle/.style={->, color = red}}
+  \Edge[label=${1,2}$](S)(C)
+  \tikzset{EdgeStyle/.style={<-, color = red}}
+  \Edge[label=${1,1}$](C)(D)
+  \Edge[label=${1,1}$](D)(T)
+  \tikzset{EdgeStyle/.style={->, color = orange}, bend right}
+  \Edge[label=${0,2}$](B)(T)
+  \draw[orange](3,0)--(4,4);
+  \draw[orange,->](4,4)--(-3,3);
+  \node at (4.25,4.25){1,$\infty$};
+  
+\end{tikzpicture}
+\end{flushleft}
+
+\end{block} 
+\end{column}
+  
+  \begin{column}{3cm}
+  \begin{block}{Chemin ameliorant}
+    En utilisant le flotle plus
+    petit de ce chemin on met a
+     jour le graphe d'ecart.
+  \end{block}
+  \end{column}
+  \end{columns}  
+}
+
+
 
 %+++++++++++++++++++++++++++++++++++++++++++++++++++
 
@@ -466,38 +659,148 @@
 \section[Experimentation et Performance]{Experimentation et Performance}
 %===================================================
 
+
+%===================================================
+\section[Experimentation et Performance]{Experimentation et Performance}
+%===================================================
+\subsection[Performance de l'ordinateur utilisé: Titine]{Performance de l'ordinateur utilisé: Titine}
+\frame{
+Version Ubuntu: 10.04
+Intel(R) Pentium(R) Dual CPU T3200 @ 2.00GHZ
+}
 %+++++++++++++++++++++++++++++++++++++++++++++++++++
-\subsection[Temps d'execution en fonction du nombre de sommets]{Temps d'execution en fonction du nombre de sommets}
+\subsection[Temps d'execution en fonction du nombre de sommets en comptant le temps de création des graphes]{Temps d'execution en fonction du nombre de sommets comptant le temps de création des graphes}
 %---------------------------------------------------
 
 %--------------------------------------------------
 \frame{
-\frametitle{???????}
+\frametitle{Ford-Fulkerson}
+\begin{tikzpicture}
+ \begin{axis}[grid= major
+ ,  width=0.8\textwidth ,xlabel = sommets ,ylabel = temps ,xmin = 0, xmax = 1100,ymin = 0, ymax = 3]
+ \addplot[color=red,mark=x] coordinates {
+   (200,0.05000)
+   (300,0.10000)
+   (400,0.35210)
+   (500,0.83900)
+   (600,1.23500)
+   (700,2.03100)
+   (800,2.46777)
+   (900,2.75100)
+   (1000,3.58500)
+	};  
+  \end{axis}
+\end{tikzpicture}
+}
 
-
+\frame{
+\frametitle{Capacity-Scaling}
+\begin{tikzpicture}
+ \begin{axis}[grid= major
+ ,  width=0.8\textwidth ,xlabel = sommets ,ylabel = temps ,xmin = 0, xmax = 1100,ymin = 0, ymax = 3]
+ \addplot[color=red,mark=x] coordinates {
+   (200,0.02000)
+   (300,0.06000)
+   (400,0.10000)
+   (500,0.17900)
+   (600,0.25500)
+   (700,0.36000)
+   (800,0.40000)
+   (900,0.60100)
+   (1000,0.80000)
+	};  
+  \end{axis}
+\end{tikzpicture}
 }
 
 
-%+++++++++++++++++++++++++++++++++++++++++++++++++++
-\subsection[Temps d'execution en fonction de la capacitÃ© maximale]{Temps d'execution en fonction de la capacitÃ© maximale}
-%---------------------------------------------------
-
-%--------------------------------------------------
 \frame{
-\frametitle{????bis?????}
-
+\frametitle{Edmons-Karp}
+\begin{tikzpicture}
+ \begin{axis}[grid= major
+ ,  width=0.8\textwidth ,xlabel = sommets ,ylabel = temps ,xmin = 0, xmax = 1100,ymin = 0, ymax = 3]
+ \addplot[color=red,mark=x] coordinates {
+   (200,0.01500)
+   (300,0.05000)
+   (400,0.10000)
+   (500,0.16000)
+   (600,0.20000)
+   (700,0.30000)
+   (800,0.40000)
+   (900,0.60000)
+   (1000,0.75000)
+	};  
+  \end{axis}
+\end{tikzpicture}
 }
 
-%+++++++++++++++++++++++++++++++++++++++++++++++++++
-\subsection[Espace Memoire utilisÃ©]{Espace Memoire utilise}
-%---------------------------------------------------
-
-%--------------------------------------------------
 
 \frame{
-  \frametitle{???}
-  
-}	
+\frametitle{Dinic}
+\begin{tikzpicture}
+ \begin{axis}[grid= major
+ ,  width=0.8\textwidth ,xlabel = sommets ,ylabel = temps ,xmin = 0, xmax = 1100,ymin = 0, ymax = 3]
+ \addplot[color=red,mark=x] coordinates {
+   (200,0.40000)
+   (300,1.50000)
+   (400,2.90000)
+   (500,5.00000)
+	};  
+  \end{axis}
+\end{tikzpicture}
+}
+
+\frame{
+\frametitle{Comparaison des algorithmes}
+\begin{tikzpicture}
+ \begin{axis}[grid= major
+ ,  width=0.8\textwidth ,xlabel = sommets ,ylabel = temps ,xmin = 0, xmax = 1100,ymin = 0, ymax = 3]
+ \addplot[color=red,mark=triangle*] coordinates {
+   (200,0.40000)
+   (300,1.50000)
+   (400,2.90000)
+   (500,5.00000)
+	};  
+ \addlegendentry{Dinic}
+\addplot[color=blue,mark=*] coordinates {
+   (200,0.01500)
+   (300,0.05000)
+   (400,0.10000)
+   (500,0.16000)
+   (600,0.20000)
+   (700,0.30000)
+   (800,0.40000)
+   (900,0.60000)
+   (1000,0.75000)
+	};  
+\addlegendentry{Edmons-Karp}
+ \addplot[color=green,mark=x] coordinates {
+   (200,0.02000)
+   (300,0.06000)
+   (400,0.10000)
+   (500,0.17900)
+   (600,0.25500)
+   (700,0.36000)
+   (800,0.40000)
+   (900,0.60100)
+   (1000,0.80000)
+	};  
+\addlegendentry{Capacity-Scaling}
+ \addplot[color=yellow,mark=square*] coordinates {
+   (200,0.05000)
+   (300,0.10000)
+   (400,0.35210)
+   (500,0.83900)
+   (600,1.23500)
+   (700,2.03100)
+   (800,2.46777)
+   (900,2.75100)
+   (1000,3.58500)
+	};
+  \end{axis}
+\addlegendentry{Ford-Fulkerson}
+\end{tikzpicture}
+}
 
 
 

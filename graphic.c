@@ -742,12 +742,15 @@ struct arcs** edmondsKarp(struct arcs** graph, int* flowmax, int s, int p, int n
     int i;
     upFlow(flow, road, sizeRoad, load[2]);
     beginTikz(edmond);
-    displayRoadInGraph(edmond,graph,n,road,sizeRoad,1,X,Y);
+    displayRoadInGraph(edmond,flow,n,road,sizeRoad,1,X,Y);
     endTikz(edmond);
     beginTikz(edmond);
-    displayRoad(edmond,graph,n,road,sizeRoad,1,X,Y);
+    displayRoad(edmond,flow,n,road,sizeRoad,1,X,Y);
     endTikz(edmond);
-
+    beginTikz(edmond);
+    display(edmond,flow,n,0,X,Y);
+    displayUpFlow(edmond,flow,road,sizeRoad,load[2]);
+    endTikz(edmond);
     *flowmax += load[2];
     sizeRoad = dijkstra(flow, s, p, road, n);
   }
@@ -849,22 +852,32 @@ int upFlowLayer(struct arcs** graph, struct arcs** graphcouche, int s, int p, in
 
 int dinic(struct arcs** graph, int s, int p, int n, FILE* din, int* X, int* Y){
   struct arcs** graphEcart = graphSD(graph, n);
-  struct arcs** graphcouche;
+  struct arcs** graphcouche = graphLayer(graphEcart, s, p, n);
   int flow = 0;
+  int flowc;
   int road[n];
-  int sizeroad = dijkstra(graphEcart, s, p, road, n);
+  int sizeroad = dijkstra(graphcouche, s, p, road, n);
   while(sizeroad != 0){
-    graphcouche = graphLayer(graphEcart, s, p, n);
-    flow += upFlowLayer(graph, graphcouche, s, p, n);
+    flowc = upFlowLayer(graph, graphcouche, s, p, n);
+    flow +=flowc;
+    free(graphEcart);
+    free(graphcouche);
     graphEcart = graphSD(graph, n);
+    graphcouche = graphLayer(graphEcart, s, p, n);
     beginTikz(din);
-    displayRoadInGraph(din,graph,n,road,sizeroad,1,X,Y);
+    displayRoadInGraph(din,graphEcart,n,road,sizeroad,1,X,Y);
     endTikz(din);
     beginTikz(din);
-    displayRoad(din,graph,n,road,sizeroad,1,X,Y);
+    displayRoad(din,graphEcart,n,road,sizeroad,1,X,Y);
+    endTikz(din);
+    beginTikz(din);
+    display(din,graphEcart,n,0,X,Y);
+    displayUpFlow(din,graphEcart,road,sizeroad, flowc);
     endTikz(din);
     sizeroad = dijkstra(graphEcart, s, p, road, n);
   }
+  free(graphEcart);
+  free(graphcouche);
   return flow;
 }
 
@@ -921,6 +934,10 @@ int fordfulkerson(struct arcs** graph, struct arcs** graphEcart, int s, int p, i
     beginTikz(ford);
     displayRoad(ford,graph,n,road,sizeroad,1,X,Y);
     endTikz(ford);
+    beginTikz(ford);
+    display(ford,graphEcart,n,0,X,Y);
+    displayUpFlow(ford,graphEcart,road,sizeroad,load[2]);
+    endTikz(ford);
     return load[2] + fordfulkerson(graphEcart, graphEcart, s, p, n, ford, X, Y);
   }
 }
@@ -953,8 +970,6 @@ int capacityscaling(struct arcs** graph, int s, int p, int n, FILE* CS, int* X, 
     }
     int road[n];
     int sizeroad = dijkstra(graphDelta, s, p, road, n);
-    printf("delta = %d\n maxflow = %d\n", delta, maxflow);
-    printf("sizeroad = %d\n", sizeroad);
     while(sizeroad != 0){
       int load[3] = {0, 0, 0};
       minLoad(graphDelta, road, load, sizeroad);
@@ -965,13 +980,16 @@ int capacityscaling(struct arcs** graph, int s, int p, int n, FILE* CS, int* X, 
       upFlow(graphEcart, road, sizeroad, load[2]);
       upFlow(graphDelta, road, sizeroad, load[2]);
       beginTikz(CS);
-      displayRoadInGraph(CS,graph,n,road,sizeroad,1,X,Y);
+      displayRoadInGraph(CS,graphEcart,n,road,sizeroad,1,X,Y);
       endTikz(CS);
       beginTikz(CS);
-      displayRoad(CS,graph,n,road,sizeroad,1,X,Y);
+      displayRoad(CS,graphEcart,n,road,sizeroad,1,X,Y);
+      endTikz(CS);
+      beginTikz(CS);
+      display(CS,graphEcart,n,0,X,Y);
+      displayUpFlow(CS,graphEcart,road,sizeroad,load[2]);
       endTikz(CS);
       maxflow += load[2];
-      printf("delta = %d\n maxflow = %d\n", delta, maxflow);
       sizeroad =  dijkstra(graphDelta, s, p, road, n);
     }
     delta /= 2;

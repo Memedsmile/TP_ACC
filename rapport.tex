@@ -67,6 +67,7 @@ Av6 = \{3->6 ; 4->6 ; 5->6\} ; Ar6 = \{\}\\
 \item Nombre minimum d'arc sortant dans une s-t coupe = 3\\
   Nombre maximum de chemin d'arc disjoint = 3\\
 
+\end{enumerate}
 
 \subsubsection{Exercice 2}
 
@@ -114,12 +115,13 @@ definition de plus petit arc vital.
 \end{center}
  
 \end{enumerate} 
+
 \subsubsection{Exercice 3}
 
 \begin{enumerate}
 
 
-\item Pour trouver une double etoile de cout min dans le Graphe, on va cree une instance G' qui est un \\
+\item Pour trouver une double etoile de cout min dans le Graphe, on va créer une instance G' qui est un \\
 sous-graphe de G$_{2n+1}$.\\
 Pour construire cette instance G', on prends notre graphe de depart et on enleve un\\
 sommet aleatoire sur ce graph, ce qui nous donne G'. Ensuite on va chercher un couplage min dans G',\\
@@ -141,7 +143,8 @@ a la fin on choisi le couplage de plus petit coup.
     3-SAT : Cas particulier du problème SAT dans lequel les clauses sont toutes de taille 3.\\
 
   \item
-    On dit qu'il existe une réduction d'un problème P à un problème P' s'ilf existe une fonction f telle que x $\in$ D(P) <=> f(x) $\in$ D(P')\\
+    On dit qu'il existe une réduction d'un problème P à un problème P' s'ilf existe une fonction f\\
+    telle que x $\in$ D(P) <=> f(x) $\in$ D(P')\\
 
   \item
     3-SAT est un cas particulier de SAT, or SAT $\in$ NP.\\
@@ -153,7 +156,7 @@ a la fin on choisi le couplage de plus petit coup.
 
     Soit P une instance du problème SAT.
     
-    $\twoheadrightarrow$Soit U={$l_1vl_2vl_3......vl_k$} une clause de taille k > 3
+    $\twoheadrightarrow$Soit U=($l_1 \vee l_2 \vee l_3......\vee l_k$) une clause de taille k > 3
 
     On la divise en 2 clause :
     $\succ$ une clause de taille $\lfloor$k/2$\rfloor$+1 en complétant par une variable x$\notin$U 
@@ -161,11 +164,11 @@ a la fin on choisi le couplage de plus petit coup.
 
     On applique ce principe récursivement jusqu'à obtenir des clauses de taille 3
 
-    $\twoheadrightarrow$Soit U={$l_1vl_2$} une clause de taille 2
+    $\twoheadrightarrow$Soit U={$l_1 \vee l_2$} une clause de taille 2
     
     On clone la clause U pour avoir 2 clauses $U_1$ et $U_2$ auxquelles on ajoute respectivement une variable x et son complémentaire $\overline x$
-    on obtient :  $U_1$={$l_1vl_2$vx}
-    $U_2$={$l_1vl_2$v$\overline x$}
+    on obtient :  $U_1$={$l_1 \vee l_2$vx}
+    $U_2$={$l_1 \vee l_2 \vee \overline x$}
 
     $\twoheadrightarrow$Soit U={$l_1$} une clause de taille 1
     On force $l_1$ à vrai et on retire les clauses unitaire.
@@ -175,112 +178,197 @@ a la fin on choisi le couplage de plus petit coup.
     Donc 3-SAT est NP-Complet.\\
 
     \item
-      Clause de taille 4 :\\
-      Soit $l_1$, $l_2$, $l_3$, $l_4$ une clause de taille 4
+      Détaillons chaque cas concernant chaque type de clause :
+     $\twoheadrightarrow$\underline{Clause de taille 4 :}\\
+     Soit ($l_1 \vee l_2 \vee l_3 \vee l_4$) une clause de taille 4\\
 
       \begin{center}
-      $l_1$, $l_2$, $l_3$, $l_4$ \left\lbrace 
-      \begin{array}{lcl} 
-        l_1 v l_2 v u\\
-        l_3 v l_4 v \overline u
-      \end{array}\right.
+        $(l_1 \vee l_2 \vee l_3 \vee l_4)\left\lbrace 
+        \begin{array}{lcl} 
+          (l_1 \vee l_2 \vee u)\\ 
+          (l_3 \vee l_4 \vee \overline u)\\ 
+        \end{array}\right.$ 
       \end{center}
 
       Chaque clause contenant 4 littéraux est ainsi divisée en 2 clauses de 3 littéraux
       \begin{center}
-        n_4 -> 2n_4
+        $n_4$ -> 2$n_4$
       \end{center}
       On ajoute ainsi une variable pour chaque clause
       \begin{center}
-        4n_4 -> 5n_4
+        4$n_4$ -> 5$n_4$
       \end{center}
-      \newline
+      \bigbreak
 
-      Clause de taille 5 :\\      
-      Soit $l_1$, $l_2$, $l_3$, $l_4$, $l_5$ une clause de taille 5
+      $\twoheadrightarrow$\underline{Clause de taille 5 :}\\      
+      Soit ($l_1 \vee l_2 \vee l_3 \vee l_4 \vee l_5$) une clause de taille 5
 
       \begin{center}
-      $l_1$, $l_2$, $l_3$, $l_4$, $l_5$\left\lbrace 
-      \begin{array}{lcl} 
-        l_1 v l_2 v u\\
-        l_3 v l_4 v l_5 v \overline u
-      \end{array}\right.
+     $ (l_1 \vee l_2 \vee l_3 \vee l_4 \vee l_5)\left\lbrace
+      \begin{array}{lcl}
+        (l_1 \vee l_2 \vee u)\\
+        (l_3 \vee l_4 \vee l_5 \vee \overline u)
+      \end{array}\right.$
       \end{center}
 
       \begin{center}
-      $l_3$ v $l_4$ v $l_5$ v \overline u\left\lbrace 
+        $(l_3 \vee l_4 \vee l_5 \vee \overline u)\left\lbrace
       \begin{array}{lcl} 
-        l_3 v l_4 v y\\
-        l_5 v \overline u v \overline y
-      \end{array}\right.
+        (l_3 \vee l_4 \vee y)\\
+        (l_5 \vee \overline u \vee \overline y)
+      \end{array}\right.$
       \end{center}
 
       Chaque clause contenant 5 littéraux est ainsi divisée en 3 clauses de 3 littéraux
       \begin{center}
-        n_5 -> 3n_5
+        $n_5$ -> 3$n_5$
       \end{center}
       On ajoute ainsi 2 variables pour chaque clause
       \begin{center}
-        5n_5 -> 7n_5
+        5$n_5$ -> 7$n_5$
       \end{center}
-      \newline
+      \bigbreak
 
-      Clause de taille 2 :\\
-      Soit $l_1$, $l_2$ une clause de taille 2
+      $\twoheadrightarrow$\underline{Clause de taille 2 :}\\
+      Soit ($l_1 \vee l_2$) une clause de taille 2
 
       \begin{center}
-      $l_1$, $l_2$\left\lbrace 
+      $(l_1 \vee l_2)\left\lbrace
       \begin{array}{lcl} 
-        l_1 v l_2 v u\\
-        l_1 v l_2 v \overline u
-      \end{array}\right.
+        (l_1 \vee l_2 \vee u)\\
+        (l_1 \vee l_2 \vee \overline u)
+      \end{array}\right.$
       \end{center}
 
       Chaque clause contenant 2 littéraux est transformée en 2 clauses de 3 littéraux
       \begin{center}
-        n_2 -> 2n_2
+        $n_2$ -> 2$n_2$
       \end{center}
       On ajoute ainsi 1 variables pour chaque clause
       \begin{center}
-        2n_2 -> 3n_2
+        2$n_2$ -> 3$n_2$
       \end{center}
-      \newline
+      \bigbreak
 
 
-      Clause de taille 1 :\\
-      Soit $l_1$ une clause de taille 1
+      $\twoheadrightarrow$\underline{Clause de taille 1 :}\\
+      Soit ($l_1$) une clause de taille 1
 
       \begin{center}
-      $l_1$\left\lbrace 
+      $(l_1)\left\lbrace 
       \begin{array}{lcl} 
-        l_1 v u v \overline u
-      \end{array}\right.
+        (l_1 \vee u \vee \overline u)
+      \end{array}\right.$
       \end{center}
 
       Chaque clause contenant 1 littéraux est transformée en une clause de 3 littéraux
       \begin{center}
-        n_1 -> n_1
+        $n_1$ -> $n_1$
       \end{center}
       On ajoute ainsi 1 variables pour chaque clause
       \begin{center}
-        n_1 -> 3n_1
+        $n_1$ -> 3$n_1$
       \end{center}
-      \newline
+      \bigbreak
 
       On peut donc conclure :
       \begin{center}
-        Nombre de clauses = n_1 + 3n_2 + n_3 + 2n_4 + 3n_5\\
-        Nombre de variables = 3n_1 + 3n_2 + 3n_3 + 5n_4 + 7n_5\\
+        Nombre de clauses = $n_1 + 3n_2 + n_3 + 2n_4 + 3n_5$\\
+        Nombre de variables = $3n_1 + 3n_2 + 3n_3 + 5n_4 + 7n_5$\\
       \end{center}
+      \bigbreak
 
-\end{enumarate}
-
-
-      
-
-
-    
 \end{enumerate}
+  
+  \item
+    Soit U = ($l_1 \vee l_2 \vee l_3$) une clause de taille 3\\
+    \smallbreak
+    En appliquant la réduction, on obtient :\\
+    
+    \begin{center}
+      $(l_1 \vee l_2 \vee l_3)\left\lbrace 
+      \begin{array}{lcl}
+        (l_1 \vee u)\\
+        (l_2 \vee l_3 \vee \overline u)
+      \end{array}\right.$
+    \end{center}
+    \smallbreak
+
+    On obtient ainsi une nouvelle clause de taille 3.\\
+    Il est donc impossible de réduire un problème 3-SAT à un problème 2-SAT de cette manière.\\
+    \smallbreak
+
+    \item
+    \smallbreak
+
+    \item
+      \begin{enumerate}
+        \item
+          Le problème étudié fait évidement partie de la classe NP.\\
+          En effet, on vérifie aisement, à partir d'un ensemble L de sommets, que L est l'ensemble des feuilles d'un arbre couvrant de G.\\
+
+          Réduction :
+          Soit un graphe G = (V,E) et un ensemble L $\subset$ V.\\
+          On choisis arbitrairement 2 sommets x et y dans L.  \\        
+          On prend le sous graphe G' = (V',E') tel que V'={V-{L-{x,y}}}\\
+          
+
+          Si il existe un chemin Hamiltonien entre x et y dans G' alors il existe un arbre couvrant dont l'ensemble des feuilles est L.\\
+          En effet, le chemin hamiltonien relie tous les sommets de G'. En y rajoutant les sommets restant L on obtient un arbre couvrant de G.\\
+
+          De la meme manière, si il existe un arbre couvrant dans G, on peut lui retirer les sommets de L-{x,y}. \\
+          Ainsi il nous reste un chemin hamiltonien de x à y dans G'.\\
+
+          Notre problème est donc NP-Complet.\\
+          \smallbreak
+
+        \item
+          Le problème étudié fait évidement partie de la classe NP.\\
+          En effet, on vérifie aisement, à partir d'un ensemble L de sommets, que l'ensemble des feuilles d'un arbre couvrant de G est contenu dans L.\\
+
+          Réduction :
+          Soit un graphe G = (V,E) et un ensemble L $\subset$ V.\\
+          On choisis arbitrairement 2 sommets x et y dans L.  \\        
+          On prend le sous graphe G' = (V',E') tel que V'={V-{L-{x,y}}}\\
+          
+
+          S'il existe un chemin Hamiltonien entre x et y dans G' alors il existe un arbre couvrant dont l'ensemble des feuilles est contenu L.\\
+
+          S'il existe un arbre couvrant dans G, on peut lui retirer les sommets de L-{x,y}. \\
+          Ainsi il nous reste un chemin hamiltonien de x à y dans G'.\\
+
+          Notre problème est donc NP-Complet.\\
+
+          \smallbreak
+        \item
+          
+
+      \end{enumerate}
+    \smallbreak
+ 
+   \item
+      Le problème Connected dominating fait évidement partie de la classe NP.\\
+      En effet, on vérifie aisement, à partir d'un ensemble S, que chaque sommet x de G est soit dans S, soit un voisin d'un sommet de S.\\
+      \smallbreak
+
+      Réduction :
+      Soit un graphe G(E,V) connexe.\\
+      On crée un nouveau graphe G'(E',V') tel que $\forall$ (u,v)$\in$ E, on ajoute dans G' un nouveau sommet x relié à u et v.\\
+      \smallbreak
+
+      Un vertex cover de G est alors un ensemble dominant de G'.\\
+      Donc, si on trouve un vertex cover de taille k dans G, alors $\exists$ S un ensemble dominant de taille k dans G' et inversement.\\
+      \smallbreak
+
+    \item
+      Balanced 3-SAT est un cas particulier de Balanced SAT, or Balnaced SAT $\in$ NP.\\
+      Donc Balanced 3-SAT $\in$ NP\\
+
+      Balanced SAT $\in$ NP-Complet\\
+
+      On réduit balanced SAT à balanced 3-SAT de la meme manière que nous avons réduit SAT à 3-SAT.\\
+      Nous savons que balanced SAT est NP-Complet donc balanced 3-SAT est NP-Complet.\\
+
 \end{enumerate}
 
 
@@ -459,6 +547,9 @@ On peut conclure que:\\
 Fesons une preuve par l'absurbe, soit la fonction d'Ackermann primitive récursive.\\\\
 Sois la fonction \[f: \mathbb{N} \rightarrow \mathbb{N} : n \rightarrow A(n,2n)\]
 Comme la fonction d'Ackerman est primitive récursive alors f est primitive récursive.   
+
 \end{enumerate}
+
 \end{enumerate}
+
 \end{document}
