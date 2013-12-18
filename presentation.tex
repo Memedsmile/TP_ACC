@@ -5,6 +5,8 @@
 %\usepackage[french]{babel}
 \usepackage{times}
 \usepackage{tabularx}
+\usepackage{tkz-graph}
+
 
 \mode<presentation>
 {
@@ -29,9 +31,9 @@
 %===================================================
 %===================================================
 
-\title{Projet pratique Algorithme / Complexité / Calculabilité}
+\title{Projet pratique Algorithme / ComplexitÃ© / CalculabilitÃ©}
 \author{Jean-Marc Lagniez, Viktor Lesnyak, Pierre-Alexandre Cimbe, Ahmed Rafik}
-\institute{Master Informatique - Université Montpellier II}
+\institute{Master Informatique - UniversitÃ© Montpellier II}
 \date{2013}
 
 %===================================================
@@ -45,8 +47,8 @@
 \section<presentation>*{Plan}
 %===================================================
 
-\note{L'exopsé est composé de trois parties, une partie présenation des algorithmes utilisés,
- une partie expérimentation et performances et une partie démonstration du programme}
+\note{L'exopsÃ© est composÃ© de trois parties, une partie prÃ©senation des algorithmes utilisÃ©s,
+ une partie expÃ©rimentation et performances et une partie dÃ©monstration du programme}
 
 %----------------------------------------
 \begin{frame}
@@ -55,7 +57,7 @@
 \end{frame}
 
 %----------------------------------------
-% cette partie entraine l'affichage du plan à chaque nouveau début de section
+% cette partie entraine l'affichage du plan Ã  chaque nouveau dÃ©but de section
 \AtBeginSection[]
 {
   \begin{frame}<beamer>
@@ -66,28 +68,322 @@
 
 
 %=================================================
-\part<presentation>{Les Algorithmes utilisés}
+\part<presentation>{Les Algorithmes utilisÃ©s}
 %===================================================
-\section[Les algorithmes étudiés]{Les algorithmes étudiés}
+\section[Les algorithmes Ã©tudiÃ©s]{Les algorithmes Ã©tudiÃ©s}
 %===================================================
 
 %+++++++++++++++++++++++++++++++++++++++++++++++++++
 \subsection[Ford-Fulkerson]{Ford-Fulkerson}
 %---------------------------------------------------
 
-%--------------------------------------------------
+%--------------------------------------------------Graphe Init
 \frame{
 \frametitle{AlgoFF}
 
 
+\begin{columns}[c]
+\begin{column}{7cm}
+\begin{block}{Graphe initiale}
+ 
+\usetikzlibrary{arrows}
+\thispagestyle{empty}
+\begin{flushleft}
+\begin{tikzpicture}[>=latex']
+ \SetUpEdge[lw         = 1pt,
+            color      = orange,
+            labelcolor = red!30,
+            labelstyle = {draw,sloped}]
+  \tikzset{node distance = 2cm}
+  \GraphInit[vstyle=Normal]
+  \Vertex[x=-3, y=3]{S}
+  \Vertex[x=0, y=3]{A}
+  \Vertex[x=3, y=3]{D}
+  \Vertex[x=3, y=0]{T}
+  \Vertex[x=0, y=0]{C}
+  \Vertex[x=-3, y=0]{B}
+  \tikzset{EdgeStyle/.style={->}}
+  \Edge[label=$3$](S)(B)
+  \Edge[label=$2$](S)(C)
+  \Edge[label=$3$](S)(A)
+  \Edge[label=$2$](C)(T)
+  \Edge[label=$1$](D)(T)
+  \Edge[label=$4$](A)(D)
+  \Edge[label=$1$](C)(A)
+  \Edge[label=$1$](C)(D)
+  \Edge[label=$1$](B)(C)
+  \tikzset{EdgeStyle/.style={->}, bend right}
+  \Edge[label=${0,2}$](B)(T)
+\end{tikzpicture}
+\end{flushleft}
+\end{block} 
+\end{column}
+  
+  \begin{column}{3cm}
+  \begin{block}{Graphe initiale}
+
+  Soit G = (V,E) un graphe,avec
+  V-ensemble des arcs et E-
+  ensemble des sommets.
+  \end{block}
+  \end{column}
+  \end{columns}  
+
+
 }
 
 
-%--------------------------------------------------
+%--------------------------------------------------Graphe Ecart avec flot null
 \frame{
 \frametitle{AlgoFF-Suite}
 
+\begin{columns}[c]
+\begin{column}{8cm}
+\begin{block}{Graphe d'ecart}
+
+
+\usetikzlibrary{arrows}
+\thispagestyle{empty}
+\begin{flushleft}
+\begin{tikzpicture}[>=latex']
+ \SetUpEdge[lw         = 1pt,
+            color      = orange,
+            labelcolor = red!30,
+            labelstyle = {draw,sloped}]
+  \tikzset{node distance = 2cm}
+  \GraphInit[vstyle=Normal]
+  \Vertex[x=-3, y=3]{S}
+  \Vertex[x=0, y=3]{A}
+  \Vertex[x=3, y=3]{D}
+  \Vertex[x=3, y=0]{T}
+  \Vertex[x=0, y=0]{C}
+  \Vertex[x=-3, y=0]{B}
+  \tikzset{EdgeStyle/.style={->}}
+  \Edge[label=${0,3}$](S)(B)
+  \Edge[label=${0,2}$](S)(C)
+  \Edge[label=${0,2}$](C)(T)
+  \Edge[label=${0,1}$](C)(A)
+  \Edge[label=${0,1}$](C)(D)
+  \Edge[label=${0,1}$](B)(C)
+  \Edge[label=${0,3}$](S)(A)
+  \Edge[label=${0,4}$](A)(D)
+  \Edge[label=${0,1}$](D)(T)
+  \tikzset{EdgeStyle/.style={->}, bend right}
+  \Edge[label=${0,2}$](B)(T)
+  \draw[orange](3,0)--(4,4);
+  \draw[orange,->](4,4)--(-3,3);
+  \node at (4.25,4.25){0,$\infty$};
+  
+
+\end{tikzpicture}
+\end{flushleft}
+
+\end{block} 
+\end{column}
+  
+  \begin{column}{3cm}
+  \begin{block}{Graphe d'ecart}
+  Pour passer de notre graphe G
+  au Graphe d'ecart G$_e$ on 
+  applique un flot null sur 
+  toutes les arcs et on ajout
+  un arc qui va de la source(S)
+  vers le puit(T).
+  \end{block}
+  \end{column}
+  \end{columns}  
+
 }
+
+
+
+%--------------------------------------------------Graphe Ecart chemin ameliorant
+\frame{
+\frametitle{AlgoFF}
+
+\begin{columns}[c]
+\begin{column}{8cm}
+\begin{block}{Chemin ameliorant}
+
+\usetikzlibrary{arrows}
+\thispagestyle{empty}
+\begin{flushleft}
+\begin{tikzpicture}[>=latex']
+ \SetUpEdge[lw         = 1pt,
+            color      = orange,
+            labelcolor = red!30,
+            labelstyle = {draw,sloped}]
+  \tikzset{node distance = 2cm}
+  \GraphInit[vstyle=Normal]
+  \Vertex[x=-3, y=3]{S}
+  \Vertex[x=0, y=3]{A}
+  \Vertex[x=3, y=3]{D}
+  \Vertex[x=3, y=0]{T}
+  \Vertex[x=0, y=0]{C}
+  \Vertex[x=-3, y=0]{B}
+
+  
+ \tikzset{EdgeStyle/.style={->}}
+  \Edge[label=${0,3}$](S)(B)
+  \Edge[label=${0,2}$](S)(C)
+  \Edge[label=${0,2}$](C)(T)
+  \Edge[label=${0,1}$](C)(A)
+  \Edge[label=${0,1}$](C)(D)
+  \Edge[label=${0,1}$](B)(C)
+  \tikzset{EdgeStyle/.style={->, color = red}}
+  \Edge[label=${0,3}$](S)(A)
+  \Edge[label=${0,4}$](A)(D)
+  \Edge[label=${0,1}$](D)(T)
+  \tikzset{EdgeStyle/.style={->, color = orange}, bend right}
+  \Edge[label=${0,2}$](B)(T)
+  \draw[orange](3,0)--(4,4);
+  \draw[orange,->](4,4)--(-3,3);
+  \node at (4.25,4.25){0,$\infty$};
+  
+\end{tikzpicture}
+\end{flushleft}
+
+\end{block} 
+\end{column}
+  
+  \begin{column}{3cm}
+  \begin{block}{Chemin ameliorant}
+    Ensuite on choisi un chemin 
+    ammeliorant sur le graphe
+    d'ecart obtenue grace a 
+    un parcour en largeur.
+  \end{block}
+  \end{column}
+  \end{columns}  
+}
+
+%---------------------------------------------Mise a jour du flot
+
+\frame{
+\frametitle{AlgoFF}
+
+\begin{columns}[c]
+\begin{column}{8cm}
+\begin{block}{Chemin ameliorant}
+
+\usetikzlibrary{arrows}
+\thispagestyle{empty}
+\begin{flushleft}
+\begin{tikzpicture}[>=latex']
+ \SetUpEdge[lw         = 1pt,
+            color      = orange,
+            labelcolor = red!30,
+            labelstyle = {draw,sloped}]
+  \tikzset{node distance = 2cm}
+  \GraphInit[vstyle=Normal]
+  \Vertex[x=-3, y=3]{S}
+  \Vertex[x=0, y=3]{A}
+  \Vertex[x=3, y=3]{D}
+  \Vertex[x=3, y=0]{T}
+  \Vertex[x=0, y=0]{C}
+  \Vertex[x=-3, y=0]{B}
+
+  
+ \tikzset{EdgeStyle/.style={->}}
+  \Edge[label=${0,3}$](S)(B)
+  \Edge[label=${0,2}$](S)(C)
+  \Edge[label=${0,2}$](C)(T)
+  \Edge[label=${0,1}$](C)(A)
+  \Edge[label=${0,1}$](C)(D)
+  \Edge[label=${0,1}$](B)(C)
+  \tikzset{EdgeStyle/.style={->, color = red}}
+  \Edge[label=${1,3}$](S)(A)
+  \Edge[label=${1,4}$](A)(D)
+  \tikzset{EdgeStyle/.style={<-, color = red}}
+  \Edge[label=${1,1}$](D)(T)
+  \tikzset{EdgeStyle/.style={->, color = orange}, bend right}
+  \Edge[label=${0,2}$](B)(T)
+  \draw[orange](3,0)--(4,4);
+  \draw[orange,->](4,4)--(-3,3);
+  \node at (4.25,4.25){1,$\infty$};
+  
+\end{tikzpicture}
+\end{flushleft}
+
+\end{block} 
+\end{column}
+  
+  \begin{column}{3cm}
+  \begin{block}{Chemin ameliorant}
+    En utilisant le flotle plus
+    petit de ce chemin on met a
+     jour le graphe d'ecart.
+  \end{block}
+  \end{column}
+  \end{columns}  
+}
+
+
+%---------------------------------------------Graphe d'ecart finale
+
+\frame{
+\frametitle{AlgoFF}
+
+\begin{columns}[c]
+\begin{column}{8cm}
+\begin{block}{Chemin ameliorant}
+
+\usetikzlibrary{arrows}
+\thispagestyle{empty}
+\begin{flushleft}
+\begin{tikzpicture}[>=latex']
+ \SetUpEdge[lw         = 1pt,
+            color      = orange,
+            labelcolor = red!30,
+            labelstyle = {draw,sloped}]
+  \tikzset{node distance = 2cm}
+  \GraphInit[vstyle=Normal]
+  \Vertex[x=-3, y=3]{S}
+  \Vertex[x=0, y=3]{A}
+  \Vertex[x=3, y=3]{D}
+  \Vertex[x=3, y=0]{T}
+  \Vertex[x=0, y=0]{C}
+  \Vertex[x=-3, y=0]{B}
+
+  
+ \tikzset{EdgeStyle/.style={->}}
+  \Edge[label=${0,2}$](S)(C)
+  \Edge[label=${0,1}$](C)(A)
+  \Edge[label=${1,3}$](S)(A)
+  \Edge[label=${1,4}$](A)(D)
+  \Edge[label=${2,3}$](S)(A)
+  \Edge[label=${2,4}$](A)(D)
+  \tikzset{EdgeStyle/.style={<-}}
+  \Edge[label=${1,1}$](D)(T)
+  \Edge[label=${3,3}$](S)(B)
+  \Edge[label=${1,1}$](B)(C)
+  \Edge[label=${2,2}$](C)(T)
+  \Edge[label=${1,1}$](C)(D)
+
+  \tikzset{EdgeStyle/.style={<-, color = orange}, bend right}
+  \Edge[label=${2,2}$](B)(T)
+  \draw[orange](3,0)--(4,4);
+  \draw[orange,->](4,4)--(-3,3);
+  \node at (4.25,4.25){6,$\infty$};
+  
+\end{tikzpicture}
+\end{flushleft}
+
+\end{block} 
+\end{column}
+  
+  \begin{column}{3cm}
+  \begin{block}{Chemin ameliorant}
+    Une foi tout les chemin
+    ameliorants sont parcouru,
+    on obtien un graphe d'ecart
+    complet avec le flot maximal
+    (das notre cas c'est 6).
+  \end{block}
+  \end{column}
+  \end{columns}  
+}
+
 
 %+++++++++++++++++++++++++++++++++++++++++++++++++++
 \subsection[Edmonds-Karp]{Edmonds-Karp}
@@ -135,7 +431,7 @@
 
 
 %+++++++++++++++++++++++++++++++++++++++++++++++++++
-\subsection[Temps d'execution en fonction de la capacité maximale]{Temps d'execution en fonction de la capacité maximale}
+\subsection[Temps d'execution en fonction de la capacitÃ© maximale]{Temps d'execution en fonction de la capacitÃ© maximale}
 %---------------------------------------------------
 
 %--------------------------------------------------
@@ -145,7 +441,7 @@
 }
 
 %+++++++++++++++++++++++++++++++++++++++++++++++++++
-\subsection[Espace Memoire utilisé]{Espace Memoire utilise}
+\subsection[Espace Memoire utilisÃ©]{Espace Memoire utilise}
 %---------------------------------------------------
 
 %--------------------------------------------------
@@ -167,7 +463,7 @@
 
 %--------------------------------------------------
 \frame{
-\frametitle{Démo}
+\frametitle{DÃ©mo}
 
 
 }
