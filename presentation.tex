@@ -1,6 +1,8 @@
-\documentclass[pdftex]{beamer}
+%\documentclass[pdftex]{beamer}
+\documentclass[french]{beamer}
 \usepackage{beamerthemesplit}
-\usepackage[latin1]{inputenc}
+%\usepackage[latin1]{inputenc}
+\usepackage[utf8]{inputenc, fontenc}
 \usepackage[T1]{fontenc}
 \usepackage[french]{babel}
 \usepackage{times}
@@ -87,7 +89,6 @@
 \begin{block}{Graphe initiale}
  
 \usetikzlibrary{arrows}
-\thispagestyle{empty}
 \begin{flushleft}
 \begin{tikzpicture}[>=latex']
  \SetUpEdge[lw         = 1pt,
@@ -143,7 +144,6 @@
 
 
 \usetikzlibrary{arrows}
-\thispagestyle{empty}
 \begin{flushleft}
 \begin{tikzpicture}[>=latex']
  \SetUpEdge[lw         = 1pt,
@@ -206,7 +206,6 @@
 \begin{block}{Chemin ameliorant}
 
 \usetikzlibrary{arrows}
-\thispagestyle{empty}
 \begin{flushleft}
 \begin{tikzpicture}[>=latex']
  \SetUpEdge[lw         = 1pt,
@@ -267,7 +266,6 @@
 \begin{block}{Chemin ameliorant}
 
 \usetikzlibrary{arrows}
-\thispagestyle{empty}
 \begin{flushleft}
 \begin{tikzpicture}[>=latex']
  \SetUpEdge[lw         = 1pt,
@@ -329,7 +327,6 @@
 \begin{block}{Chemin ameliorant}
 
 \usetikzlibrary{arrows}
-\thispagestyle{empty}
 \begin{flushleft}
 \begin{tikzpicture}[>=latex']
  \SetUpEdge[lw         = 1pt,
@@ -388,10 +385,60 @@
 %+++++++++++++++++++++++++++++++++++++++++++++++++++
 \subsection[Edmonds-Karp]{Edmonds-Karp}
 %---------------------------------------------------
-%--------------------------------------------------
+
+
+
+%--------------------------------------------------Graphe initiale
 \frame{
 \frametitle{AlgoEK}
-   
+ 
+
+\begin{columns}[c]
+\begin{column}{7cm}
+\begin{block}{Graphe initiale}
+ 
+\usetikzlibrary{arrows}
+\begin{flushleft}
+\begin{tikzpicture}[>=latex']
+ \SetUpEdge[lw         = 1pt,
+            color      = orange,
+            labelcolor = red!30,
+            labelstyle = {draw,sloped}]
+  \tikzset{node distance = 2cm}
+  \GraphInit[vstyle=Normal]
+  \Vertex[x=-3, y=3]{S}
+  \Vertex[x=0, y=3]{A}
+  \Vertex[x=3, y=3]{D}
+  \Vertex[x=3, y=0]{T}
+  \Vertex[x=0, y=0]{C}
+  \Vertex[x=-3, y=0]{B}
+  \tikzset{EdgeStyle/.style={->}}
+  \Edge[label=$3$](S)(B)
+  \Edge[label=$2$](S)(C)
+  \Edge[label=$3$](S)(A)
+  \Edge[label=$2$](C)(T)
+  \Edge[label=$1$](D)(T)
+  \Edge[label=$4$](A)(D)
+  \Edge[label=$1$](C)(A)
+  \Edge[label=$1$](C)(D)
+  \Edge[label=$1$](B)(C)
+  \tikzset{EdgeStyle/.style={->}, bend right}
+  \Edge[label=${0,2}$](B)(T)
+\end{tikzpicture}
+\end{flushleft}
+\end{block} 
+\end{column}
+  
+  \begin{column}{3cm}
+  \begin{block}{Graphe initiale}
+
+  Soit G = (V,E) un graphe,avec
+  V-ensemble des arcs et E-
+  ensemble des sommets.
+  \end{block}
+  \end{column}
+  \end{columns}  
+  
 }
 
 %+++++++++++++++++++++++++++++++++++++++++++++++++++
