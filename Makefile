@@ -28,5 +28,8 @@ CS : scaling.tex
 dinic : dinic.tex
 	pdflatex dinic.tex
 
+rapport : rapport.tex
+	pdflatex rapport.tex
+
 clean :
 	rm -f *~ *.o *.aux *.log *.out *.nav *.snm *.toc \#*\# essai

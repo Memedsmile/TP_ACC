@@ -1,0 +1,98 @@
+   \item
+     Clause de taille 4 :\\
+     Soit {l\textsubscript{1}, l\textsubscript{2}, l\textsubscript{3}, l\textsubscript{4}} une clause de taille 4\\
+
+      \begin{center}
+        {l\textsubscript{1}, l\textsubscript{2}, l\textsubscript{3}, l\textsubscript{4}} \left\lbrace 
+      \begin{array}{lcl} 
+        l\textsubscript{1} v l\textsubscript{2} v u\\
+        l\textsubscript{3} v l\textsubscript{4} v \overline u
+      \end{array}\right.
+      \end{center}
+
+      Chaque clause contenant 4 littéraux est ainsi divisée en 2 clauses de 3 littéraux
+      \begin{center}
+        n\textsubscript{4} -> 2n\textsubscript{4}
+      \end{center}
+      On ajoute ainsi une variable pour chaque clause
+      \begin{center}
+        4n\textsubscript{4} -> 5n\textsubscript{4}
+      \end{center}
+      \newline
+
+      Clause de taille 5 :\\      
+      Soit l_1, l_2, l_3, l_4, l_5 une clause de taille 5
+
+      \begin{center}
+      l_1, l_2, l_3, l_4, l_5\left\lbrace 
+      \begin{array}{lcl} 
+        l_1 v l_2 v u\\
+        l_3 v l_4 v l_5 v \overline u
+      \end{array}\right.
+      \end{center}
+
+      \begin{center}
+      l_3 v l_4 v l_5 v \overline u\left\lbrace 
+      \begin{array}{lcl} 
+        l_3 v l_4 v y\\
+        l_5 v \overline u v \overline y
+      \end{array}\right.
+      \end{center}
+
+      Chaque clause contenant 5 littéraux est ainsi divisée en 3 clauses de 3 littéraux
+      \begin{center}
+        n_5 -> 3n_5
+      \end{center}
+      On ajoute ainsi 2 variables pour chaque clause
+      \begin{center}
+        5n_5 -> 7n_5
+      \end{center}
+      \newline
+
+      Clause de taille 2 :\\
+      Soit l_1, l_2 une clause de taille 2
+
+      \begin{center}
+      l_1, l_2\left\lbrace 
+      \begin{array}{lcl} 
+        l_1 v l_2 v u\\
+        l_1 v l_2 v \overline u
+      \end{array}\right.
+      \end{center}
+
+      Chaque clause contenant 2 littéraux est transformée en 2 clauses de 3 littéraux
+      \begin{center}
+        n_2 -> 2n_2
+      \end{center}
+      On ajoute ainsi 1 variables pour chaque clause
+      \begin{center}
+        2n_2 -> 3n_2
+      \end{center}
+      \newline
+
+
+      Clause de taille 1 :\\
+      Soit l_1 une clause de taille 1
+
+      \begin{center}
+      l_1 \left\lbrace 
+      \begin{array}{lcl} 
+        l_1 v u v \overline u
+      \end{array}\right.
+      \end{center}
+
+      Chaque clause contenant 1 littéraux est transformée en une clause de 3 littéraux
+      \begin{center}
+        n_1 -> n_1
+      \end{center}
+      On ajoute ainsi 1 variables pour chaque clause
+      \begin{center}
+        n_1 -> 3n_1
+      \end{center}
+      \newline
+
+      On peut donc conclure :
+      \begin{center}
+        Nombre de clauses = n_1 + 3n_2 + n_3 + 2n_4 + 3n_5\\
+        Nombre de variables = 3n_1 + 3n_2 + 3n_3 + 5n_4 + 7n_5\\
+      \end{center}
