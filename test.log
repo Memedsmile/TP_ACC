@@ -1,11 +1,21 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2013.11.24)  12 DEC 2013 13:43
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2013.12.3)  18 DEC 2013 14:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **test.tex
 (./test.tex
 LaTeX2e <2011/06/27>
-Babel <3.9f> and hyphenation patterns for 4 languages loaded.
+Babel <v3.8m> and hyphenation patterns for english, dumylang, nohyphenation, et
+hiopic, farsi, arabic, pinyin, croatian, bulgarian, ukrainian, russian, slovak,
+ czech, danish, dutch, usenglishmax, ukenglish, finnish, french, basque, ngerma
+n, german, swissgerman, ngerman-x-2012-05-30, german-x-2012-05-30, monogreek, g
+reek, ibycus, ancientgreek, hungarian, bengali, tamil, hindi, telugu, gujarati,
+ sanskrit, malayalam, kannada, assamese, marathi, oriya, panjabi, italian, lati
+n, latvian, lithuanian, mongolian, mongolianlmc, nynorsk, bokmal, indonesian, e
+speranto, coptic, welsh, irish, interlingua, serbian, serbianc, slovenian, friu
+lan, romansh, estonian, romanian, armenian, uppersorbian, turkish, afrikaans, i
+celandic, kurmanji, polish, portuguese, galician, catalan, spanish, swedish, th
+ai, loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
 (/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
@@ -309,10 +319,9 @@ File: pgflibraryarrows.code.tex 2008/10/27 v2.10 (rcs-revision 1.9)
 (/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypetri
 .code.tex
 File: tikzlibrarypetri.code.tex 2008/06/18 v2.10 (rcs-revision 1.2)
-) (/usr/share/texlive/texmf-dist/tex/latex/tkz-berge/tkz-berge.sty
-Package: tkz-berge 2011/06/01 1.00 c tkz-berge for named graphs
-
-(/usr/share/texlive/texmf-dist/tex/latex/tkz-graph/tkz-graph.sty
+) (./tkz-berge.sty
+Package: tkz-berge 13/01/2009 v 2.8 tkz-berge for named graphs
+ (./tkz-graph.sty
 Package: tkz-graph 2011/06/01 ctan v 1.00 base for graphs
 
 (/usr/share/texlive/texmf-dist/tex/latex/etex-pkg/etex.sty
@@ -323,13 +332,13 @@ Package: etex 1998/03/26 v2.0 eTeX basic definition package (PEB)
 Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
 )
 (/usr/share/texlive/texmf-dist/tex/latex/xkeyval/xkeyval.sty
-Package: xkeyval 2012/10/14 v2.6b package option processing (HA)
+Package: xkeyval 2008/08/13 v2.6a package option processing (HA)
 
 (/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkeyval.tex
 \XKV@toks=\toks24
 \XKV@tempa@toks=\toks25
 \XKV@depth=\count108
-File: xkeyval.tex 2012/10/14 v2.6b key=value parser (HA)
+File: xkeyval.tex 2008/08/13 v2.6a key=value parser (HA)
 ))
 \c@tkz@gr@a=\count109
 \c@tkz@gr@b=\count110
@@ -342,49 +351,42 @@ File: xkeyval.tex 2012/10/14 v2.6b key=value parser (HA)
 \c@tkz@gr@ta=\count117
 \c@tkz@gr@tb=\count118
 )
-(/usr/share/texlive/texmf-dist/tex/latex/tkz-berge/tkz-arith.sty
+(./tkz-arith.sty
 Package: tkz-arith 2011/02/28 v 1.00 c integers numbers
-
-(/usr/share/texlive/texmf-dist/tex/latex/tkz-base/tkz-tools-arith.tex
+ (./tkz-tools-arith.tex
 File: tkz-tool-arith.tex tkz-tool-arith 1.161 c
-))
-\c@tkz@bg@cnt=\count119
-\c@tkza@tmp=\count120
-)
+)))
 (/usr/share/texlive/texmf-dist/tex/latex/subfig/subfig.sty
 Package: subfig 2005/06/28 ver: 1.3 subfig package
 
 (/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
-Package: caption 2013/05/02 v3.3-89 Customizing captions (AR)
+Package: caption 2012/02/19 v3.2f Customizing captions (AR)
 
 (/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
-Package: caption3 2013/05/02 v1.6-88 caption3 kernel (AR)
-Package caption3 Info: TeX engine: e-TeX on input line 57.
+Package: caption3 2012/01/12 v1.4b caption3 kernel (AR)
 \captionmargin=\dimen149
 \captionmargin@=\dimen150
 \captionwidth=\dimen151
-\caption@tempdima=\dimen152
-\caption@indent=\dimen153
-\caption@parindent=\dimen154
-\caption@hangindent=\dimen155
+\caption@indent=\dimen152
+\caption@parindent=\dimen153
+\caption@hangindent=\dimen154
 )
-\c@ContinuedFloat=\count121
+\c@ContinuedFloat=\count119
 )
-\c@KVtest=\count122
+\c@KVtest=\count120
 \sf@farskip=\skip44
-\sf@captopadj=\dimen156
+\sf@captopadj=\dimen155
 \sf@capskip=\skip45
 \sf@nearskip=\skip46
-\c@subfigure=\count123
-\c@subfigure@save=\count124
-\c@lofdepth=\count125
-\c@subtable=\count126
-\c@subtable@save=\count127
-\c@lotdepth=\count128
+\c@subfigure=\count121
+\c@subfigure@save=\count122
+\c@lofdepth=\count123
+\c@subtable=\count124
+\c@subtable@save=\count125
+\c@lotdepth=\count126
 \sf@top=\skip47
 \sf@bottom=\skip48
-)
-No file test.aux.
+) (./test.aux)
 \openout1 = `test.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 12.
@@ -399,19 +401,20 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 12.
 LaTeX Font Info:    ... okay on input line 12.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 12.
 LaTeX Font Info:    ... okay on input line 12.
+
 ABD: EveryShipout initializing macros
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count129
-\scratchdimen=\dimen157
+\scratchcounter=\count127
+\scratchdimen=\dimen156
 \scratchbox=\box35
-\nofMPsegments=\count130
-\nofMParguments=\count131
+\nofMPsegments=\count128
+\nofMParguments=\count129
 \everyMPshowfont=\toks26
-\MPscratchCnt=\count132
-\MPscratchDim=\dimen158
-\MPnumerator=\count133
-\makeMPintoPDFobject=\count134
+\MPscratchCnt=\count130
+\MPscratchDim=\dimen157
+\MPnumerator=\count131
+\makeMPintoPDFobject=\count132
 \everyMPtoPDFconversion=\toks27
 ) (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
@@ -490,12 +493,6 @@ Type  H <return>  for immediate help.
                                                   
 l.40 }
       
-? H
-This error message was generated by an \errmessage
-command, so I can't give any explicit help.
-Pretend that you're Hercule Poirot: Examine all clues,
-and deduce the truth by order and method.
-
 ? 
 
 ! Package pgf Error: No shape named K is known.
@@ -580,22 +577,132 @@ Type  H <return>  for immediate help.
                                                   
 l.40 }
       
-? n
-Type <return> to proceed, S to scroll future error messages,
-R to run without stopping, Q to run quietly,
-I to insert something, E to edit your file,
-1 or ... or 9 to ignore the next 1 to 9 tokens of input,
-H for help, X to quit.
-? X
+? 
+
+! Package pgf Error: No shape named H is known.
+
+See the pgf package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.40 }
+      
+? 
+
+! Package pgf Error: No shape named M is known.
+
+See the pgf package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.40 }
+      
+? 
+
+! Package pgf Error: No shape named H is known.
+
+See the pgf package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.40 }
+      
+? 
+
+! Package pgf Error: No shape named D is known.
+
+See the pgf package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.40 }
+      
+? 
+
+! Package pgf Error: No shape named D is known.
+
+See the pgf package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.40 }
+      
+? 
+
+! Package pgf Error: No shape named B is known.
+
+See the pgf package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.40 }
+      
+? 
+
+! Package pgf Error: No shape named D is known.
+
+See the pgf package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.40 }
+      
+? 
+
+! Package pgf Error: No shape named D is known.
+
+See the pgf package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.40 }
+      
+? 
+
+! Package pgf Error: No shape named D is known.
+
+See the pgf package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.40 }
+      
+? 
+
+! Package pgf Error: No shape named M is known.
+
+See the pgf package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.40 }
+      
+? 
+
+! Package pgf Error: No shape named D is known.
+
+See the pgf package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.40 }
+      
+? 
+! Interruption.
+\GenericError  ...                                
+                                                  \endgroup 
+l.40 }
+      
+? x
  
 Here is how much of TeX's memory you used:
- 12328 strings out of 495002
- 230979 string characters out of 6180261
- 291660 words of memory out of 5000000
- 15325 multiletter control sequences out of 15000+600000
- 3640 words of font info for 14 fonts, out of 8000000 for 9000
- 14 hyphenation exceptions out of 8191
- 61i,10n,96p,420b,1011s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 12235 strings out of 493485
+ 228849 string characters out of 3143526
+ 289355 words of memory out of 3000000
+ 15325 multiletter control sequences out of 15000+200000
+ 3640 words of font info for 14 fonts, out of 3000000 for 9000
+ 957 hyphenation exceptions out of 8191
+ 61i,10n,96p,667b,1007s stack positions out of 5000i,500n,10000p,200000b,50000s
 No pages of output.
 PDF statistics:
  3 PDF objects out of 1000 (max. 8388607)

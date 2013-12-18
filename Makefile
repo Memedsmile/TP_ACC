@@ -16,5 +16,17 @@ graphic.o : graphic.c list.h file.h
 graph : graph.tex
 	pdflatex graph.tex
 
+ford : ford.tex
+	pdflatex ford.tex
+
+edmonds : edmonds.tex 
+	pdflatex edmonds.tex
+
+CS : scaling.tex
+	pdflatex scaling.tex
+
+dinic : dinic.tex
+	pdflatex dinic.tex
+
 clean :
-	rm -f *~ *.o \#*\# essai
+	rm -f *~ *.o *.aux *.log *.out *.nav *.snm *.toc \#*\# essai
