@@ -23,7 +23,27 @@
 
 \begin{document}
 
-\maketitle
+\makeatletter
+  \begin{titlepage}
+    \centering
+        {\large \textsc{Université Montpellier II}}\\
+        \textsc{Master 1ère Année Informatique}\\
+        \vspace{1cm}
+        \includegraphics[width=0.25\textwidth]{logo.png}
+        \hfill
+        \includegraphics[width=0.35\textwidth]{logo2.png}\\
+        \vspace{1cm}
+               {\large\textbf{	\@date\\
+                   Rapport de Travaux Pratique}}\\
+               \vfill
+                   {\LARGE \textbf{\@title}} \\
+                   \vspace{2em}
+                          {\large \@author} \\
+                          \vfill
+  \end{titlepage}
+\makeatother
+
+%\maketitle
 
 \section{Partie théorique}
 \subsection{Partie algorithmique}

@@ -614,7 +614,7 @@ void minLoad(struct arcs** graph,int* road,int* load,int sizeRoad)
     }
 
   
-  int flow =  graph[road[rangMinLoad]][road[rangMinLoad+1]].flow;
+         int flow =  graph[road[rangMinLoad]][road[rangMinLoad+1]].flow;
   int capacity = graph[road[rangMinLoad]][road[rangMinLoad+1]].capacity;
   load[0] = road[rangMinLoad];
   load[1] = road[rangMinLoad + 1];
@@ -797,6 +797,7 @@ struct arcs** graphLayer(struct arcs** graphEcart, int s, int p, int n){
     }
     currentlayer++;
   }
+  freeList(treat);
   return gL;
 }
 
@@ -836,7 +837,6 @@ int rRoad(struct arcs** graph, int* load, int* road, int s, int p, int n){
     road[j] = roadjp[i];
     j++;
   }
- 
   return sizeroad;
 }
     
@@ -994,6 +994,8 @@ int capacityscaling(struct arcs** graph, int s, int p, int n, FILE* CS, int* X, 
     }
     delta /= 2;
   }
+  free(graphEcart);
+  free(graphDelta);
   return maxflow;
 }
  
@@ -1253,7 +1255,7 @@ int main()
 
   
 
-
+  free(flow);
   free(graphEcart);
   free(graph);
 }
