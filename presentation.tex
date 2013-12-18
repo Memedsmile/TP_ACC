@@ -6,6 +6,9 @@
 \usepackage{times}
 \usepackage{tabularx}
 \usepackage{tkz-graph}
+\usepackage{graphics}
+\usepackage{tikz}
+\usepackage{pgfplots}
 
 
 \mode<presentation>
@@ -409,17 +412,13 @@
    
 }
 
-%===================================================
-\section[Experimentation et Performance]{Experimentation et Performance}
-%===================================================
-
 
 %===================================================
 \section[Experimentation et Performance]{Experimentation et Performance}
 %===================================================
 \subsection[Performance de l'ordinateur utilisé: Titine]{Performance de l'ordinateur utilisé: Titine}
 \frame{
-Version Ubuntu: 10.04
+Version Ubuntu: 10.04\\
 Intel(R) Pentium(R) Dual CPU T3200 @ 2.00GHZ
 }
 %+++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -551,10 +550,38 @@ Intel(R) Pentium(R) Dual CPU T3200 @ 2.00GHZ
    (900,2.75100)
    (1000,3.58500)
 	};
+ \addlegendentry{Ford-Fulkerson}
   \end{axis}
-\addlegendentry{Ford-Fulkerson}
 \end{tikzpicture}
 }
+
+%+++++++++++++++++++++++++++++++++++++++++++++++++++
+\subsection[Evolutions à apporter]{Evolutions à apporter}
+%---------------------------------------------------
+
+%--------------------------------------------------
+\frame{
+\frametitle{Evolutions}
+  \begin{block}{Représentation du graphe}
+    La représentation sous forme de matrice nous a parue interréssante dans un premier temps, de par sa simplicité à l'utilisation 
+    mais nous avons réalisé qu'une liste de voisins aurait été certainement plus représentative pour les parcours de chemin.
+  \end{block}
+
+ \begin{block}{Graphe de couche}
+   Le graphe de couche est peut-etre mal représenter car nous l'avons représenter comme un graphe normal, dans une matrice.\\
+   Ceci gene un peu l'utilisation de ce graphe
+  \end{block}
+}
+
+\frame{
+\frametitle{Evolutions}
+
+ \begin{block}{Algorithme de Dinic}
+    L'algorithme de Dinic, comme les autres, fonctionne mais il manque certainement d'optimisation
+  \end{block}
+
+}
+
 
 
 
