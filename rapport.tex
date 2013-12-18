@@ -95,15 +95,15 @@ definition de plus petit arc vital.
             labelstyle = {draw,sloped}]
   \tikzset{node distance = 5cm}
   \GraphInit[vstyle=Normal]
-  \Vertex[x=-3, y=0]{P}
+  \Vertex[x=-3, y=0]{S}
   \Vertex[x=0, y=3]{B}
-  \Vertex[x=3, y=0]{C}
+  \Vertex[x=3, y=0]{T}
   \Vertex[x=0, y=-3]{M}
   \tikzset{EdgeStyle/.style={->}}
-  \Edge[label=$2$](P)(B)
-  \Edge[label=$1$](P)(M)
-  \Edge[label=$1$](B)(C)
-  \Edge[label=$2$](M)(C)
+  \Edge[label=$2$](S)(B)
+  \Edge[label=$1$](S)(M)
+  \Edge[label=$1$](B)(T)
+  \Edge[label=$2$](M)(T)
   \Edge[label=$1$](B)(M)
   \draw (-2,2) -- (-2,-2);
   \draw[blue,->](-1,-2.75)--(-1,-2);
