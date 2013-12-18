@@ -413,38 +413,148 @@
 \section[Experimentation et Performance]{Experimentation et Performance}
 %===================================================
 
+
+%===================================================
+\section[Experimentation et Performance]{Experimentation et Performance}
+%===================================================
+\subsection[Performance de l'ordinateur utilisé: Titine]{Performance de l'ordinateur utilisé: Titine}
+\frame{
+Version Ubuntu: 10.04
+Intel(R) Pentium(R) Dual CPU T3200 @ 2.00GHZ
+}
 %+++++++++++++++++++++++++++++++++++++++++++++++++++
-\subsection[Temps d'execution en fonction du nombre de sommets]{Temps d'execution en fonction du nombre de sommets}
+\subsection[Temps d'execution en fonction du nombre de sommets en comptant le temps de création des graphes]{Temps d'execution en fonction du nombre de sommets comptant le temps de création des graphes}
 %---------------------------------------------------
 
 %--------------------------------------------------
 \frame{
-\frametitle{???????}
+\frametitle{Ford-Fulkerson}
+\begin{tikzpicture}
+ \begin{axis}[grid= major
+ ,  width=0.8\textwidth ,xlabel = sommets ,ylabel = temps ,xmin = 0, xmax = 1100,ymin = 0, ymax = 3]
+ \addplot[color=red,mark=x] coordinates {
+   (200,0.05000)
+   (300,0.10000)
+   (400,0.35210)
+   (500,0.83900)
+   (600,1.23500)
+   (700,2.03100)
+   (800,2.46777)
+   (900,2.75100)
+   (1000,3.58500)
+	};  
+  \end{axis}
+\end{tikzpicture}
+}
 
-
+\frame{
+\frametitle{Capacity-Scaling}
+\begin{tikzpicture}
+ \begin{axis}[grid= major
+ ,  width=0.8\textwidth ,xlabel = sommets ,ylabel = temps ,xmin = 0, xmax = 1100,ymin = 0, ymax = 3]
+ \addplot[color=red,mark=x] coordinates {
+   (200,0.02000)
+   (300,0.06000)
+   (400,0.10000)
+   (500,0.17900)
+   (600,0.25500)
+   (700,0.36000)
+   (800,0.40000)
+   (900,0.60100)
+   (1000,0.80000)
+	};  
+  \end{axis}
+\end{tikzpicture}
 }
 
 
-%+++++++++++++++++++++++++++++++++++++++++++++++++++
-\subsection[Temps d'execution en fonction de la capacitÃ© maximale]{Temps d'execution en fonction de la capacitÃ© maximale}
-%---------------------------------------------------
-
-%--------------------------------------------------
 \frame{
-\frametitle{????bis?????}
-
+\frametitle{Edmons-Karp}
+\begin{tikzpicture}
+ \begin{axis}[grid= major
+ ,  width=0.8\textwidth ,xlabel = sommets ,ylabel = temps ,xmin = 0, xmax = 1100,ymin = 0, ymax = 3]
+ \addplot[color=red,mark=x] coordinates {
+   (200,0.01500)
+   (300,0.05000)
+   (400,0.10000)
+   (500,0.16000)
+   (600,0.20000)
+   (700,0.30000)
+   (800,0.40000)
+   (900,0.60000)
+   (1000,0.75000)
+	};  
+  \end{axis}
+\end{tikzpicture}
 }
 
-%+++++++++++++++++++++++++++++++++++++++++++++++++++
-\subsection[Espace Memoire utilisÃ©]{Espace Memoire utilise}
-%---------------------------------------------------
-
-%--------------------------------------------------
 
 \frame{
-  \frametitle{???}
-  
-}	
+\frametitle{Dinic}
+\begin{tikzpicture}
+ \begin{axis}[grid= major
+ ,  width=0.8\textwidth ,xlabel = sommets ,ylabel = temps ,xmin = 0, xmax = 1100,ymin = 0, ymax = 3]
+ \addplot[color=red,mark=x] coordinates {
+   (200,0.40000)
+   (300,1.50000)
+   (400,2.90000)
+   (500,5.00000)
+	};  
+  \end{axis}
+\end{tikzpicture}
+}
+
+\frame{
+\frametitle{Comparaison des algorithmes}
+\begin{tikzpicture}
+ \begin{axis}[grid= major
+ ,  width=0.8\textwidth ,xlabel = sommets ,ylabel = temps ,xmin = 0, xmax = 1100,ymin = 0, ymax = 3]
+ \addplot[color=red,mark=triangle*] coordinates {
+   (200,0.40000)
+   (300,1.50000)
+   (400,2.90000)
+   (500,5.00000)
+	};  
+ \addlegendentry{Dinic}
+\addplot[color=blue,mark=*] coordinates {
+   (200,0.01500)
+   (300,0.05000)
+   (400,0.10000)
+   (500,0.16000)
+   (600,0.20000)
+   (700,0.30000)
+   (800,0.40000)
+   (900,0.60000)
+   (1000,0.75000)
+	};  
+\addlegendentry{Edmons-Karp}
+ \addplot[color=green,mark=x] coordinates {
+   (200,0.02000)
+   (300,0.06000)
+   (400,0.10000)
+   (500,0.17900)
+   (600,0.25500)
+   (700,0.36000)
+   (800,0.40000)
+   (900,0.60100)
+   (1000,0.80000)
+	};  
+\addlegendentry{Capacity-Scaling}
+ \addplot[color=yellow,mark=square*] coordinates {
+   (200,0.05000)
+   (300,0.10000)
+   (400,0.35210)
+   (500,0.83900)
+   (600,1.23500)
+   (700,2.03100)
+   (800,2.46777)
+   (900,2.75100)
+   (1000,3.58500)
+	};
+  \end{axis}
+\addlegendentry{Ford-Fulkerson}
+\end{tikzpicture}
+}
 
 
 
