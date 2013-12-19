@@ -654,8 +654,447 @@
 %---------------------------------------------------
 %--------------------------------------------------
 \frame{
-\frametitle{AlgoCS}
-   
+\frametitle{Algo Capacity Scaling}
+   \begin{columns}[c]
+\begin{column}{8cm}
+\begin{block}{Graphe initial}
+
+
+\usetikzlibrary{arrows}
+\begin{flushleft}
+\begin{center}
+\begin{tikzpicture}[>=latex']
+ \SetUpEdge[lw         = 1pt,
+            color      = orange,
+            labelcolor = red!30,
+            labelstyle = {draw,sloped}]
+  \tikzset{node distance = 2cm}
+  \GraphInit[vstyle=Normal]
+  \Vertex[x=-3, y=3]{S}
+  \Vertex[x=0, y=3]{A}
+  \Vertex[x=3, y=3]{D}
+  \Vertex[x=3, y=0]{T}
+  \Vertex[x=0, y=0]{C}
+  \Vertex[x=-3, y=0]{B}
+  \tikzset{EdgeStyle/.style={->}}
+  \Edge[label=$3$](S)(B)
+  \Edge[label=$2$](S)(C)
+  \Edge[label=$3$](S)(A)
+  \Edge[label=$2$](C)(T)
+  \Edge[label=$1$](D)(T)
+  \Edge[label=$4$](A)(D)
+  \Edge[label=$1$](C)(A)
+  \Edge[label=$1$](C)(D)
+  \Edge[label=$1$](B)(C)
+  \tikzset{EdgeStyle/.style={->}, bend right}
+  \Edge[label=$2$](B)(T)
+\end{tikzpicture}
+\end{center}
+\end{flushleft}
+
+\end{block} 
+\end{column}
+  
+  \begin{column}{3cm}
+  \begin{block}{Initialisation}
+  C=4;\\
+  $\Delta=4$;\\
+  F le flot max = 0;\\
+  \end{block}
+  \end{column}
+  \end{columns}  
+}
+
+\frame{
+\frametitle{Algo Capacity Scaling}
+   \begin{columns}[c]
+\begin{column}{8cm}
+\begin{block}{G(f,4)}
+
+
+\usetikzlibrary{arrows}
+\begin{flushleft}
+\begin{center}
+\begin{tikzpicture}[>=latex']
+ \SetUpEdge[lw         = 1pt,
+            color      = orange,
+            labelcolor = red!30,
+            labelstyle = {draw,sloped}]
+  \tikzset{node distance = 2cm}
+  \GraphInit[vstyle=Normal]
+  \Vertex[x=-3, y=3]{S}
+  \Vertex[x=0, y=3]{A}
+  \Vertex[x=3, y=3]{D}
+  \Vertex[x=3, y=0]{T}
+  \Vertex[x=0, y=0]{C}
+  \Vertex[x=-3, y=0]{B}
+  \tikzset{EdgeStyle/.style={->}}
+  \Edge[label=$4$](A)(D)
+  \tikzset{EdgeStyle/.style={->}, bend right}
+\end{tikzpicture}
+\end{center}
+\end{flushleft}
+
+\end{block} 
+\end{column}
+  
+  \begin{column}{3cm}
+  \begin{block}{Augmentation}
+  Pas de chemin de s à p, $\Delta = \Delta/2 = 2$\\
+  \end{block}
+  \end{column}
+  \end{columns}  
+}
+
+\frame{
+\frametitle{Algo Capacity Scaling}
+   \begin{columns}[c]
+\begin{column}{8cm}
+\begin{block}{G(f,2)}
+
+
+\usetikzlibrary{arrows}
+\begin{flushleft}
+\begin{center}
+\begin{tikzpicture}[>=latex']
+ \SetUpEdge[lw         = 1pt,
+            color      = orange,
+            labelcolor = red!30,
+            labelstyle = {draw,sloped}]
+  \tikzset{node distance = 2cm}
+  \GraphInit[vstyle=Normal]
+  \Vertex[x=-3, y=3]{S}
+  \Vertex[x=0, y=3]{A}
+  \Vertex[x=3, y=3]{D}
+  \Vertex[x=3, y=0]{T}
+  \Vertex[x=0, y=0]{C}
+  \Vertex[x=-3, y=0]{B}
+  \tikzset{EdgeStyle/.style={->}}
+  \Edge[label=$3$,color=green,labelcolor=green!30](S)(B)
+  \Edge[label=$2$](S)(C)
+  \Edge[label=$3$](S)(A)
+  \Edge[label=$2$](C)(T)
+  \Edge[label=$4$](A)(D)
+  \tikzset{EdgeStyle/.style={->}, bend right}
+  \Edge[label=$2$,color=green,labelcolor=green!30](B)(T)
+\end{tikzpicture}
+\end{center}
+\end{flushleft}
+
+\end{block} 
+\end{column}
+  
+  \begin{column}{3cm}
+  \begin{block}{Augmentation}
+  Premier chemin :\\
+$s \rightarrow b \rightarrow t$  \\
+$\delta = 2$  \\
+$F = 2$\\
+  \end{block}
+  \end{column}
+  \end{columns}  
+}
+
+\frame{
+\frametitle{Algo Capacity Scaling}
+   \begin{columns}[c]
+\begin{column}{8cm}
+\begin{block}{G(f,2)}
+
+
+\usetikzlibrary{arrows}
+\begin{flushleft}
+\begin{center}
+\begin{tikzpicture}[>=latex']
+ \SetUpEdge[lw         = 1pt,
+            color      = orange,
+            labelcolor = red!30,
+            labelstyle = {draw,sloped}]
+  \tikzset{node distance = 2cm}
+  \GraphInit[vstyle=Normal]
+  \Vertex[x=-3, y=3]{S}
+  \Vertex[x=0, y=3]{A}
+  \Vertex[x=3, y=3]{D}
+  \Vertex[x=3, y=0]{T}
+  \Vertex[x=0, y=0]{C}
+  \Vertex[x=-3, y=0]{B}
+  \tikzset{EdgeStyle/.style={->}}
+  \Edge[label=$2$,color=green,labelcolor=green!30](S)(C)
+  \Edge[label=$3$](S)(A)
+  \Edge[label=$2$,color=green,labelcolor=green!30](C)(T)
+  \Edge[label=$4$](A)(D)
+  \tikzset{EdgeStyle/.style={->}, bend left}
+  \Edge[label=$2$](T)(B)
+  \Edge[label=$2$](B)(S)
+  \Edge[label=$1$](S)(B)
+\end{tikzpicture}
+\end{center}
+\end{flushleft}
+
+\end{block} 
+\end{column}
+  
+  \begin{column}{3cm}
+  \begin{block}{Mise à jour du graphe d'écart et Augmentation}
+Second chemin :\\
+$s \rightarrow c \rightarrow t$  \\
+$\delta = 2$  \\
+$F = 4$\\
+  \end{block}
+  \end{column}
+  \end{columns}  
+}
+
+\frame{
+\frametitle{Algo Capacity Scaling}
+   \begin{columns}[c]
+\begin{column}{8cm}
+\begin{block}{G(f,2)}
+
+
+\usetikzlibrary{arrows}
+\begin{flushleft}
+\begin{center}
+\begin{tikzpicture}[>=latex']
+ \SetUpEdge[lw         = 1pt,
+            color      = orange,
+            labelcolor = red!30,
+            labelstyle = {draw,sloped}]
+  \tikzset{node distance = 2cm}
+  \GraphInit[vstyle=Normal]
+  \Vertex[x=-3, y=3]{S}
+  \Vertex[x=0, y=3]{A}
+  \Vertex[x=3, y=3]{D}
+  \Vertex[x=3, y=0]{T}
+  \Vertex[x=0, y=0]{C}
+  \Vertex[x=-3, y=0]{B}
+  \tikzset{EdgeStyle/.style={->}}
+  \Edge[label=$2$](C)(S)
+  \Edge[label=$2$](T)(C)
+  \Edge[label=$3$](S)(A)
+  \Edge[label=$4$](A)(D)
+   \tikzset{EdgeStyle/.style={->}, bend left}
+  \Edge[label=$2$](T)(B)
+  \Edge[label=$2$](B)(S)
+\end{tikzpicture}
+\end{center}
+\end{flushleft}
+
+\end{block} 
+\end{column}
+  
+  \begin{column}{3cm}
+  \begin{block}{Mise à jour du graphe d'écart et Augmentation}
+Pas d'autre chemin dans le graphe. $\Delta = \Delta/2 = 1$\\
+  \end{block}
+  \end{column}
+  \end{columns}  
+}
+
+\frame{
+\frametitle{Algo Capacity Scaling}
+   \begin{columns}[c]
+\begin{column}{8cm}
+\begin{block}{Flot actuel dans G}
+
+
+\usetikzlibrary{arrows}
+\begin{flushleft}
+\begin{center}
+\begin{tikzpicture}[>=latex']
+ \SetUpEdge[lw         = 1pt,
+            color      = orange,
+            labelcolor = red!30,
+            labelstyle = {draw,sloped}]
+  \tikzset{node distance = 2cm}
+  \GraphInit[vstyle=Normal]
+  \Vertex[x=-3, y=3]{S}
+  \Vertex[x=0, y=3]{A}
+  \Vertex[x=3, y=3]{D}
+  \Vertex[x=3, y=0]{T}
+  \Vertex[x=0, y=0]{C}
+  \Vertex[x=-3, y=0]{B}
+  \tikzset{EdgeStyle/.style={->}}
+  \Edge[label=${2,3}$](S)(B)
+  \Edge[label=${2,2}$](S)(C)
+  \Edge[label=${0,3}$](S)(A)
+  \Edge[label=${2,2}$](C)(T)
+  \Edge[label=${0,1}$](D)(T)
+  \Edge[label=${0,4}$](A)(D)
+  \Edge[label=${0,1}$](C)(A)
+  \Edge[label=${0,1}$](C)(D)
+  \Edge[label=${0,1}$](B)(C)
+  \tikzset{EdgeStyle/.style={->}, bend right}
+  \Edge[label=${2,2}$](B)(T)
+\end{tikzpicture}
+\end{center}
+\end{flushleft}
+
+\end{block} 
+\end{column}
+  
+  \begin{column}{3cm}
+  \begin{block}{Rappel :}
+    $\Delta = 1$  \\
+    $F = 4$\\
+  \end{block}
+  \end{column}
+  \end{columns}  
+}
+
+\frame{
+\frametitle{Algo Capacity Scaling}
+   \begin{columns}[c]
+\begin{column}{8cm}
+\begin{block}{G(f,1)}
+
+
+\usetikzlibrary{arrows}
+\begin{flushleft}
+\begin{center}
+\begin{tikzpicture}[>=latex']
+ \SetUpEdge[lw         = 1pt,
+            color      = orange,
+            labelcolor = red!30,
+            labelstyle = {draw,sloped}]
+  \tikzset{node distance = 2cm}
+  \GraphInit[vstyle=Normal]
+  \Vertex[x=-3, y=3]{S}
+  \Vertex[x=0, y=3]{A}
+  \Vertex[x=3, y=3]{D}
+  \Vertex[x=3, y=0]{T}
+  \Vertex[x=0, y=0]{C}
+  \Vertex[x=-3, y=0]{B}
+  \tikzset{EdgeStyle/.style={->}}
+  \Edge[label=$2$](C)(S)
+  \Edge[label=$2$](T)(C)
+  \Edge[label=$3$,color=green,labelcolor=green!30](S)(A)
+  \Edge[label=$4$,color=green,labelcolor=green!30](A)(D)
+  \Edge[label=$1$,color=green,labelcolor=green!30](D)(T)
+  \Edge[label=$1$](C)(A)
+  \Edge[label=$1$](C)(D)
+  \Edge[label=$1$](B)(C)
+  \Edge[label=$2$](B)(S)
+  \tikzset{EdgeStyle/.style={->}, bend left}
+  \Edge[label=$2$](T)(B)
+\end{tikzpicture}
+\end{center}
+\end{flushleft}
+
+\end{block} 
+\end{column}
+  
+  \begin{column}{3cm}
+  \begin{block}{Mise à jour du graphe d'écart et Augmentation}
+  Premier chemin :\\
+$s \rightarrow a \rightarrow d \rightarrow t$  \\
+$\delta = 1$  \\
+$F = 5$\\
+  \end{block}
+  \end{column}
+  \end{columns}  
+}
+
+\frame{
+\frametitle{Algo Capacity Scaling}
+   \begin{columns}[c]
+\begin{column}{8cm}
+\begin{block}{G(f,1)}
+
+
+\usetikzlibrary{arrows}
+\begin{flushleft}
+\begin{center}
+\begin{tikzpicture}[>=latex']
+ \SetUpEdge[lw         = 1pt,
+            color      = orange,
+            labelcolor = red!30,
+            labelstyle = {draw,sloped}]
+  \tikzset{node distance = 2cm}
+  \GraphInit[vstyle=Normal]
+  \Vertex[x=-3, y=3]{S}
+  \Vertex[x=0, y=3]{A}
+  \Vertex[x=3, y=3]{D}
+  \Vertex[x=3, y=0]{T}
+  \Vertex[x=0, y=0]{C}
+  \Vertex[x=-3, y=0]{B}
+  \tikzset{EdgeStyle/.style={->}}
+  \Edge[label=$2$](C)(S)
+  \Edge[label=$2$](T)(C)
+  \Edge[label=$1$](T)(D)
+  \Edge[label=$1$](C)(A)
+  \Edge[label=$1$](C)(D)
+  \Edge[label=$1$](B)(C)
+  \tikzset{EdgeStyle/.style={->}, bend left}
+  \Edge[label=$2$](T)(B)
+  \Edge[label=$2$](B)(S)
+  \Edge[label=$2$](S)(A)
+  \Edge[label=$3$](A)(D)
+  \Edge[label=$1$](A)(S)
+  \Edge[label=$1$](D)(A)
+\end{tikzpicture}
+\end{center}
+\end{flushleft}
+
+\end{block} 
+\end{column}
+  
+  \begin{column}{3cm}
+  \begin{block}{Mise à jour du graphe d'écart et Augmentation}
+ Pas d'autre chemin dans le graphe. L'algorithme est terminé.\\\
+  \end{block}
+  \end{column}
+  \end{columns}  
+}
+
+\frame{
+\frametitle{Algo Capacity Scaling}
+   \begin{columns}[c]
+\begin{column}{8cm}
+\begin{block}{Flot maximum)}
+
+
+\usetikzlibrary{arrows}
+\begin{flushleft}
+\begin{center}
+\begin{tikzpicture}[>=latex']
+ \SetUpEdge[lw         = 1pt,
+            color      = orange,
+            labelcolor = red!30,
+            labelstyle = {draw,sloped}]
+  \tikzset{node distance = 2cm}
+  \GraphInit[vstyle=Normal]
+  \Vertex[x=-3, y=3]{S}
+  \Vertex[x=0, y=3]{A}
+  \Vertex[x=3, y=3]{D}
+  \Vertex[x=3, y=0]{T}
+  \Vertex[x=0, y=0]{C}
+  \Vertex[x=-3, y=0]{B}
+  \tikzset{EdgeStyle/.style={->}}
+  \Edge[label=${2,3}$,color=blue,labelcolor=blue!30](S)(B)
+  \Edge[label=${2,2}$,color=blue,labelcolor=blue!30](S)(C)
+  \Edge[label=${1,3}$,color=blue,labelcolor=blue!30](S)(A)
+  \Edge[label=${2,2}$,color=blue,labelcolor=blue!30](C)(T)
+  \Edge[label=${1,1}$,color=blue,labelcolor=blue!30](D)(T)
+  \Edge[label=${1,4}$,color=blue,labelcolor=blue!30](A)(D)
+  \Edge[label=${0,1}$](C)(A)
+  \Edge[label=${0,1}$](C)(D)
+  \Edge[label=${0,1}$](B)(C)
+  \tikzset{EdgeStyle/.style={->}, bend right}
+  \Edge[label=${2,2}$,color=blue,labelcolor=blue!30](B)(T)
+\end{tikzpicture}
+\end{center}
+\end{flushleft}
+
+\end{block} 
+\end{column}
+  
+  \begin{column}{3cm}
+  \begin{block}{Valeur du flot}
+ F=5;\\
+  \end{block}
+  \end{column}
+  \end{columns}  
 }
 
 
