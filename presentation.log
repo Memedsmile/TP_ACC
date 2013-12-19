@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2013.12.3)  19 DEC 2013 09:41
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2013.12.3)  19 DEC 2013 09:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1477,7 +1477,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.9 ...n> to continue without it.}itine}{19}{1}{2}
+l.9 ...n> to continue without it.}itine}{27}{1}{2}
                                                   
 ? 
 
@@ -1493,7 +1493,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.10 ...nue without it.}ion des graphes}{20}{1}{2}
+l.10 ...nue without it.}ion des graphes}{28}{1}{2}
                                                   
 ? 
 
@@ -1509,7 +1509,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.11 ... to continue without it.}porter}{25}{1}{2}
+l.11 ... to continue without it.}porter}{33}{1}{2}
                                                   
 ? 
 )
@@ -1533,7 +1533,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.9 ...n> to continue without it.}itine}{19}{1}{2}
+l.9 ...n> to continue without it.}itine}{27}{1}{2}
                                                   
 ? 
 
@@ -1549,7 +1549,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.10 ...nue without it.}ion des graphes}{20}{1}{2}
+l.10 ...nue without it.}ion des graphes}{28}{1}{2}
                                                   
 ? 
 
@@ -1565,7 +1565,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.11 ... to continue without it.}porter}{25}{1}{2}
+l.11 ... to continue without it.}porter}{33}{1}{2}
                                                   
 ? 
 )
@@ -1589,7 +1589,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.9 ...n> to continue without it.}itine}{19}{1}{2}
+l.9 ...n> to continue without it.}itine}{27}{1}{2}
                                                   
 ? 
 
@@ -1605,7 +1605,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.10 ...nue without it.}ion des graphes}{20}{1}{2}
+l.10 ...nue without it.}ion des graphes}{28}{1}{2}
                                                   
 ? 
 
@@ -1621,7 +1621,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.11 ... to continue without it.}porter}{25}{1}{2}
+l.11 ... to continue without it.}porter}{33}{1}{2}
                                                   
 ? 
 )
@@ -1645,7 +1645,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.9 ...n> to continue without it.}itine}{19}{1}{2}
+l.9 ...n> to continue without it.}itine}{27}{1}{2}
                                                   
 ? 
 
@@ -1661,7 +1661,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.10 ...nue without it.}ion des graphes}{20}{1}{2}
+l.10 ...nue without it.}ion des graphes}{28}{1}{2}
                                                   
 ? 
 
@@ -1677,7 +1677,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.11 ... to continue without it.}porter}{25}{1}{2}
+l.11 ... to continue without it.}porter}{33}{1}{2}
                                                   
 ? 
 )
@@ -1837,7 +1837,7 @@ Overfull \hbox (3.20671pt too wide) in paragraph at lines 702--702
  []
 
 
-Overfull \vbox (1.60875pt too high) detected at line 702
+Overfull \vbox (1.42258pt too high) detected at line 702
  []
 
 
@@ -1861,109 +1861,16 @@ Overfull \hbox (45.52928pt too wide) has occurred while \output is active
 
 [17
 
-] (./presentation.toc
+]
 
-! Package inputenc Error: Unicode char \u 8:\GenericError {(inputenc)          
-      }{Package inputenc Error: Unicode char \u8:é:T not set up for use with La
-TeX}{See the inputenc package documentation for explanation.}{Your command was 
-ignored.
-(inputenc) Type  I <command> <return>  to replace it with another command,
-(inputenc) or  <return>  to continue without it.} not set up for use with LaTeX
-.
+! Package inputenc Error: Unicode char \u8:àp, not set up for use with LaTeX.
 
 See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.9 ...n> to continue without it.}itine}{19}{1}{2}
-                                                  
-? 
-
-! Package inputenc Error: Unicode char \u 8:\GenericError {(inputenc)          
-      }{Package inputenc Error: Unicode char \u8:éat not set up for use with La
-TeX}{See the inputenc package documentation for explanation.}{Your command was 
-ignored.
-(inputenc) Type  I <command> <return>  to replace it with another command,
-(inputenc) or  <return>  to continue without it.} not set up for use with LaTeX
-.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.10 ...nue without it.}ion des graphes}{20}{1}{2}
-                                                  
-? 
-
-! Package inputenc Error: Unicode char \u 8:\GenericError {(inputenc)          
-      }{Package inputenc Error: Unicode char \u8:àap not set up for use with La
-TeX}{See the inputenc package documentation for explanation.}{Your command was 
-ignored.
-(inputenc) Type  I <command> <return>  to replace it with another command,
-(inputenc) or  <return>  to continue without it.} not set up for use with LaTeX
-.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.11 ... to continue without it.}porter}{25}{1}{2}
-                                                  
-? 
-)
-
-! Package inputenc Error: Unicode char \u 8:\GenericError {(inputenc)          
-      }{Package inputenc Error: Unicode char \u8:é:T not set up for use with La
-TeX}{See the inputenc package documentation for explanation.}{Your command was 
-ignored.
-(inputenc) Type  I <command> <return>  to replace it with another command,
-(inputenc) or  <return>  to continue without it.} not set up for use with LaTeX
-.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.726 ...formance]{Experimentation et Performance}
-                                                  
-? 
-
-! Package inputenc Error: Unicode char \u 8:\GenericError {(inputenc)          
-      }{Package inputenc Error: Unicode char \u8:éat not set up for use with La
-TeX}{See the inputenc package documentation for explanation.}{Your command was 
-ignored.
-(inputenc) Type  I <command> <return>  to replace it with another command,
-(inputenc) or  <return>  to continue without it.} not set up for use with LaTeX
-.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.726 ...formance]{Experimentation et Performance}
-                                                  
-? 
-
-Overfull \hbox (111.46951pt too wide) has occurred while \output is active
- []\T1/phv/b/n/6 Temps d'execution en fonction du nombre de sommets en comptant
- le temps de crion des graphes[]  
- []
-
-
-! Package inputenc Error: Unicode char \u 8:\GenericError {(inputenc)          
-      }{Package inputenc Error: Unicode char \u8:àap not set up for use with La
-TeX}{See the inputenc package documentation for explanation.}{Your command was 
-ignored.
-(inputenc) Type  I <command> <return>  to replace it with another command,
-(inputenc) or  <return>  to continue without it.} not set up for use with LaTeX
-.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.726 ...formance]{Experimentation et Performance}
-                                                  
+l.810 }
+       
 ? 
 
 Overfull \hbox (45.52928pt too wide) has occurred while \output is active
@@ -1973,61 +1880,6 @@ Overfull \hbox (45.52928pt too wide) has occurred while \output is active
 [18
 
 ]
-
-! Package inputenc Error: Unicode char \u 8:\GenericError {(inputenc)          
-      }{Package inputenc Error: Unicode char \u8:é:T not set up for use with La
-TeX}{See the inputenc package documentation for explanation.}{Your command was 
-ignored.
-(inputenc) Type  I <command> <return>  to replace it with another command,
-(inputenc) or  <return>  to continue without it.} not set up for use with LaTeX
-.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.732 }
-       
-? 
-
-! Package inputenc Error: Unicode char \u 8:\GenericError {(inputenc)          
-      }{Package inputenc Error: Unicode char \u8:éat not set up for use with La
-TeX}{See the inputenc package documentation for explanation.}{Your command was 
-ignored.
-(inputenc) Type  I <command> <return>  to replace it with another command,
-(inputenc) or  <return>  to continue without it.} not set up for use with LaTeX
-.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.732 }
-       
-? 
-
-Overfull \hbox (111.46951pt too wide) has occurred while \output is active
- []\T1/phv/b/n/6 Temps d'execution en fonction du nombre de sommets en comptant
- le temps de crion des graphes[]  
- []
-
-
-! Package inputenc Error: Unicode char \u 8:\GenericError {(inputenc)          
-      }{Package inputenc Error: Unicode char \u8:àap not set up for use with La
-TeX}{See the inputenc package documentation for explanation.}{Your command was 
-ignored.
-(inputenc) Type  I <command> <return>  to replace it with another command,
-(inputenc) or  <return>  to continue without it.} not set up for use with LaTeX
-.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.732 }
-       
-? 
-
 Overfull \hbox (45.52928pt too wide) has occurred while \output is active
  [][]  
  []
@@ -2035,61 +1887,24 @@ Overfull \hbox (45.52928pt too wide) has occurred while \output is active
 [19
 
 ]
-Overfull \vbox (6.97186pt too high) detected at line 756
- []
 
-
-! Package inputenc Error: Unicode char \u 8:\GenericError {(inputenc)          
-      }{Package inputenc Error: Unicode char \u8:é:T not set up for use with La
-TeX}{See the inputenc package documentation for explanation.}{Your command was 
-ignored.
-(inputenc) Type  I <command> <return>  to replace it with another command,
-(inputenc) or  <return>  to continue without it.} not set up for use with LaTeX
-.
+! Package inputenc Error: Unicode char \u8:àjo not set up for use with LaTeX.
 
 See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.756 }
+l.909 }
        
 ? 
 
-! Package inputenc Error: Unicode char \u 8:\GenericError {(inputenc)          
-      }{Package inputenc Error: Unicode char \u8:éat not set up for use with La
-TeX}{See the inputenc package documentation for explanation.}{Your command was 
-ignored.
-(inputenc) Type  I <command> <return>  to replace it with another command,
-(inputenc) or  <return>  to continue without it.} not set up for use with LaTeX
-.
+! Package inputenc Error: Unicode char \u8:éca not set up for use with LaTeX.
 
 See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.756 }
-       
-? 
-
-Overfull \hbox (111.46951pt too wide) has occurred while \output is active
- \T1/phv/b/n/6 Temps d'execution en fonction du nombre de sommets en comptant l
-e temps de crion des graphes  
- []
-
-
-! Package inputenc Error: Unicode char \u 8:\GenericError {(inputenc)          
-      }{Package inputenc Error: Unicode char \u8:àap not set up for use with La
-TeX}{See the inputenc package documentation for explanation.}{Your command was 
-ignored.
-(inputenc) Type  I <command> <return>  to replace it with another command,
-(inputenc) or  <return>  to continue without it.} not set up for use with LaTeX
-.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.756 }
+l.909 }
        
 ? 
 
@@ -2100,61 +1915,24 @@ Overfull \hbox (45.52928pt too wide) has occurred while \output is active
 [20
 
 ]
-Overfull \vbox (6.97186pt too high) detected at line 776
- []
 
-
-! Package inputenc Error: Unicode char \u 8:\GenericError {(inputenc)          
-      }{Package inputenc Error: Unicode char \u8:é:T not set up for use with La
-TeX}{See the inputenc package documentation for explanation.}{Your command was 
-ignored.
-(inputenc) Type  I <command> <return>  to replace it with another command,
-(inputenc) or  <return>  to continue without it.} not set up for use with LaTeX
-.
+! Package inputenc Error: Unicode char \u8:àjo not set up for use with LaTeX.
 
 See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.776 }
+l.955 }
        
 ? 
 
-! Package inputenc Error: Unicode char \u 8:\GenericError {(inputenc)          
-      }{Package inputenc Error: Unicode char \u8:éat not set up for use with La
-TeX}{See the inputenc package documentation for explanation.}{Your command was 
-ignored.
-(inputenc) Type  I <command> <return>  to replace it with another command,
-(inputenc) or  <return>  to continue without it.} not set up for use with LaTeX
-.
+! Package inputenc Error: Unicode char \u8:éca not set up for use with LaTeX.
 
 See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.776 }
-       
-? 
-
-Overfull \hbox (111.46951pt too wide) has occurred while \output is active
- \T1/phv/b/n/6 Temps d'execution en fonction du nombre de sommets en comptant l
-e temps de crion des graphes  
- []
-
-
-! Package inputenc Error: Unicode char \u 8:\GenericError {(inputenc)          
-      }{Package inputenc Error: Unicode char \u8:àap not set up for use with La
-TeX}{See the inputenc package documentation for explanation.}{Your command was 
-ignored.
-(inputenc) Type  I <command> <return>  to replace it with another command,
-(inputenc) or  <return>  to continue without it.} not set up for use with LaTeX
-.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.776 }
+l.955 }
        
 ? 
 
@@ -2165,64 +1943,6 @@ Overfull \hbox (45.52928pt too wide) has occurred while \output is active
 [21
 
 ]
-Overfull \vbox (6.97186pt too high) detected at line 797
- []
-
-
-! Package inputenc Error: Unicode char \u 8:\GenericError {(inputenc)          
-      }{Package inputenc Error: Unicode char \u8:é:T not set up for use with La
-TeX}{See the inputenc package documentation for explanation.}{Your command was 
-ignored.
-(inputenc) Type  I <command> <return>  to replace it with another command,
-(inputenc) or  <return>  to continue without it.} not set up for use with LaTeX
-.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.797 }
-       
-? 
-
-! Package inputenc Error: Unicode char \u 8:\GenericError {(inputenc)          
-      }{Package inputenc Error: Unicode char \u8:éat not set up for use with La
-TeX}{See the inputenc package documentation for explanation.}{Your command was 
-ignored.
-(inputenc) Type  I <command> <return>  to replace it with another command,
-(inputenc) or  <return>  to continue without it.} not set up for use with LaTeX
-.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.797 }
-       
-? 
-
-Overfull \hbox (111.46951pt too wide) has occurred while \output is active
- \T1/phv/b/n/6 Temps d'execution en fonction du nombre de sommets en comptant l
-e temps de crion des graphes  
- []
-
-
-! Package inputenc Error: Unicode char \u 8:\GenericError {(inputenc)          
-      }{Package inputenc Error: Unicode char \u8:àap not set up for use with La
-TeX}{See the inputenc package documentation for explanation.}{Your command was 
-ignored.
-(inputenc) Type  I <command> <return>  to replace it with another command,
-(inputenc) or  <return>  to continue without it.} not set up for use with LaTeX
-.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.797 }
-       
-? 
-
 Overfull \hbox (45.52928pt too wide) has occurred while \output is active
  [][]  
  []
@@ -2230,62 +1950,25 @@ Overfull \hbox (45.52928pt too wide) has occurred while \output is active
 [22
 
 ]
-Overfull \vbox (6.97186pt too high) detected at line 813
- []
 
-
-! Package inputenc Error: Unicode char \u 8:\GenericError {(inputenc)          
-      }{Package inputenc Error: Unicode char \u8:é:T not set up for use with La
-TeX}{See the inputenc package documentation for explanation.}{Your command was 
-ignored.
-(inputenc) Type  I <command> <return>  to replace it with another command,
-(inputenc) or  <return>  to continue without it.} not set up for use with LaTeX
-.
+! Package inputenc Error: Unicode char \u8:àjo not set up for use with LaTeX.
 
 See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.813 }
-       
+l.1059 }
+        
 ? 
 
-! Package inputenc Error: Unicode char \u 8:\GenericError {(inputenc)          
-      }{Package inputenc Error: Unicode char \u8:éat not set up for use with La
-TeX}{See the inputenc package documentation for explanation.}{Your command was 
-ignored.
-(inputenc) Type  I <command> <return>  to replace it with another command,
-(inputenc) or  <return>  to continue without it.} not set up for use with LaTeX
-.
+! Package inputenc Error: Unicode char \u8:éca not set up for use with LaTeX.
 
 See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.813 }
-       
-? 
-
-Overfull \hbox (111.46951pt too wide) has occurred while \output is active
- \T1/phv/b/n/6 Temps d'execution en fonction du nombre de sommets en comptant l
-e temps de crion des graphes  
- []
-
-
-! Package inputenc Error: Unicode char \u 8:\GenericError {(inputenc)          
-      }{Package inputenc Error: Unicode char \u8:àap not set up for use with La
-TeX}{See the inputenc package documentation for explanation.}{Your command was 
-ignored.
-(inputenc) Type  I <command> <return>  to replace it with another command,
-(inputenc) or  <return>  to continue without it.} not set up for use with LaTeX
-.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.813 }
-       
+l.1059 }
+        
 ? 
 
 Overfull \hbox (45.52928pt too wide) has occurred while \output is active
@@ -2295,62 +1978,35 @@ Overfull \hbox (45.52928pt too wide) has occurred while \output is active
 [23
 
 ]
-Overfull \vbox (6.97186pt too high) detected at line 865
- []
 
-
-! Package inputenc Error: Unicode char \u 8:\GenericError {(inputenc)          
-      }{Package inputenc Error: Unicode char \u8:é:T not set up for use with La
-TeX}{See the inputenc package documentation for explanation.}{Your command was 
-ignored.
-(inputenc) Type  I <command> <return>  to replace it with another command,
-(inputenc) or  <return>  to continue without it.} not set up for use with LaTeX
-.
+! Package inputenc Error: Unicode char \u8:àjo not set up for use with LaTeX.
 
 See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.865 }
-       
+l.1111 }
+        
 ? 
 
-! Package inputenc Error: Unicode char \u 8:\GenericError {(inputenc)          
-      }{Package inputenc Error: Unicode char \u8:éat not set up for use with La
-TeX}{See the inputenc package documentation for explanation.}{Your command was 
-ignored.
-(inputenc) Type  I <command> <return>  to replace it with another command,
-(inputenc) or  <return>  to continue without it.} not set up for use with LaTeX
-.
+! Package inputenc Error: Unicode char \u8:éca not set up for use with LaTeX.
 
 See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.865 }
-       
+l.1111 }
+        
 ? 
 
-Overfull \hbox (111.46951pt too wide) has occurred while \output is active
- \T1/phv/b/n/6 Temps d'execution en fonction du nombre de sommets en comptant l
-e temps de crion des graphes  
- []
-
-
-! Package inputenc Error: Unicode char \u 8:\GenericError {(inputenc)          
-      }{Package inputenc Error: Unicode char \u8:àap not set up for use with La
-TeX}{See the inputenc package documentation for explanation.}{Your command was 
-ignored.
-(inputenc) Type  I <command> <return>  to replace it with another command,
-(inputenc) or  <return>  to continue without it.} not set up for use with LaTeX
-.
+! Package inputenc Error: Unicode char \u8:é.\\ not set up for use with LaTeX.
 
 See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.865 }
-       
+l.1111 }
+        
 ? 
 
 Overfull \hbox (45.52928pt too wide) has occurred while \output is active
@@ -2360,228 +2016,11 @@ Overfull \hbox (45.52928pt too wide) has occurred while \output is active
 [24
 
 ]
-
-! Package inputenc Error: Unicode char \u8:ése not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.883 }
-       
-? 
-
-! Package inputenc Error: Unicode char \u8:ése not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.883 }
-       
-? 
-
-! Package inputenc Error: Unicode char \u8:éss not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.883 }
-       
-? 
-
-! Package inputenc Error: Unicode char \u8:éàl not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.883 }
-       
-? 
-
-! Package inputenc Error: Unicode char \u8:éal not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.883 }
-       
-? 
-
-! Package inputenc Error: Unicode char \u8:équ not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.883 }
-       
-? 
-
-! Package inputenc Error: Unicode char \u8:été not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.883 }
-       
-? 
-
-! Package inputenc Error: Unicode char \u8:ése not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.883 }
-       
-? 
-
-! Package inputenc Error: Unicode char \u8:ése not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.883 }
-       
-? 
-
-! Package inputenc Error: Unicode char \u8:ése not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.883 }
-       
-? 
-
-! Package inputenc Error: Unicode char \u 8:\GenericError {(inputenc)          
-      }{Package inputenc Error: Unicode char \u8:é:T not set up for use with La
-TeX}{See the inputenc package documentation for explanation.}{Your command was 
-ignored.
-(inputenc) Type  I <command> <return>  to replace it with another command,
-(inputenc) or  <return>  to continue without it.} not set up for use with LaTeX
-.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.883 }
-       
-? 
-
-! Package inputenc Error: Unicode char \u 8:\GenericError {(inputenc)          
-      }{Package inputenc Error: Unicode char \u8:éat not set up for use with La
-TeX}{See the inputenc package documentation for explanation.}{Your command was 
-ignored.
-(inputenc) Type  I <command> <return>  to replace it with another command,
-(inputenc) or  <return>  to continue without it.} not set up for use with LaTeX
-.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.883 }
-       
-? 
-
-Overfull \hbox (111.46951pt too wide) has occurred while \output is active
- []\T1/phv/b/n/6 Temps d'execution en fonction du nombre de sommets en comptant
- le temps de crion des graphes[]  
- []
-
-
-! Package inputenc Error: Unicode char \u 8:\GenericError {(inputenc)          
-      }{Package inputenc Error: Unicode char \u8:àap not set up for use with La
-TeX}{See the inputenc package documentation for explanation.}{Your command was 
-ignored.
-(inputenc) Type  I <command> <return>  to replace it with another command,
-(inputenc) or  <return>  to continue without it.} not set up for use with LaTeX
-.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.883 }
-       
-? 
-
 Overfull \hbox (45.52928pt too wide) has occurred while \output is active
  [][]  
  []
 
 [25
-
-]
-
-! Package inputenc Error: Unicode char \u 8:\GenericError {(inputenc)          
-      }{Package inputenc Error: Unicode char \u8:é:T not set up for use with La
-TeX}{See the inputenc package documentation for explanation.}{Your command was 
-ignored.
-(inputenc) Type  I <command> <return>  to replace it with another command,
-(inputenc) or  <return>  to continue without it.} not set up for use with LaTeX
-.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.892 }
-       
-? 
-
-! Package inputenc Error: Unicode char \u 8:\GenericError {(inputenc)          
-      }{Package inputenc Error: Unicode char \u8:éat not set up for use with La
-TeX}{See the inputenc package documentation for explanation.}{Your command was 
-ignored.
-(inputenc) Type  I <command> <return>  to replace it with another command,
-(inputenc) or  <return>  to continue without it.} not set up for use with LaTeX
-.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.892 }
-       
-? 
-
-Overfull \hbox (111.46951pt too wide) has occurred while \output is active
- []\T1/phv/b/n/6 Temps d'execution en fonction du nombre de sommets en comptant
- le temps de crion des graphes[]  
- []
-
-
-! Package inputenc Error: Unicode char \u 8:\GenericError {(inputenc)          
-      }{Package inputenc Error: Unicode char \u8:àap not set up for use with La
-TeX}{See the inputenc package documentation for explanation.}{Your command was 
-ignored.
-(inputenc) Type  I <command> <return>  to replace it with another command,
-(inputenc) or  <return>  to continue without it.} not set up for use with LaTeX
-.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.892 }
-       
-? 
-
-Overfull \hbox (45.52928pt too wide) has occurred while \output is active
- [][]  
- []
-
-[26
 
 ] (./presentation.toc
 
@@ -2597,7 +2036,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.9 ...n> to continue without it.}itine}{19}{1}{2}
+l.9 ...n> to continue without it.}itine}{27}{1}{2}
                                                   
 ? 
 
@@ -2613,7 +2052,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.10 ...nue without it.}ion des graphes}{20}{1}{2}
+l.10 ...nue without it.}ion des graphes}{28}{1}{2}
                                                   
 ? 
 
@@ -2629,10 +2068,127 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.11 ... to continue without it.}porter}{25}{1}{2}
+l.11 ... to continue without it.}porter}{33}{1}{2}
                                                   
 ? 
 )
+
+! Package inputenc Error: Unicode char \u 8:\GenericError {(inputenc)          
+      }{Package inputenc Error: Unicode char \u8:é:T not set up for use with La
+TeX}{See the inputenc package documentation for explanation.}{Your command was 
+ignored.
+(inputenc) Type  I <command> <return>  to replace it with another command,
+(inputenc) or  <return>  to continue without it.} not set up for use with LaTeX
+.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1165 ...ormance]{Experimentation et Performance}
+                                                  
+? 
+
+! Package inputenc Error: Unicode char \u 8:\GenericError {(inputenc)          
+      }{Package inputenc Error: Unicode char \u8:éat not set up for use with La
+TeX}{See the inputenc package documentation for explanation.}{Your command was 
+ignored.
+(inputenc) Type  I <command> <return>  to replace it with another command,
+(inputenc) or  <return>  to continue without it.} not set up for use with LaTeX
+.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1165 ...ormance]{Experimentation et Performance}
+                                                  
+? 
+
+Overfull \hbox (111.46951pt too wide) has occurred while \output is active
+ []\T1/phv/b/n/6 Temps d'execution en fonction du nombre de sommets en comptant
+ le temps de crion des graphes[]  
+ []
+
+
+! Package inputenc Error: Unicode char \u 8:\GenericError {(inputenc)          
+      }{Package inputenc Error: Unicode char \u8:àap not set up for use with La
+TeX}{See the inputenc package documentation for explanation.}{Your command was 
+ignored.
+(inputenc) Type  I <command> <return>  to replace it with another command,
+(inputenc) or  <return>  to continue without it.} not set up for use with LaTeX
+.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1165 ...ormance]{Experimentation et Performance}
+                                                  
+? 
+
+Overfull \hbox (45.52928pt too wide) has occurred while \output is active
+ [][]  
+ []
+
+[26
+
+]
+
+! Package inputenc Error: Unicode char \u 8:\GenericError {(inputenc)          
+      }{Package inputenc Error: Unicode char \u8:é:T not set up for use with La
+TeX}{See the inputenc package documentation for explanation.}{Your command was 
+ignored.
+(inputenc) Type  I <command> <return>  to replace it with another command,
+(inputenc) or  <return>  to continue without it.} not set up for use with LaTeX
+.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1171 }
+        
+? 
+
+! Package inputenc Error: Unicode char \u 8:\GenericError {(inputenc)          
+      }{Package inputenc Error: Unicode char \u8:éat not set up for use with La
+TeX}{See the inputenc package documentation for explanation.}{Your command was 
+ignored.
+(inputenc) Type  I <command> <return>  to replace it with another command,
+(inputenc) or  <return>  to continue without it.} not set up for use with LaTeX
+.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1171 }
+        
+? 
+
+Overfull \hbox (111.46951pt too wide) has occurred while \output is active
+ []\T1/phv/b/n/6 Temps d'execution en fonction du nombre de sommets en comptant
+ le temps de crion des graphes[]  
+ []
+
+
+! Package inputenc Error: Unicode char \u 8:\GenericError {(inputenc)          
+      }{Package inputenc Error: Unicode char \u8:àap not set up for use with La
+TeX}{See the inputenc package documentation for explanation.}{Your command was 
+ignored.
+(inputenc) Type  I <command> <return>  to replace it with another command,
+(inputenc) or  <return>  to continue without it.} not set up for use with LaTeX
+.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1171 }
+        
+? 
+
 Overfull \hbox (45.52928pt too wide) has occurred while \output is active
  [][]  
  []
@@ -2640,11 +2196,616 @@ Overfull \hbox (45.52928pt too wide) has occurred while \output is active
 [27
 
 ]
+Overfull \vbox (6.97186pt too high) detected at line 1195
+ []
+
+
+! Package inputenc Error: Unicode char \u 8:\GenericError {(inputenc)          
+      }{Package inputenc Error: Unicode char \u8:é:T not set up for use with La
+TeX}{See the inputenc package documentation for explanation.}{Your command was 
+ignored.
+(inputenc) Type  I <command> <return>  to replace it with another command,
+(inputenc) or  <return>  to continue without it.} not set up for use with LaTeX
+.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1195 }
+        
+? 
+
+! Package inputenc Error: Unicode char \u 8:\GenericError {(inputenc)          
+      }{Package inputenc Error: Unicode char \u8:éat not set up for use with La
+TeX}{See the inputenc package documentation for explanation.}{Your command was 
+ignored.
+(inputenc) Type  I <command> <return>  to replace it with another command,
+(inputenc) or  <return>  to continue without it.} not set up for use with LaTeX
+.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1195 }
+        
+? 
+
+Overfull \hbox (111.46951pt too wide) has occurred while \output is active
+ \T1/phv/b/n/6 Temps d'execution en fonction du nombre de sommets en comptant l
+e temps de crion des graphes  
+ []
+
+
+! Package inputenc Error: Unicode char \u 8:\GenericError {(inputenc)          
+      }{Package inputenc Error: Unicode char \u8:àap not set up for use with La
+TeX}{See the inputenc package documentation for explanation.}{Your command was 
+ignored.
+(inputenc) Type  I <command> <return>  to replace it with another command,
+(inputenc) or  <return>  to continue without it.} not set up for use with LaTeX
+.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1195 }
+        
+? 
+
 Overfull \hbox (45.52928pt too wide) has occurred while \output is active
  [][]  
  []
 
 [28
+
+]
+Overfull \vbox (6.97186pt too high) detected at line 1215
+ []
+
+
+! Package inputenc Error: Unicode char \u 8:\GenericError {(inputenc)          
+      }{Package inputenc Error: Unicode char \u8:é:T not set up for use with La
+TeX}{See the inputenc package documentation for explanation.}{Your command was 
+ignored.
+(inputenc) Type  I <command> <return>  to replace it with another command,
+(inputenc) or  <return>  to continue without it.} not set up for use with LaTeX
+.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1215 }
+        
+? 
+
+! Package inputenc Error: Unicode char \u 8:\GenericError {(inputenc)          
+      }{Package inputenc Error: Unicode char \u8:éat not set up for use with La
+TeX}{See the inputenc package documentation for explanation.}{Your command was 
+ignored.
+(inputenc) Type  I <command> <return>  to replace it with another command,
+(inputenc) or  <return>  to continue without it.} not set up for use with LaTeX
+.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1215 }
+        
+? 
+
+Overfull \hbox (111.46951pt too wide) has occurred while \output is active
+ \T1/phv/b/n/6 Temps d'execution en fonction du nombre de sommets en comptant l
+e temps de crion des graphes  
+ []
+
+
+! Package inputenc Error: Unicode char \u 8:\GenericError {(inputenc)          
+      }{Package inputenc Error: Unicode char \u8:àap not set up for use with La
+TeX}{See the inputenc package documentation for explanation.}{Your command was 
+ignored.
+(inputenc) Type  I <command> <return>  to replace it with another command,
+(inputenc) or  <return>  to continue without it.} not set up for use with LaTeX
+.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1215 }
+        
+? 
+
+Overfull \hbox (45.52928pt too wide) has occurred while \output is active
+ [][]  
+ []
+
+[29
+
+]
+Overfull \vbox (6.97186pt too high) detected at line 1236
+ []
+
+
+! Package inputenc Error: Unicode char \u 8:\GenericError {(inputenc)          
+      }{Package inputenc Error: Unicode char \u8:é:T not set up for use with La
+TeX}{See the inputenc package documentation for explanation.}{Your command was 
+ignored.
+(inputenc) Type  I <command> <return>  to replace it with another command,
+(inputenc) or  <return>  to continue without it.} not set up for use with LaTeX
+.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1236 }
+        
+? 
+
+! Package inputenc Error: Unicode char \u 8:\GenericError {(inputenc)          
+      }{Package inputenc Error: Unicode char \u8:éat not set up for use with La
+TeX}{See the inputenc package documentation for explanation.}{Your command was 
+ignored.
+(inputenc) Type  I <command> <return>  to replace it with another command,
+(inputenc) or  <return>  to continue without it.} not set up for use with LaTeX
+.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1236 }
+        
+? 
+
+Overfull \hbox (111.46951pt too wide) has occurred while \output is active
+ \T1/phv/b/n/6 Temps d'execution en fonction du nombre de sommets en comptant l
+e temps de crion des graphes  
+ []
+
+
+! Package inputenc Error: Unicode char \u 8:\GenericError {(inputenc)          
+      }{Package inputenc Error: Unicode char \u8:àap not set up for use with La
+TeX}{See the inputenc package documentation for explanation.}{Your command was 
+ignored.
+(inputenc) Type  I <command> <return>  to replace it with another command,
+(inputenc) or  <return>  to continue without it.} not set up for use with LaTeX
+.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1236 }
+        
+? 
+
+Overfull \hbox (45.52928pt too wide) has occurred while \output is active
+ [][]  
+ []
+
+[30
+
+]
+Overfull \vbox (6.97186pt too high) detected at line 1252
+ []
+
+
+! Package inputenc Error: Unicode char \u 8:\GenericError {(inputenc)          
+      }{Package inputenc Error: Unicode char \u8:é:T not set up for use with La
+TeX}{See the inputenc package documentation for explanation.}{Your command was 
+ignored.
+(inputenc) Type  I <command> <return>  to replace it with another command,
+(inputenc) or  <return>  to continue without it.} not set up for use with LaTeX
+.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1252 }
+        
+? 
+
+! Package inputenc Error: Unicode char \u 8:\GenericError {(inputenc)          
+      }{Package inputenc Error: Unicode char \u8:éat not set up for use with La
+TeX}{See the inputenc package documentation for explanation.}{Your command was 
+ignored.
+(inputenc) Type  I <command> <return>  to replace it with another command,
+(inputenc) or  <return>  to continue without it.} not set up for use with LaTeX
+.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1252 }
+        
+? 
+
+Overfull \hbox (111.46951pt too wide) has occurred while \output is active
+ \T1/phv/b/n/6 Temps d'execution en fonction du nombre de sommets en comptant l
+e temps de crion des graphes  
+ []
+
+
+! Package inputenc Error: Unicode char \u 8:\GenericError {(inputenc)          
+      }{Package inputenc Error: Unicode char \u8:àap not set up for use with La
+TeX}{See the inputenc package documentation for explanation.}{Your command was 
+ignored.
+(inputenc) Type  I <command> <return>  to replace it with another command,
+(inputenc) or  <return>  to continue without it.} not set up for use with LaTeX
+.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1252 }
+        
+? 
+
+Overfull \hbox (45.52928pt too wide) has occurred while \output is active
+ [][]  
+ []
+
+[31
+
+]
+Overfull \vbox (6.97186pt too high) detected at line 1304
+ []
+
+
+! Package inputenc Error: Unicode char \u 8:\GenericError {(inputenc)          
+      }{Package inputenc Error: Unicode char \u8:é:T not set up for use with La
+TeX}{See the inputenc package documentation for explanation.}{Your command was 
+ignored.
+(inputenc) Type  I <command> <return>  to replace it with another command,
+(inputenc) or  <return>  to continue without it.} not set up for use with LaTeX
+.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1304 }
+        
+? 
+
+! Package inputenc Error: Unicode char \u 8:\GenericError {(inputenc)          
+      }{Package inputenc Error: Unicode char \u8:éat not set up for use with La
+TeX}{See the inputenc package documentation for explanation.}{Your command was 
+ignored.
+(inputenc) Type  I <command> <return>  to replace it with another command,
+(inputenc) or  <return>  to continue without it.} not set up for use with LaTeX
+.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1304 }
+        
+? 
+
+Overfull \hbox (111.46951pt too wide) has occurred while \output is active
+ \T1/phv/b/n/6 Temps d'execution en fonction du nombre de sommets en comptant l
+e temps de crion des graphes  
+ []
+
+
+! Package inputenc Error: Unicode char \u 8:\GenericError {(inputenc)          
+      }{Package inputenc Error: Unicode char \u8:àap not set up for use with La
+TeX}{See the inputenc package documentation for explanation.}{Your command was 
+ignored.
+(inputenc) Type  I <command> <return>  to replace it with another command,
+(inputenc) or  <return>  to continue without it.} not set up for use with LaTeX
+.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1304 }
+        
+? 
+
+Overfull \hbox (45.52928pt too wide) has occurred while \output is active
+ [][]  
+ []
+
+[32
+
+]
+
+! Package inputenc Error: Unicode char \u8:ése not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1322 }
+        
+? 
+
+! Package inputenc Error: Unicode char \u8:ése not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1322 }
+        
+? 
+
+! Package inputenc Error: Unicode char \u8:éss not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1322 }
+        
+? 
+
+! Package inputenc Error: Unicode char \u8:éàl not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1322 }
+        
+? 
+
+! Package inputenc Error: Unicode char \u8:éal not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1322 }
+        
+? 
+
+! Package inputenc Error: Unicode char \u8:équ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1322 }
+        
+? 
+
+! Package inputenc Error: Unicode char \u8:été not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1322 }
+        
+? 
+
+! Package inputenc Error: Unicode char \u8:ése not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1322 }
+        
+? 
+
+! Package inputenc Error: Unicode char \u8:ése not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1322 }
+        
+? 
+
+! Package inputenc Error: Unicode char \u8:ése not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1322 }
+        
+? 
+
+! Package inputenc Error: Unicode char \u 8:\GenericError {(inputenc)          
+      }{Package inputenc Error: Unicode char \u8:é:T not set up for use with La
+TeX}{See the inputenc package documentation for explanation.}{Your command was 
+ignored.
+(inputenc) Type  I <command> <return>  to replace it with another command,
+(inputenc) or  <return>  to continue without it.} not set up for use with LaTeX
+.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1322 }
+        
+? 
+
+! Package inputenc Error: Unicode char \u 8:\GenericError {(inputenc)          
+      }{Package inputenc Error: Unicode char \u8:éat not set up for use with La
+TeX}{See the inputenc package documentation for explanation.}{Your command was 
+ignored.
+(inputenc) Type  I <command> <return>  to replace it with another command,
+(inputenc) or  <return>  to continue without it.} not set up for use with LaTeX
+.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1322 }
+        
+? 
+
+Overfull \hbox (111.46951pt too wide) has occurred while \output is active
+ []\T1/phv/b/n/6 Temps d'execution en fonction du nombre de sommets en comptant
+ le temps de crion des graphes[]  
+ []
+
+
+! Package inputenc Error: Unicode char \u 8:\GenericError {(inputenc)          
+      }{Package inputenc Error: Unicode char \u8:àap not set up for use with La
+TeX}{See the inputenc package documentation for explanation.}{Your command was 
+ignored.
+(inputenc) Type  I <command> <return>  to replace it with another command,
+(inputenc) or  <return>  to continue without it.} not set up for use with LaTeX
+.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1322 }
+        
+? 
+
+Overfull \hbox (45.52928pt too wide) has occurred while \output is active
+ [][]  
+ []
+
+[33
+
+]
+
+! Package inputenc Error: Unicode char \u 8:\GenericError {(inputenc)          
+      }{Package inputenc Error: Unicode char \u8:é:T not set up for use with La
+TeX}{See the inputenc package documentation for explanation.}{Your command was 
+ignored.
+(inputenc) Type  I <command> <return>  to replace it with another command,
+(inputenc) or  <return>  to continue without it.} not set up for use with LaTeX
+.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1331 }
+        
+? 
+
+! Package inputenc Error: Unicode char \u 8:\GenericError {(inputenc)          
+      }{Package inputenc Error: Unicode char \u8:éat not set up for use with La
+TeX}{See the inputenc package documentation for explanation.}{Your command was 
+ignored.
+(inputenc) Type  I <command> <return>  to replace it with another command,
+(inputenc) or  <return>  to continue without it.} not set up for use with LaTeX
+.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1331 }
+        
+? 
+
+Overfull \hbox (111.46951pt too wide) has occurred while \output is active
+ []\T1/phv/b/n/6 Temps d'execution en fonction du nombre de sommets en comptant
+ le temps de crion des graphes[]  
+ []
+
+
+! Package inputenc Error: Unicode char \u 8:\GenericError {(inputenc)          
+      }{Package inputenc Error: Unicode char \u8:àap not set up for use with La
+TeX}{See the inputenc package documentation for explanation.}{Your command was 
+ignored.
+(inputenc) Type  I <command> <return>  to replace it with another command,
+(inputenc) or  <return>  to continue without it.} not set up for use with LaTeX
+.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1331 }
+        
+? 
+
+Overfull \hbox (45.52928pt too wide) has occurred while \output is active
+ [][]  
+ []
+
+[34
+
+] (./presentation.toc
+
+! Package inputenc Error: Unicode char \u 8:\GenericError {(inputenc)          
+      }{Package inputenc Error: Unicode char \u8:é:T not set up for use with La
+TeX}{See the inputenc package documentation for explanation.}{Your command was 
+ignored.
+(inputenc) Type  I <command> <return>  to replace it with another command,
+(inputenc) or  <return>  to continue without it.} not set up for use with LaTeX
+.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.9 ...n> to continue without it.}itine}{27}{1}{2}
+                                                  
+? 
+
+! Package inputenc Error: Unicode char \u 8:\GenericError {(inputenc)          
+      }{Package inputenc Error: Unicode char \u8:éat not set up for use with La
+TeX}{See the inputenc package documentation for explanation.}{Your command was 
+ignored.
+(inputenc) Type  I <command> <return>  to replace it with another command,
+(inputenc) or  <return>  to continue without it.} not set up for use with LaTeX
+.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.10 ...nue without it.}ion des graphes}{28}{1}{2}
+                                                  
+? 
+
+! Package inputenc Error: Unicode char \u 8:\GenericError {(inputenc)          
+      }{Package inputenc Error: Unicode char \u8:àap not set up for use with La
+TeX}{See the inputenc package documentation for explanation.}{Your command was 
+ignored.
+(inputenc) Type  I <command> <return>  to replace it with another command,
+(inputenc) or  <return>  to continue without it.} not set up for use with LaTeX
+.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.11 ... to continue without it.}porter}{33}{1}{2}
+                                                  
+? 
+)
+Overfull \hbox (45.52928pt too wide) has occurred while \output is active
+ [][]  
+ []
+
+[35
+
+]
+Overfull \hbox (45.52928pt too wide) has occurred while \output is active
+ [][]  
+ []
+
+[36
 
 ]
 \tf@nav=\write6
@@ -2656,33 +2817,35 @@ Overfull \hbox (45.52928pt too wide) has occurred while \output is active
 \tf@snm=\write8
 \openout8 = `presentation.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 912.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 912.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1351.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1351.
  (./presentation.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 912.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 912.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1351.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1351.
+
 Package rerunfilecheck Info: File `presentation.out' has not changed.
-(rerunfilecheck)             Checksum: 11C67C5B9E3F5EB48F07F86791F3574F;924.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 912.
+(rerunfilecheck)             Checksum: CD20A91D7CF19972B0268F0A7D559313;924.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1351.
  ) 
 Here is how much of TeX's memory you used:
- 27261 strings out of 493485
- 592228 string characters out of 3143526
- 767758 words of memory out of 3000000
- 29819 multiletter control sequences out of 15000+200000
- 35426 words of font info for 52 fonts, out of 3000000 for 9000
+ 27309 strings out of 493485
+ 592749 string characters out of 3143526
+ 768300 words of memory out of 3000000
+ 29850 multiletter control sequences out of 15000+200000
+ 36643 words of font info for 53 fonts, out of 3000000 for 9000
  957 hyphenation exceptions out of 8191
  50i,19n,74p,634b,1829s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1
-/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helveti
-c/uhvro8a.pfb>
-Output written on presentation.pdf (28 pages, 144317 bytes).
+f-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/h
+elvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr
+o8a.pfb>
+Output written on presentation.pdf (36 pages, 193089 bytes).
 PDF statistics:
- 1099 PDF objects out of 1200 (max. 8388607)
- 1035 compressed objects within 11 object streams
- 70 named destinations out of 1000 (max. 500000)
+ 1374 PDF objects out of 1440 (max. 8388607)
+ 1299 compressed objects within 13 object streams
+ 86 named destinations out of 1000 (max. 500000)
  201 words of extra memory for PDF output out of 10000 (max. 10000000)
 
