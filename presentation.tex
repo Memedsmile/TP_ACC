@@ -1,7 +1,5 @@
-%\documentclass[pdftex]{beamer}
 \documentclass[french]{beamer}
 \usepackage{beamerthemesplit}
-%\usepackage[latin1]{inputenc}
 \usepackage[utf8]{inputenc, fontenc}
 \usepackage[T1]{fontenc}
 \usepackage[french]{babel}
@@ -84,7 +82,7 @@
 
 %--------------------------------------------------Graphe Init
 \frame{
-\frametitle{AlgoFF}
+\frametitle{Algo Ford-Fulkerson}
 
 
 \begin{columns}[c]
@@ -114,7 +112,7 @@
   \Edge[label=$1$](D)(T)
   \Edge[label=$4$](A)(D)
   \Edge[label=$1$](C)(A)
-  \Edge[label=$1$](C)(D)
+  \Edge[label=$1$](D)(C)
   \Edge[label=$1$](B)(C)
   \tikzset{EdgeStyle/.style={->}, bend right}
   \Edge[label=${0,2}$](B)(T)
@@ -139,7 +137,7 @@
 
 %--------------------------------------------------Graphe Ecart avec flot null
 \frame{
-\frametitle{AlgoFF}
+\frametitle{Algo Ford-Fulkerson}
 
 \begin{columns}[c]
 \begin{column}{8cm}
@@ -166,7 +164,7 @@
   \Edge[label=${0,2}$](S)(C)
   \Edge[label=${0,2}$](C)(T)
   \Edge[label=${0,1}$](C)(A)
-  \Edge[label=${0,1}$](C)(D)
+  \Edge[label=${0,1}$](D)(C)
   \Edge[label=${0,1}$](B)(C)
   \Edge[label=${0,3}$](S)(A)
   \Edge[label=${0,4}$](A)(D)
@@ -202,7 +200,7 @@
 
 %--------------------------------------------------Graphe Ecart chemin ameliorant
 \frame{
-\frametitle{AlgoFF}
+\frametitle{Algo Ford-Fulkerson}
 
 \begin{columns}[c]
 \begin{column}{8cm}
@@ -230,7 +228,7 @@
   \Edge[label=${0,2}$](S)(C)
   \Edge[label=${0,2}$](C)(T)
   \Edge[label=${0,1}$](C)(A)
-  \Edge[label=${0,1}$](C)(D)
+  \Edge[label=${0,1}$](D)(C)
   \Edge[label=${0,1}$](B)(C)
   \tikzset{EdgeStyle/.style={->, color = red}}
   \Edge[label=${0,3}$](S)(A)
@@ -262,7 +260,7 @@
 %---------------------------------------------Mise a jour du flot
 
 \frame{
-\frametitle{AlgoFF}
+\frametitle{Algo Ford-Fulkerson}
 
 \begin{columns}[c]
 \begin{column}{8cm}
@@ -290,7 +288,7 @@
   \Edge[label=${0,2}$](S)(C)
   \Edge[label=${0,2}$](C)(T)
   \Edge[label=${0,1}$](C)(A)
-  \Edge[label=${0,1}$](C)(D)
+  \Edge[label=${0,1}$](D)(C)
   \Edge[label=${0,1}$](B)(C)
   \tikzset{EdgeStyle/.style={->, color = red}}
   \Edge[label=${1,3}$](S)(A)
@@ -311,7 +309,7 @@
   
   \begin{column}{3cm}
   \begin{block}{Chemin ameliorant}
-    En utilisant le flotle plus
+    En utilisant le flot le plus
     petit de ce chemin on met a
      jour le graphe d'ecart.
   \end{block}
@@ -323,11 +321,11 @@
 %---------------------------------------------Graphe d'ecart finale
 
 \frame{
-\frametitle{AlgoFF}
+\frametitle{Algo Ford-Fulkerson}
 
 \begin{columns}[c]
 \begin{column}{8cm}
-\begin{block}{Chemin ameliorant}
+\begin{block}{Graphe finale}
 
 \usetikzlibrary{arrows}
 \begin{flushleft}
@@ -358,13 +356,13 @@
   \Edge[label=${3,3}$](S)(B)
   \Edge[label=${1,1}$](B)(C)
   \Edge[label=${2,2}$](C)(T)
-  \Edge[label=${1,1}$](C)(D)
+  \Edge[label=${1,1}$](D)(C)
 
   \tikzset{EdgeStyle/.style={<-, color = orange}, bend right}
   \Edge[label=${2,2}$](B)(T)
   \draw[orange](3,0)--(4,4);
   \draw[orange,->](4,4)--(-3,3);
-  \node at (4.25,4.25){6,$\infty$};
+  \node at (4.25,4.25){5,$\infty$};
   
 \end{tikzpicture}
 \end{flushleft}
@@ -373,12 +371,12 @@
 \end{column}
   
   \begin{column}{3cm}
-  \begin{block}{Chemin ameliorant}
+  \begin{block}{Graphe finale}
     Une foi tout les chemin
     ameliorants sont parcouru,
     on obtien un graphe d'ecart
     complet avec le flot maximal
-    (das notre cas c'est 6).
+    (das notre cas c'est 5).
   \end{block}
   \end{column}
   \end{columns}  
@@ -393,7 +391,7 @@
 
 %--------------------------------------------------Graphe initiale
 \frame{
-\frametitle{AlgoEK}
+\frametitle{Algo Edmonds-Karp}
  
 
 \begin{columns}[c]
@@ -423,10 +421,10 @@
   \Edge[label=$1$](D)(T)
   \Edge[label=$4$](A)(D)
   \Edge[label=$1$](C)(A)
-  \Edge[label=$1$](C)(D)
+  \Edge[label=$1$](D)(C)
   \Edge[label=$1$](B)(C)
   \tikzset{EdgeStyle/.style={->}, bend right}
-  \Edge[label=${0,2}$](B)(T)
+  \Edge[label=$2$](B)(T)
 \end{tikzpicture}
 \end{flushleft}
 \end{block} 
@@ -451,7 +449,7 @@
 
 
 \frame{
-\frametitle{AlgoEK}
+\frametitle{Algo Edmonds-Karp}
 
 \begin{columns}[c]
 \begin{column}{8cm}
@@ -478,7 +476,7 @@
   \Edge[label=${0,2}$](S)(C)
   \Edge[label=${0,2}$](C)(T)
   \Edge[label=${0,1}$](C)(A)
-  \Edge[label=${0,1}$](C)(D)
+  \Edge[label=${0,1}$](D)(C)
   \Edge[label=${0,1}$](B)(C)
   \Edge[label=${0,3}$](S)(A)
   \Edge[label=${0,4}$](A)(D)
@@ -511,11 +509,11 @@
 }
 
 
-%------------------------------------------grapheecart chemin ameliorant
+%------------------------------------------graphe ecart chemin ameliorant
 
 
 \frame{
-\frametitle{AlgoEK}
+\frametitle{Algo Edmonds-Karp}
 
 \begin{columns}[c]
 \begin{column}{8cm}
@@ -540,15 +538,15 @@
   
  \tikzset{EdgeStyle/.style={->}}
   \Edge[label=${0,3}$](S)(B)
-  \Edge[label=${0,2}$](C)(T)
   \Edge[label=${0,1}$](C)(A)
   \Edge[label=${0,1}$](B)(C)
   \Edge[label=${0,3}$](S)(A)
   \Edge[label=${0,4}$](A)(D)
-  \tikzset{EdgeStyle/.style={->, color = red}}
   \Edge[label=${0,1}$](D)(T)
-  \Edge[label=${0,2}$](S)(C)
   \Edge[label=${0,1}$](C)(D)
+  \tikzset{EdgeStyle/.style={->, color = red}}
+  \Edge[label=${0,2}$](S)(C)
+  \Edge[label=${0,2}$](C)(T)
   \tikzset{EdgeStyle/.style={->, color = orange}, bend right}
   \Edge[label=${0,2}$](B)(T)
   \draw[orange](3,0)--(4,4);
@@ -565,7 +563,7 @@
   \begin{block}{Chemin ameliorant}
     On choisi ici un chemin ameliorant
     en fonction de plus court chemin,
-    qui dans notre cas est calculé 
+    qui dans notre cas est calcule\\ 
     avec l'algo de Dijsktra
   \end{block}
   \end{column}
@@ -578,7 +576,7 @@
 %-------------------------------------------------Mis a jour du graphe
 
 \frame{
-\frametitle{AlgoFF}
+\frametitle{Algo Edmonds-Karp}
 
 \begin{columns}[c]
 \begin{column}{8cm}
@@ -604,21 +602,20 @@
   
  \tikzset{EdgeStyle/.style={->}}
   \Edge[label=${0,3}$](S)(B)
-  \Edge[label=${0,2}$](C)(T)
   \Edge[label=${0,1}$](C)(A)
   \Edge[label=${0,1}$](B)(C)
   \Edge[label=${1,4}$](A)(D)
   \Edge[label=${1,3}$](S)(A)
-  \tikzset{EdgeStyle/.style={->, color = red}}
-  \Edge[label=${1,2}$](S)(C)
-  \tikzset{EdgeStyle/.style={<-, color = red}}
   \Edge[label=${1,1}$](C)(D)
   \Edge[label=${1,1}$](D)(T)
+  \tikzset{EdgeStyle/.style={<-, color = red}}
+  \Edge[label=${2,2}$](S)(C)
+  \Edge[label=${2,2}$](C)(T)
   \tikzset{EdgeStyle/.style={->, color = orange}, bend right}
   \Edge[label=${0,2}$](B)(T)
   \draw[orange](3,0)--(4,4);
   \draw[orange,->](4,4)--(-3,3);
-  \node at (4.25,4.25){1,$\infty$};
+  \node at (4.25,4.25){2,$\infty$};
   
 \end{tikzpicture}
 \end{flushleft}
@@ -637,6 +634,72 @@
 }
 
 
+
+
+
+%----------------------------------------Graphe d'ecart finale
+
+\frame{
+\frametitle{Algo Edmonds-Karp}
+
+\begin{columns}[c]
+\begin{column}{8cm}
+\begin{block}{Graphe finale}
+
+\usetikzlibrary{arrows}
+\begin{flushleft}
+\begin{tikzpicture}[>=latex']
+ \SetUpEdge[lw         = 1pt,
+            color      = orange,
+            labelcolor = red!30,
+            labelstyle = {draw,sloped}]
+  \tikzset{node distance = 2cm}
+  \GraphInit[vstyle=Normal]
+  \Vertex[x=-3, y=3]{S}
+  \Vertex[x=0, y=3]{A}
+  \Vertex[x=3, y=3]{D}
+  \Vertex[x=3, y=0]{T}
+  \Vertex[x=0, y=0]{C}
+  \Vertex[x=-3, y=0]{B}
+
+  
+ \tikzset{EdgeStyle/.style={->}}
+  \Edge[label=${0,2}$](S)(C)
+  \Edge[label=${0,1}$](C)(A)
+  \Edge[label=${1,3}$](S)(A)
+  \Edge[label=${1,4}$](A)(D)
+  \Edge[label=${2,3}$](S)(A)
+  \Edge[label=${2,4}$](A)(D)
+  \tikzset{EdgeStyle/.style={<-}}
+  \Edge[label=${1,1}$](D)(T)
+  \Edge[label=${3,3}$](S)(B)
+  \Edge[label=${1,1}$](B)(C)
+  \Edge[label=${2,2}$](C)(T)
+  \Edge[label=${1,1}$](D)(C)
+
+  \tikzset{EdgeStyle/.style={<-, color = orange}, bend right}
+  \Edge[label=${2,2}$](B)(T)
+  \draw[orange](3,0)--(4,4);
+  \draw[orange,->](4,4)--(-3,3);
+  \node at (4.25,4.25){2,$\infty$};
+  
+\end{tikzpicture}
+\end{flushleft}
+
+\end{block} 
+\end{column}
+  
+  \begin{column}{3cm}
+  \begin{block}{Graphe finale}
+    Une foi tout les chemin
+    ameliorants sont parcouru,
+    on obtien un graphe d'ecart
+    complet avec le flot maximal
+    (das notre cas c'est 5).
+  \end{block}
+  \end{column}
+  \end{columns}  
+}
 
 %+++++++++++++++++++++++++++++++++++++++++++++++++++
 
